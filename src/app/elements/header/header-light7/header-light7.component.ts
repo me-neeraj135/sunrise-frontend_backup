@@ -73,7 +73,9 @@ export class HeaderLight7Component {
     this.searchToggle = !this.searchToggle
   }
   opneMenu(item: any) {
-    if (item === 4) {
+    console.log('opn', item)
+
+    if (item === 3) {
       this.router.navigate(['/blog-half-img'])
     } else if (this.toggleMenu != item.toString()) {
       this.toggleMenu = item.toString()
@@ -112,14 +114,14 @@ export class HeaderLight7Component {
       subMenuClass: 'sub-menu',
       subMenu: [
         {
-          title: "About Sunrise",
+          title: 'About Sunrise',
           route: '/about-1',
         },
         {
           title: "Principal's Message",
           route: '/teachers-profile',
-        }
-      ]
+        },
+      ],
     },
     {
       title: 'Academics',
@@ -144,7 +146,7 @@ export class HeaderLight7Component {
             {
               title: 'Courses Details',
               route: '/courses-details',
-            }
+            },
           ],
         },
         {
@@ -157,7 +159,7 @@ export class HeaderLight7Component {
             {
               title: 'Events Details',
               route: '/event-details',
-            }
+            },
           ],
         },
         {
@@ -195,9 +197,9 @@ export class HeaderLight7Component {
             {
               title: 'Privacy Policy',
               route: '/privacy-policy',
-            }
+            },
           ],
-        }
+        },
       ],
     },
     {
@@ -205,7 +207,7 @@ export class HeaderLight7Component {
       subMenuClass: 'sub-menu',
       subMenu: [
         {
-          title: "Products",
+          title: 'Products',
           route: '/shop-sidebar',
         },
         {
@@ -238,6 +240,6 @@ export class HeaderLight7Component {
       title: 'Testimonials',
       route: '/blog-half-img',
       menuClass: 'has-mega-menu',
-    }
+    },
   ]
 }

@@ -1,14 +1,13 @@
-
 <div class="page-wraper">
 
-    <!-- header -->
-    <app-header-light3></app-header-light3>
-    <!-- header END -->
-    <!-- Content -->
-    <div class="page-content bg-gray">
-        <!-- inner page banner -->
-        <app-banner1 [data] = "banner"></app-banner1>
-        <!-- inner page banner END -->
+	<!-- header -->
+	<app-header-light7></app-header-light7>
+	<!-- header END -->
+	<!-- Content -->
+	<div class="page-content bg-gray">
+		<!-- inner page banner -->
+		<app-banner1 [data]="banner"></app-banner1>
+		<!-- inner page banner END -->
 		<div class="section-full bg-white content-inner">
 			<div class="container">
 				<div class="row">
@@ -26,16 +25,18 @@
 									</ul>
 								</div>
 								<div class="dlab-post-title">
-									<h4 class="post-title"><a [routerLink]="['/event-details']">{{ item.title }}</a></h4>
+									<h4 class="post-title"><a [routerLink]="['/event-details']">{{ item.title }}</a>
+									</h4>
 								</div>
 							</div>
 						</div>
 					</div>
-					
+
 					<!-- Pagination start -->
 					<div class="pagination-bx rounded-sm primary clearfix m-b30 text-center col-md-12">
 						<ul class="pagination">
-							<li class="previous"><a href="javascript:void(0);"><i class="ti-arrow-left"></i> Prev</a></li>
+							<li class="previous"><a href="javascript:void(0);"><i class="ti-arrow-left"></i> Prev</a>
+							</li>
 							<li class="active"><a href="javascript:void(0);">1</a></li>
 							<li><a href="javascript:void(0);">2</a></li>
 							<li><a href="javascript:void(0);">3</a></li>
@@ -48,13 +49,13 @@
 		</div>
 		<!-- Events End -->
 	</div>
-    <!-- Content END-->
-    <!-- Footer -->
-   <!-- Newsletter -->
+	<!-- Content END-->
+	<!-- Footer -->
+	<!-- Newsletter -->
 	<app-newsletter2></app-newsletter2>
-   <!-- Footer -->
-    <app-footer13></app-footer13>
-    <!-- Footer END-->
-    <!-- scroll top button --> 
-    <app-scroltop></app-scroltop>
+	<!-- Footer -->
+	<app-footer13></app-footer13>
+	<!-- Footer END-->
+	<!-- scroll top button -->
+	<app-scroltop></app-scroltop>
 </div>

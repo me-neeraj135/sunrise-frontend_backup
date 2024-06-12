@@ -81,7 +81,7 @@ const routes: Routes = [
 
   // Features --
 
-  { path: 'header-style-3', component: HeaderStyle3Component },
+  
   { path: 'header-style-4', component: HeaderStyle4Component },
 
   { path: 'header-style-6', component: HeaderStyle6Component },

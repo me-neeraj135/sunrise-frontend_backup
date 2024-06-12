@@ -1,14 +1,13 @@
-
 <div class="page-wraper">
 
 	<!-- header -->
-    <app-header-light3></app-header-light3>
-    <!-- header END -->
-    <!-- Content -->
-    <div class="page-content bg-gray">
-        <!-- inner page banner -->
-        <app-banner1 [data] = "banner"></app-banner1>
-        <!-- inner page banner END -->
+	<app-header-light7></app-header-light7>
+	<!-- header END -->
+	<!-- Content -->
+	<div class="page-content bg-gray">
+		<!-- inner page banner -->
+		<app-banner1 [data]="banner"></app-banner1>
+		<!-- inner page banner END -->
 		<!-- Contact Form -->
 		<div class="section-full content-inner">
 			<div class="container">
@@ -44,47 +43,54 @@
 					</div>
 					<div class="col-lg-8 col-md-7 col-sm-12 m-b30">
 						<form class="contact-box dzForm" action="script/contact.php">
-							<h3 class="title-box">Write us a few words about your project and we’ll prepare a proposal for you within <strong>24</strong> hours</h3>
+							<h3 class="title-box">Write us a few words about your project and we’ll prepare a proposal
+								for you within <strong>24</strong> hours</h3>
 							<div class="dzFormMsg m-b20"></div>
 							<input type="hidden" value="Contact" name="dzToDo">
 							<div class="row">
 								<div class="col-lg-6 col-md-6">
 									<div class="form-group">
 										<div class="input-group">
-											<input name="dzFirstName" type="text" required="" class="form-control" placeholder="First Name">
+											<input name="dzFirstName" type="text" required="" class="form-control"
+												placeholder="First Name">
 										</div>
 									</div>
 								</div>
 								<div class="col-lg-6 col-md-6">
 									<div class="form-group">
 										<div class="input-group">
-											<input name="dzLastName" type="text" required="" class="form-control" placeholder="Last Name">
+											<input name="dzLastName" type="text" required="" class="form-control"
+												placeholder="Last Name">
 										</div>
 									</div>
 								</div>
 								<div class="col-lg-6 col-md-6">
 									<div class="form-group">
 										<div class="input-group">
-											<input name="dzOther[Phone]" type="text" required="" class="form-control" placeholder="Phone">
+											<input name="dzOther[Phone]" type="text" required="" class="form-control"
+												placeholder="Phone">
 										</div>
 									</div>
 								</div>
 								<div class="col-lg-6 col-md-6">
 									<div class="form-group">
-										<div class="input-group"> 
-											<input name="dzEmail" type="email" class="form-control" required="" placeholder="Your Email Id">
+										<div class="input-group">
+											<input name="dzEmail" type="email" class="form-control" required=""
+												placeholder="Your Email Id">
 										</div>
 									</div>
 								</div>
 								<div class="col-lg-12 col-md-12">
 									<div class="form-group">
 										<div class="input-group">
-											<textarea name="dzMessage" rows="4" class="form-control" required="" placeholder="Tell us about your project or idea"></textarea>
+											<textarea name="dzMessage" rows="4" class="form-control" required=""
+												placeholder="Tell us about your project or idea"></textarea>
 										</div>
 									</div>
 								</div>
 								<div class="col-lg-12 col-md-12">
-									<button name="submit" type="submit" value="Submit" class="site-button">Get A Free Quote!</button>
+									<button name="submit" type="submit" value="Submit" class="site-button">Get A Free
+										Quote!</button>
 								</div>
 							</div>
 						</form>
@@ -93,13 +99,13 @@
 			</div>
 		</div>
 		<!-- Contact Form End -->
-    </div>
-    <!-- Content END-->
-    <!-- Newsletter -->
+	</div>
+	<!-- Content END-->
+	<!-- Newsletter -->
 	<app-newsletter2></app-newsletter2>
-   <!-- Footer -->
-    <app-footer13></app-footer13>
-    <!-- Footer END-->
-    <!-- scroltop -->
-    <app-scroltop></app-scroltop>
+	<!-- Footer -->
+	<app-footer13></app-footer13>
+	<!-- Footer END-->
+	<!-- scroltop -->
+	<app-scroltop></app-scroltop>
 </div>

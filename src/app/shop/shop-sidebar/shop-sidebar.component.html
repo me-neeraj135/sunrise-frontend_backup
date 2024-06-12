@@ -1,18 +1,17 @@
-
 <div class="page-wraper">
 
-    <!-- header -->
-    <app-header-light3></app-header-light3>
-    <!-- header END -->
-    <!-- Content -->
-    <div class="page-content bg-white">
-        <!-- inner page banner -->
-        <app-banner1 [data] = "banner"></app-banner1>
-        <!-- inner page banner END -->
-        <!-- contact area -->
-        <div class="section-full content-inner">
-            <!-- Product -->
-            <div class="container">
+	<!-- header -->
+	<app-header-light7></app-header-light7>
+	<!-- header END -->
+	<!-- Content -->
+	<div class="page-content bg-white">
+		<!-- inner page banner -->
+		<app-banner1 [data]="banner"></app-banner1>
+		<!-- inner page banner END -->
+		<!-- contact area -->
+		<div class="section-full content-inner">
+			<!-- Product -->
+			<div class="container">
 				<div class="row">
 					<div class="col-lg-3 col-md-4 m-b30">
 						<aside class="side-bar shop-categories sticky-top">
@@ -52,7 +51,8 @@
 											<div class="acod-content">
 												<div class="price-slide-2 range-slider">
 													<div class="price">
-														<input type="text" id="amount-2" class="amount" readonly="" value="$400 - $4000" />
+														<input type="text" id="amount-2" class="amount" readonly=""
+															value="$400 - $4000" />
 														<div id="slider-range-2"></div>
 													</div>
 												</div>
@@ -134,23 +134,28 @@
 												<div class="product-brand">
 													<div class="search-content">
 														<input id="seating1" type="checkbox">
-														<label for="seating1" class="search-content-area">School Bag</label>
+														<label for="seating1" class="search-content-area">School
+															Bag</label>
 													</div>
 													<div class="search-content">
 														<input id="seating2" type="checkbox">
-														<label for="seating2" class="search-content-area">Color Pencils</label>
+														<label for="seating2" class="search-content-area">Color
+															Pencils</label>
 													</div>
 													<div class="search-content">
 														<input id="seating3" type="checkbox">
-														<label for="seating3" class="search-content-area">Project Book</label>
+														<label for="seating3" class="search-content-area">Project
+															Book</label>
 													</div>
 													<div class="search-content">
 														<input id="seating4" type="checkbox">
-														<label for="seating4" class="search-content-area">Calculator</label>
+														<label for="seating4"
+															class="search-content-area">Calculator</label>
 													</div>
 													<div class="search-content">
 														<input id="seating5" type="checkbox">
-														<label for="seating5" class="search-content-area">Colorful Book</label>
+														<label for="seating5" class="search-content-area">Colorful
+															Book</label>
 													</div>
 												</div>
 											</div>
@@ -206,7 +211,8 @@
 													</div>
 													<div class="item-widgets-body text-black">
 														<h6 class="item-title text-capitalize font-weight-500 m-t0">
-															<a [routerLink]="['/shop-product-details']">Color Pencils</a>
+															<a [routerLink]="['/shop-product-details']">Color
+																Pencils</a>
 														</h6>
 														<ul class="item-review text-yellow-light">
 															<li><i class="fa fa-star"></i></li>
@@ -227,7 +233,8 @@
 													</div>
 													<div class="item-widgets-body text-black">
 														<h6 class="item-title text-capitalize font-weight-500 m-t0">
-															<a [routerLink]="['/shop-product-details']">Color Pencils</a>
+															<a [routerLink]="['/shop-product-details']">Color
+																Pencils</a>
 														</h6>
 														<ul class="item-review text-yellow-light">
 															<li><i class="fa fa-star"></i></li>
@@ -248,7 +255,8 @@
 													</div>
 													<div class="item-widgets-body text-black">
 														<h6 class="item-title text-capitalize font-weight-500 m-t0">
-															<a [routerLink]="['/shop-product-details']">Color Pencils</a>
+															<a [routerLink]="['/shop-product-details']">Color
+																Pencils</a>
 														</h6>
 														<ul class="item-review text-yellow-light">
 															<li><i class="fa fa-star"></i></li>
@@ -275,16 +283,20 @@
 							<div *ngFor="let item of shopData" class="col-lg-4 col-md-6 col-sm-6">
 								<div class="item-box m-b10">
 									<div class="item-img">
-										<img src="{{ item.img }}" alt=""/>
+										<img src="{{ item.img }}" alt="" />
 										<div class="item-info-in full">
 											<div class="center p-lr40">
-												<a href="javascript:void(0);" class="site-button radius-xl m-b10 btn-block"><i class="la la-shopping-cart"></i> Add To Cart</a>
-												<a href="javascript:void(0);" class="site-button radius-xl btn-block"><i class="la la-heart-o"></i> Wishlist</a>
+												<a href="javascript:void(0);"
+													class="site-button radius-xl m-b10 btn-block"><i
+														class="la la-shopping-cart"></i> Add To Cart</a>
+												<a href="javascript:void(0);" class="site-button radius-xl btn-block"><i
+														class="la la-heart-o"></i> Wishlist</a>
 											</div>
 										</div>
 									</div>
 									<div class="item-info text-center text-black p-a10">
-										<h6 class="item-title font-weight-500"><a [routerLink]="['{ item.titleUrl }']">{{ item.title }}</a></h6>
+										<h6 class="item-title font-weight-500"><a
+												[routerLink]="['{ item.titleUrl }']">{{ item.title }}</a></h6>
 										<ul class="item-review">
 											<li><i class="fa fa-star"></i></li>
 											<li><i class="fa fa-star"></i></li>
@@ -293,7 +305,7 @@
 											<li><i class="fa fa-star-o"></i></li>
 										</ul>
 										<h4 class="item-price">
-											<del>${{ item.priceDic }}</del> 
+											<del>${{ item.priceDic }}</del>
 											<span class="text-primary">${{ item.price }}</span>
 										</h4>
 									</div>
@@ -303,18 +315,18 @@
 					</div>
 				</div>
 			</div>
-            <!-- Product END -->
+			<!-- Product END -->
 		</div>
 		<!-- Shop Service info -->
 		<app-icon-box4></app-icon-box4>
 		<!-- Shop Service info End -->
-    </div>
-    <!-- Content END-->
-    <!-- Newsletter -->
+	</div>
+	<!-- Content END-->
+	<!-- Newsletter -->
 	<app-newsletter2></app-newsletter2>
-   <!-- Footer -->
-    <app-footer13></app-footer13>
-    <!-- Footer END-->
-    <!-- scroltop -->
-    <app-scroltop></app-scroltop>
+	<!-- Footer -->
+	<app-footer13></app-footer13>
+	<!-- Footer END-->
+	<!-- scroltop -->
+	<app-scroltop></app-scroltop>
 </div>

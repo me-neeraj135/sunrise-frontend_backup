@@ -46,7 +46,7 @@ import { HeaderStyle3Component } from './features/header-style3/header-style3.co
 import { HeaderStyle4Component } from './features/header-style4/header-style4.component'
 
 import { HeaderStyle6Component } from './features/header-style6/header-style6.component'
-import { HeaderLight3Component } from './elements/header/header-light3/header-light3.component'
+
 import { HeaderLight7Component } from './elements/header/header-light7/header-light7.component'
 
 import { FooterStyle1Component } from './features/footer-style1/footer-style1.component'
@@ -220,7 +220,7 @@ import { LightgalleryComponent } from './elements/widgets/lightgallery/lightgall
     HeaderStyle4Component,
 
     HeaderStyle6Component,
-    HeaderLight3Component,
+
     HeaderLight7Component,
 
     FooterStyle1Component,
