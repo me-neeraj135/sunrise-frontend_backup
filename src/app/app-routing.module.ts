@@ -26,22 +26,22 @@ import { FooterStyle11Component } from './features/footer-style11/footer-style11
 import { FooterStyle12Component } from './features/footer-style12/footer-style12.component'
 import { AboutUs1Component } from './pages/about-us1/about-us1.component'
 import { AboutUs2Component } from './pages/about-us2/about-us2.component'
-import { Services1Component } from './pages/services1/services1.component'
-import { Services2Component } from './pages/services2/services2.component'
-import { FaqsComponent } from './pages/faqs/faqs.component'
-import { TeachersComponent } from './pages/teachers/teachers.component'
-import { TeachersProfileComponent } from './pages/teachers-profile/teachers-profile.component'
-import { CourcesComponent } from './pages/cources/cources.component'
-import { CourcesDetailsComponent } from './pages/cources-details/cources-details.component'
-import { EventsComponent } from './pages/events/events.component'
-import { EventsDetailsComponent } from './pages/events-details/events-details.component'
-import { HelpDeskComponent } from './pages/help-desk/help-desk.component'
-import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component'
+import { Services1Component } from './academics/school-services/services1/services1.component'
+import { Services2Component } from './academics/school-services/services2/services2.component'
+import { FaqsComponent } from './academics/school-services/faqs/faqs.component'
+import { TeachersComponent } from './academics/teachers-courses/teachers/teachers.component'
+import { TeachersProfileComponent } from './academics/teachers-courses/teachers-profile/teachers-profile.component'
+import { CourcesComponent } from './academics/teachers-courses/cources/cources.component'
+import { CourcesDetailsComponent } from './academics/teachers-courses/cources-details/cources-details.component'
+import { EventsComponent } from './academics/events-recognitions/events/events.component'
+import { EventsDetailsComponent } from './academics/events-recognitions/events-details/events-details.component'
+import { HelpDeskComponent } from './academics/school-services/help-desk/help-desk.component'
+import { PrivacyPolicyComponent } from './academics/school-services/privacy-policy/privacy-policy.component'
 import { Error404Component } from './pages/error404/error404.component'
 import { Error405Component } from './pages/error405/error405.component'
-import { GalleryGrid2Component } from './pages/gallery-grid2/gallery-grid2.component'
-import { GalleryGrid3Component } from './pages/gallery-grid3/gallery-grid3.component'
-import { GalleryGrid4Component } from './pages/gallery-grid4/gallery-grid4.component'
+import { GalleryGrid2Component } from './academics/gallery/gallery-grid2/gallery-grid2.component'
+import { GalleryGrid3Component } from './academics/gallery/gallery-grid3/gallery-grid3.component'
+import { GalleryGrid4Component } from './academics/gallery/gallery-grid4/gallery-grid4.component'
 import { ShopComponent } from './shop/shop/shop.component'
 import { ShopSidebarComponent } from './shop/shop-sidebar/shop-sidebar.component'
 import { ProductDetailsComponent } from './shop/product-details/product-details.component'
@@ -72,19 +72,39 @@ import { PrincipalMessageComponent } from './about-us/principal-message/principa
 import { AboutSunriseComponent } from './about-us/about-sunrise/about-sunrise.component'
 
 const routes: Routes = [
+  
   // Home --
   { path: '', redirectTo: '/home-school', pathMatch: 'full' },
   { path: 'home-school', component: HomeSchoolComponent },
   { path: 'index-5', component: HomeSchoolComponent },
 
-  // About page
+  // About Us
 
   // { path: 'about-1', component: AboutUs1Component },
   { path: 'about-sunrise', component: AboutSunriseComponent },
+  { path: 'principal-message', component: PrincipalMessageComponent},
 
-  // Features --
+  // Academics
+    // Events-Recognitions
+    { path: 'event', component: EventsComponent },
+    { path: 'event-details', component: EventsDetailsComponent },
+    // Gallary
+    { path: 'gallery-grid-2', component: GalleryGrid2Component },
+    { path: 'gallery-grid-3', component: GalleryGrid3Component },
+    { path: 'gallery-grid-4', component: GalleryGrid4Component },
+    // School-Services
+    { path: 'services-1', component: Services1Component },
+    { path: 'services-2', component: Services2Component },
+    { path: 'faq-1', component: FaqsComponent },
+    { path: 'help-desk', component: HelpDeskComponent },
+    { path: 'privacy-policy', component: PrivacyPolicyComponent },
+    // Teachers-Course
+    { path: 'teacher', component: TeachersComponent },
+    { path: 'teachers-profile/:id', component: TeachersProfileComponent },
+    { path: 'courses', component: CourcesComponent },
+    { path: 'courses-details', component: CourcesDetailsComponent },
 
-  
+  // Features --  
   { path: 'header-style-4', component: HeaderStyle4Component },
 
   { path: 'header-style-6', component: HeaderStyle6Component },
@@ -105,23 +125,8 @@ const routes: Routes = [
   // Pages --
   { path: 'about-1', component: AboutUs1Component },
   { path: 'about-2', component: AboutUs1Component },
-
-  { path: 'services-1', component: Services1Component },
-  { path: 'services-2', component: Services2Component },
-  { path: 'faq-1', component: FaqsComponent },
-  { path: 'teacher', component: TeachersComponent },
-  { path: 'teachers-profile', component: TeachersProfileComponent },
-  { path: 'courses', component: CourcesComponent },
-  { path: 'courses-details', component: CourcesDetailsComponent },
-  { path: 'event', component: EventsComponent },
-  { path: 'event-details', component: EventsDetailsComponent },
-  { path: 'help-desk', component: HelpDeskComponent },
-  { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'error-404', component: Error404Component },
   { path: 'error-405', component: Error405Component },
-  { path: 'gallery-grid-2', component: GalleryGrid2Component },
-  { path: 'gallery-grid-3', component: GalleryGrid3Component },
-  { path: 'gallery-grid-4', component: GalleryGrid4Component },
 
   // Shop --
   { path: 'shop', component: ShopComponent },
@@ -162,9 +167,6 @@ const routes: Routes = [
   { path: 'contact-2', component: ContactUs2Component },
   { path: 'contact-3', component: ContactUs3Component },
   { path: 'contact-4', component: ContactUs4Component },
-
-  // About Us
-  { path: 'principal-message', component: PrincipalMessageComponent},
 
   // Error --
   { path: '**', component: Error404Component },

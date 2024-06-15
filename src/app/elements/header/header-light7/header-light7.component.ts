@@ -136,10 +136,6 @@ export class HeaderLight7Component {
               route: '/teacher',
             },
             {
-              title: 'Teachers Profile',
-              route: '/teachers-profile',
-            },
-            {
               title: 'Courses',
               route: '/courses',
             },

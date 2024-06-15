@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { map, switchMap } from 'rxjs';
 import { TeacherService } from 'src/app/services/teacher.service';
 
 @Component({
@@ -12,13 +14,17 @@ export class TeachersProfileComponent {
 		bg_image: "assets/images/banner/bnr4.jpg",
 		title: "Teachers Profile",
 	}
-  allTeacherData: any;
+  teacherData: any;
+  teacherId: any;
 
-  constructor(private teacherService: TeacherService){}
+  constructor(
+    private route: ActivatedRoute,
+    private teacherService: TeacherService){}
 
   ngOnInit(): void {
-    this.teacherService.getAllTeacherData().subscribe((data:any) => {
-      this.allTeacherData = data;
+    this.teacherId = Number(this.route.snapshot.paramMap.get('id'));
+    this.teacherService.getTeacherById(this.teacherId).subscribe((data:any) => {
+      this.teacherData = data;
     });
   }
 	

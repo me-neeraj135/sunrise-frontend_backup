@@ -1,4 +1,10 @@
 [
-    { "teacherId": 1, "name": "John Doe", "age": 40, "gender": "Male" },
-    { "teacherId": 2, "name": "Jane Smith", "age": 35, "gender": "Female" }
+    { "teacherId": 1, "name": "Nashid Martines", "age": 40, "gender": "Male", "img": "assets/images/our-team/pic1.jpg", "position": "Principal" },
+    { "teacherId": 2, "name": "Konne Backfield", "age": 25, "gender": "Female", "img": "assets/images/our-team/pic2.jpg", "position": "Vice Principal" },
+    { "teacherId": 3, "name": "Hackson Willingham", "age": 28, "gender": "Male", "img": "assets/images/our-team/pic3.jpg", "position": "Head of Department" },
+    { "teacherId": 4, "name": "Konne Backfield", "age": 46, "gender": "Female", "img": "assets/images/our-team/pic4.jpg", "position": "Teacher" },
+    { "teacherId": 5, "name": "Nashid Martines", "age": 36, "gender": "Female", "img": "assets/images/our-team/pic5.jpg", "position": "Teacher" },
+    { "teacherId": 6, "name": "Jane Smith", "age": 56, "gender": "Female", "img": "assets/images/our-team/pic6.jpg", "position": "Teacher" },
+    { "teacherId": 7, "name": "Colin Kimpel", "age": 34, "gender": "Female", "img": "assets/images/our-team/pic7.jpg", "position": "Teacher" },
+    { "teacherId": 8, "name": "Joe Biden", "age": 35, "gender": "Female", "img": "assets/images/our-team/pic8.jpg", "position": "Teacher" }
 ]
