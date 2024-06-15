@@ -177,6 +177,7 @@ import { Courses6Component } from './elements/courses/courses6/courses6.componen
 import { LightgalleryComponent } from './elements/widgets/lightgallery/lightgallery.component';
 import { PrincipalMessageComponent } from './about-us/principal-message/principal-message.component'
 import { HttpClientModule } from '@angular/common/http';
+import { AboutSunriseComponent } from './about-us/about-sunrise/about-sunrise.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -350,6 +351,7 @@ import { HttpClientModule } from '@angular/common/http';
     Courses6Component,
     LightgalleryComponent,
     PrincipalMessageComponent,
+    AboutSunriseComponent,
   ],
   imports: [BrowserModule, LightgalleryModule, AppRoutingModule, HttpClientModule],
   providers: [],

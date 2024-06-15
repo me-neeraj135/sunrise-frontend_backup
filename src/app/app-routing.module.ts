@@ -69,6 +69,7 @@ import { SingleSidebarLeftComponent } from './blog/single-sidebar-left/single-si
 import { CommonModule } from '@angular/common'
 import { HomeSchoolComponent } from './home-school/home-school.component'
 import { PrincipalMessageComponent } from './about-us/principal-message/principal-message.component'
+import { AboutSunriseComponent } from './about-us/about-sunrise/about-sunrise.component'
 
 const routes: Routes = [
   // Home --
@@ -79,6 +80,7 @@ const routes: Routes = [
   // About page
 
   // { path: 'about-1', component: AboutUs1Component },
+  { path: 'about-sunrise', component: AboutSunriseComponent },
 
   // Features --
 
