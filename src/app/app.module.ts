@@ -174,7 +174,9 @@ import { BlogStyleImageComponent } from './elements/blog/blog-style-image/blog-s
 import { Gallery5Component } from './elements/gallery/gallery5/gallery5.component'
 import { Gallery6Component } from './elements/gallery/gallery6/gallery6.component'
 import { Courses6Component } from './elements/courses/courses6/courses6.component'
-import { LightgalleryComponent } from './elements/widgets/lightgallery/lightgallery.component'
+import { LightgalleryComponent } from './elements/widgets/lightgallery/lightgallery.component';
+import { PrincipalMessageComponent } from './about-us/principal-message/principal-message.component'
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -347,8 +349,9 @@ import { LightgalleryComponent } from './elements/widgets/lightgallery/lightgall
     Gallery6Component,
     Courses6Component,
     LightgalleryComponent,
+    PrincipalMessageComponent,
   ],
-  imports: [BrowserModule, LightgalleryModule, AppRoutingModule],
+  imports: [BrowserModule, LightgalleryModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
