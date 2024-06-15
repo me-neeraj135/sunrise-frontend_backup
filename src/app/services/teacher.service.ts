@@ -12,7 +12,7 @@ export class TeacherService {
 
   constructor(private http: HttpClient) { }
 
-  getAllTeacherData(): Observable<any> {
+  getAllTeacherAndDetails(): Observable<any> {
     const teachers$ = this.http.get<any[]>(this.teachersUrl);
     const teacherDetails$ = this.http.get<any[]>(this.teacherDetailsUrl);
 
@@ -25,4 +25,29 @@ export class TeacherService {
       })
     );
   }
+
+  getTeachers(): Observable<any> {
+    return this.http.get<any>(this.teachersUrl);
+  }
+
+  getTeacherDetails(): Observable<any[]> {
+    return this.http.get<any[]>(this.teacherDetailsUrl);
+  }
+
+  getTeacherDetailsById(id: number): Observable<any> {
+    return this.http.get<any[]>(this.teacherDetailsUrl).pipe(
+      map(details => details.find(detail => detail.teacherId === id))
+    );
+  }
+
+  getTeacherById(id: number): Observable<any> {
+    return forkJoin([this.getTeachers(), this.getTeacherDetails()]).pipe(
+      map(([teachers, teacherDetails]) => {
+        const teacher = teachers.find((t: { teacherId: number; }) => t.teacherId === id);
+        const details = teacherDetails.find(d => d.teacherId === id);
+        return { ...teacher, ...details };
+      })
+    );
+  }
+
 }
