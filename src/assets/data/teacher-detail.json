@@ -1,0 +1,5 @@
+[
+    { "teacherDetailId": 1, "teacherId": 1, "about": "Expert in Mathematics", "experience": "15 years" },
+    { "teacherDetailId": 2, "teacherId": 2, "about": "Expert in Physics", "experience": "10 years" }
+  ]
+  

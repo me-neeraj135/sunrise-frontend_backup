@@ -1,0 +1,4 @@
+[
+    { "teacherId": 1, "name": "John Doe", "age": 40, "gender": "Male" },
+    { "teacherId": 2, "name": "Jane Smith", "age": 35, "gender": "Female" }
+]

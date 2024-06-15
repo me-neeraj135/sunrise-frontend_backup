@@ -68,6 +68,7 @@ import { SingleSidebarLeftComponent } from './blog/single-sidebar-left/single-si
 
 import { CommonModule } from '@angular/common'
 import { HomeSchoolComponent } from './home-school/home-school.component'
+import { PrincipalMessageComponent } from './about-us/principal-message/principal-message.component'
 
 const routes: Routes = [
   // Home --
@@ -160,8 +161,12 @@ const routes: Routes = [
   { path: 'contact-3', component: ContactUs3Component },
   { path: 'contact-4', component: ContactUs4Component },
 
+  // About Us
+  { path: 'principal-message', component: PrincipalMessageComponent},
+
   // Error --
   { path: '**', component: Error404Component },
+
 ]
 
 @NgModule({

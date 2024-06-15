@@ -119,7 +119,7 @@ export class HeaderLight7Component {
         },
         {
           title: "Principal's Message",
-          route: '/teachers-profile',
+          route: '/principal-message',
         },
       ],
     },
