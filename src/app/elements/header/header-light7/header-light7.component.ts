@@ -115,7 +115,7 @@ export class HeaderLight7Component {
       subMenu: [
         {
           title: 'About Sunrise',
-          route: '/about-1',
+          route: '/about-sunrise',
         },
         {
           title: "Principal's Message",
@@ -235,11 +235,6 @@ export class HeaderLight7Component {
           route: '/shop-register',
         },
       ],
-    },
-    {
-      title: 'Testimonials',
-      route: '/blog-half-img',
-      menuClass: 'has-mega-menu',
-    },
+    }
   ]
 }
