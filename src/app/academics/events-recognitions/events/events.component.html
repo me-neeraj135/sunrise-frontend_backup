@@ -14,18 +14,18 @@
 					<div *ngFor="let item of eventData" class="col-lg-4 col-md-6 m-b30">
 						<div class="event-post post-grid shadow radius">
 							<div class="dlab-post-media">
-								<a [routerLink]="['/event-details']"><img src="{{ item.img }}" alt=""></a>
+								<a [routerLink]="['/event-details', item.eventId]"><img src="{{ item.img }}" alt=""></a>
 							</div>
 							<div class="dlab-post-info">
 								<div class="dlab-post-meta">
 									<ul>
-										<li class="post-date"> <strong>10 June</strong> <span> 2024</span> </li>
-										<li class="post-author"> <i class="la la-clock"></i> 05:00 PM </li>
-										<li class="post-tag"> <i class="ti-location-pin"></i> {{ item.loction }} </li>
+										<li class="post-date"> <strong>{{item.startDate}}</strong> <span> {{item.year}}</span> </li>
+										<li class="post-author"> <i class="la la-clock"></i> {{item.startTime}} </li>
+										<li class="post-tag"> <i class="ti-location-pin"></i> {{ item.location }} </li>
 									</ul>
 								</div>
 								<div class="dlab-post-title">
-									<h4 class="post-title"><a [routerLink]="['/event-details']">{{ item.title }}</a>
+									<h4 class="post-title"><a [routerLink]="['/event-details', 1]">{{ item.title }}</a>
 									</h4>
 								</div>
 							</div>

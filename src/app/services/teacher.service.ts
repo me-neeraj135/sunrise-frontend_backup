@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
 export class TeacherService {
   private teachersUrl = 'assets/data/teacher.json'
   private teacherDetailsUrl = 'assets/data/teacher-detail.json';
+  teacher: any;
 
   constructor(private http: HttpClient) { }
 
@@ -34,13 +35,22 @@ export class TeacherService {
     return this.http.get<any[]>(this.teacherDetailsUrl);
   }
 
+  getTeacherById(id: number): Observable<any> {
+    this.teacher = this.http.get<any[]>(this.teachersUrl).pipe(
+      map(teachers => teachers.find(teacher => teacher.teacherId === id))
+    );
+    return this.http.get<any[]>(this.teachersUrl).pipe(
+      map(teachers => teachers.find(teacher => teacher.teacherId === id))
+    );
+  }
+
   getTeacherDetailsById(id: number): Observable<any> {
     return this.http.get<any[]>(this.teacherDetailsUrl).pipe(
       map(details => details.find(detail => detail.teacherId === id))
     );
   }
 
-  getTeacherById(id: number): Observable<any> {
+  getTeacherAndDetailsById(id: number): Observable<any> {
     return forkJoin([this.getTeachers(), this.getTeacherDetails()]).pipe(
       map(([teachers, teacherDetails]) => {
         const teacher = teachers.find((t: { teacherId: number; }) => t.teacherId === id);
