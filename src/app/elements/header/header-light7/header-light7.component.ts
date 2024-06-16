@@ -129,11 +129,19 @@ export class HeaderLight7Component {
       subMenuClass: 'mega-menu',
       subMenu: [
         {
-          title: 'Teachers And Courses',
+          title: 'Explore',
           subSubMenu: [
             {
               title: 'Teachers',
               route: '/teacher',
+            },
+            {
+              title: 'Events',
+              route: '/event',
+            },
+            {
+              title: 'Services',
+              route: '/services-1',
             },
             {
               title: 'Courses',
@@ -142,19 +150,6 @@ export class HeaderLight7Component {
             {
               title: 'Courses Details',
               route: '/courses-details',
-            },
-          ],
-        },
-        {
-          title: 'Events And Recognitions',
-          subSubMenu: [
-            {
-              title: 'Events',
-              route: '/event',
-            },
-            {
-              title: 'Events Details',
-              route: '/event-details',
             },
           ],
         },
@@ -176,14 +171,10 @@ export class HeaderLight7Component {
           ],
         },
         {
-          title: 'Services',
+          title: 'Support',
           subSubMenu: [
             {
-              title: 'Services 1',
-              route: '/services-1',
-            },
-            {
-              title: 'Faqs',
+              title: 'FAQ',
               route: '/faq-1',
             },
             {

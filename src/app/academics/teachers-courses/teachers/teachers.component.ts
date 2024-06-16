@@ -14,7 +14,6 @@ export class TeachersComponent {
   }
 
   teachersData: any;
-  //teachersDetailsUrl: any = "/teachers-profile, teacher.teacherId"
 
   constructor(private teacherService: TeacherService){}
 
