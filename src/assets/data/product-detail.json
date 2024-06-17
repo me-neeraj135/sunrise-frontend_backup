@@ -1,0 +1,451 @@
+[
+    {
+        "productDetailId": 101,
+        "productId": 1,
+        "currency": "INR",
+        "stock": 25,
+        "availability": "In Stock",
+        "additionalImages": [
+            "assets/images/product/item1.jpg",
+            "assets/images/product/item2.jpg",
+            "assets/images/product/item3.jpg",
+            "assets/images/product/item4.jpg",
+            "assets/images/product/item5.jpg"
+        ],
+        "video": "assets/videos/product/item1.mp4",
+        "specifications": {
+            "dimensions": "40x30x15 cm",
+            "weight": "0.8 kg",
+            "material": "Polyester"
+        },
+        "features": [
+            "Water-resistant material",
+            "Multiple compartments",
+            "Padded shoulder straps"
+        ],
+        "color": ["Red", "Blue", "Green"],
+        "size": ["S", "M", "L"],
+        "rating": 4.5,
+        "shippingCost": 50,
+        "deliveryTime": "3-5 business days",
+        "returnPolicy": "30-day return policy",
+        "vendorId": 501,
+        "vendorName": "Sunrise School Supplies Co.",
+        "vendorContact": "support@schoolsupplies.com"
+    },
+    {
+        "productDetailId": 102,
+        "productId": 2,
+        "currency": "INR",
+        "stock": 100,
+        "availability": "In Stock",
+        "additionalImages": [
+            "assets/images/product/item2.jpg",
+            "assets/images/product/item3.jpg",
+            "assets/images/product/item4.jpg",
+            "assets/images/product/item5.jpg"
+        ],
+        "video": "assets/videos/product/item2.mp4",
+        "specifications": {
+            "dimensions": "15x1x1 cm",
+            "weight": "0.1 kg",
+            "material": "Wood"
+        },
+        "features": [
+            "Vibrant colors",
+            "Smooth application",
+            "Durable wood casing"
+        ],
+        "color": ["Multicolor"],
+        "size": ["R"],
+        "rating": 4.7,
+        "shippingCost": 20,
+        "deliveryTime": "2-4 business days",
+        "returnPolicy": "15-day return policy",
+        "vendorId": 501,
+        "vendorName": "Sunrise School Supplies Co.",
+        "vendorContact": "support@schoolsupplies.com"
+    },
+    {
+        "productDetailId": 103,
+        "productId": 3,
+        "currency": "INR",
+        "stock": 200,
+        "availability": "In Stock",
+        "additionalImages": [
+            "assets/images/product/item3.jpg",
+            "assets/images/product/item4.jpg",
+            "assets/images/product/item5.jpg"
+        ],
+        "video": "assets/videos/product/item3.mp4",
+        "specifications": {
+            "dimensions": "17x1x1 cm",
+            "weight": "0.1 kg",
+            "material": "Wood"
+        },
+        "features": [
+            "Smooth lead",
+            "Eraser attached",
+            "Durable"
+        ],
+        "color": ["Yellow"],
+        "size": ["R"],
+        "rating": 4.3,
+        "shippingCost": 15,
+        "deliveryTime": "1-3 business days",
+        "returnPolicy": "7-day return policy",
+        "vendorId": 501,
+        "vendorName": "Sunrise School Supplies Co.",
+        "vendorContact": "support@schoolsupplies.com"
+    },
+    {
+        "productDetailId": 104,
+        "productId": 4,
+        "currency": "INR",
+        "stock": 50,
+        "availability": "In Stock",
+        "additionalImages": [
+            "assets/images/product/item4.jpg",
+            "assets/images/product/item5.jpg"
+        ],
+        "video": "assets/videos/product/item4.mp4",
+        "specifications": {
+            "dimensions": "12x3x5 cm",
+            "weight": "0.2 kg",
+            "material": "Metal and Plastic"
+        },
+        "features": [
+            "Easy to use",
+            "Durable construction",
+            "Includes staples"
+        ],
+        "color": ["Black", "Blue"],
+        "size": ["M"],
+        "rating": 4.0,
+        "shippingCost": 25,
+        "deliveryTime": "2-5 business days",
+        "returnPolicy": "30-day return policy",
+        "vendorId": 501,
+        "vendorName": "Sunrise School Supplies Co.",
+        "vendorContact": "support@schoolsupplies.com"
+    },
+    {
+        "productDetailId": 105,
+        "productId": 5,
+        "currency": "INR",
+        "stock": 80,
+        "availability": "In Stock",
+        "additionalImages": [
+            "assets/images/product/item5.jpg"
+        ],
+        "video": "assets/videos/product/item5.mp4",
+        "specifications": {
+            "dimensions": "29.7x21 cm",
+            "weight": "0.5 kg",
+            "material": "Paper"
+        },
+        "features": [
+            "High-quality paper",
+            "Durable cover",
+            "Multiple sections"
+        ],
+        "color": ["White"],
+        "size": ["A4"],
+        "rating": 4.6,
+        "shippingCost": 30,
+        "deliveryTime": "3-5 business days",
+        "returnPolicy": "30-day return policy",
+        "vendorId": 501,
+        "vendorName": "Sunrise School Supplies Co.",
+        "vendorContact": "support@schoolsupplies.com"
+    },
+    {
+        "productDetailId": 106,
+        "productId": 6,
+        "currency": "INR",
+        "stock": 60,
+        "availability": "In Stock",
+        "additionalImages": [
+            "assets/images/product/item6.jpg",
+            "assets/images/product/item7.jpg"
+        ],
+        "video": "assets/videos/product/item6.mp4",
+        "specifications": {
+            "dimensions": "21x15 cm",
+            "weight": "0.3 kg",
+            "material": "Paper"
+        },
+        "features": [
+            "Colorful illustrations",
+            "Durable binding",
+            "Interactive content"
+        ],
+        "color": ["Multicolor"],
+        "size": ["M"],
+        "rating": 4.8,
+        "shippingCost": 35,
+        "deliveryTime": "3-6 business days",
+        "returnPolicy": "30-day return policy",
+        "vendorId": 501,
+        "vendorName": "Sunrise School Supplies Co.",
+        "vendorContact": "support@schoolsupplies.com"
+    },
+    {
+        "productDetailId": 107,
+        "productId": 7,
+        "currency": "INR",
+        "stock": 120,
+        "availability": "In Stock",
+        "additionalImages": [
+            "assets/images/product/item7.jpg",
+            "assets/images/product/item8.jpg"
+        ],
+        "video": "assets/videos/product/item7.mp4",
+        "specifications": {
+            "dimensions": "21x15 cm",
+            "weight": "0.4 kg",
+            "material": "Paper"
+        },
+        "features": [
+            "Ruled pages",
+            "Durable cover",
+            "Elastic closure"
+        ],
+        "color": ["Black", "Blue"],
+        "size": ["A5"],
+        "rating": 4.4,
+        "shippingCost": 20,
+        "deliveryTime": "2-4 business days",
+        "returnPolicy": "30-day return policy",
+        "vendorId": 501,
+        "vendorName": "Sunrise School Supplies Co.",
+        "vendorContact": "support@schoolsupplies.com"
+    },
+    {
+        "productDetailId": 108,
+        "productId": 8,
+        "currency": "INR",
+        "stock": 75,
+        "availability": "In Stock",
+        "additionalImages": [
+            "assets/images/product/item8.jpg",
+            "assets/images/product/item7.jpg",
+            "assets/images/product/item3.jpg",
+            "assets/images/product/item4.jpg",
+            "assets/images/product/item5.jpg"
+        ],
+        "video": "assets/videos/product/item8.mp4",
+        "specifications": {
+            "dimensions": "32x25 cm",
+            "weight": "0.6 kg",
+            "material": "Plastic"
+        },
+        "features": [
+            "Durable material",
+            "Multiple pockets",
+            "Secure closure"
+        ],
+        "color": ["Black", "Red"],
+        "size": ["L"],
+        "rating": 4.2,
+        "shippingCost": 40,
+        "deliveryTime": "3-5 business days",
+        "returnPolicy": "30-day return policy",
+        "vendorId": 508,
+        "vendorName": "Sunrise School Supplies Co.",
+        "vendorContact": "support@schoolsupplies.com"
+    },
+    {
+        "productDetailId": 109,
+        "productId": 9,
+        "currency": "INR",
+        "stock": 90,
+        "availability": "In Stock",
+        "additionalImages": [
+            "assets/images/product/item9.jpg",
+            "assets/images/product/item7.jpg",
+            "assets/images/product/item3.jpg"
+        ],
+        "video": "assets/videos/product/item9.mp4",
+        "specifications": {
+            "dimensions": "15x10x2 cm",
+            "weight": "0.2 kg",
+            "material": "Plastic"
+        },
+        "features": [
+            "L display",
+            "Solar powered",
+            "Durable construction"
+        ],
+        "color": ["Gray"],
+        "size": ["R"],
+        "rating": 4.5,
+        "shippingCost": 25,
+        "deliveryTime": "2-4 business days",
+        "returnPolicy": "30-day return policy",
+        "vendorId": 501,
+        "vendorName": "Sunrise School Supplies Co.",
+        "vendorContact": "support@schoolsupplies.com"
+    },
+    {
+        "productDetailId": 110,
+        "productId": 10,
+        "currency": "INR",
+        "stock": 35,
+        "availability": "In Stock",
+        "additionalImages": [
+            "assets/images/product/item1.jpg",
+            "assets/images/product/item7.jpg"
+        ],
+        "video": "assets/videos/product/item10.mp4",
+        "specifications": {
+            "dimensions": "40x30x15 cm",
+            "weight": "0.8 kg",
+            "material": "Polyester"
+        },
+        "features": [
+            "Water-resistant material",
+            "Multiple compartments",
+            "Padded shoulder straps"
+        ],
+        "color": ["Red", "Blue", "Green"],
+        "size": ["S", "M", "L"],
+        "rating": 4.5,
+        "shippingCost": 50,
+        "deliveryTime": "3-5 business days",
+        "returnPolicy": "30-day return policy",
+        "vendorId": 501,
+        "vendorName": "Sunrise School Supplies Co.",
+        "vendorContact": "support@schoolsupplies.com"
+    },
+    {
+        "productDetailId": 111,
+        "productId": 11,
+        "currency": "INR",
+        "stock": 150,
+        "availability": "In Stock",
+        "additionalImages": [
+            "assets/images/product/item2.jpg",
+            "assets/images/product/item7.jpg",
+            "assets/images/product/item3.jpg",
+            "assets/images/product/item4.jpg",
+            "assets/images/product/item5.jpg"
+        ],
+        "video": "assets/videos/product/item11.mp4",
+        "specifications": {
+            "dimensions": "15x1x1 cm",
+            "weight": "0.1 kg",
+            "material": "Wood"
+        },
+        "features": [
+            "Vibrant colors",
+            "Smooth application",
+            "Durable wood casing"
+        ],
+        "color": ["Multicolor"],
+        "size": ["R"],
+        "rating": 4.7,
+        "shippingCost": 20,
+        "deliveryTime": "2-4 business days",
+        "returnPolicy": "15-day return policy",
+        "vendorId": 501,
+        "vendorName": "Sunrise School Supplies Co.",
+        "vendorContact": "support@schoolsupplies.com"
+    },
+    {
+        "productDetailId": 112,
+        "productId": 12,
+        "currency": "INR",
+        "stock": 200,
+        "availability": "In Stock",
+        "additionalImages": [
+            "assets/images/product/item3.jpg",
+            "assets/images/product/item7.jpg",
+            "assets/images/product/item4.jpg",
+            "assets/images/product/item5.jpg"
+        ],
+        "video": "assets/videos/product/item12.mp4",
+        "specifications": {
+            "dimensions": "17x1x1 cm",
+            "weight": "0.1 kg",
+            "material": "Wood"
+        },
+        "features": [
+            "Smooth lead",
+            "Eraser attached",
+            "Durable"
+        ],
+        "color": ["Yellow"],
+        "size": ["R"],
+        "rating": 4.3,
+        "shippingCost": 15,
+        "deliveryTime": "1-3 business days",
+        "returnPolicy": "7-day return policy",
+        "vendorId": 501,
+        "vendorName": "Sunrise School Supplies Co.",
+        "vendorContact": "support@schoolsupplies.com"
+    },
+    {
+        "productDetailId": 113,
+        "productId": 13,
+        "currency": "INR",
+        "stock": 70,
+        "availability": "In Stock",
+        "additionalImages": [
+            "assets/images/product/item4.jpg",
+            "assets/images/product/item7.jpg",
+            "assets/images/product/item3.jpg",
+            "assets/images/product/item4.jpg"
+        ],
+        "video": "assets/videos/product/item13.mp4",
+        "specifications": {
+            "dimensions": "12x3x5 cm",
+            "weight": "0.2 kg",
+            "material": "Metal and Plastic"
+        },
+        "features": [
+            "Easy to use",
+            "Durable construction",
+            "Includes staples"
+        ],
+        "color": ["Black", "Blue"],
+        "size": ["M"],
+        "rating": 4.0,
+        "shippingCost": 25,
+        "deliveryTime": "2-5 business days",
+        "returnPolicy": "30-day return policy",
+        "vendorId": 501,
+        "vendorName": "Sunrise School Supplies Co.",
+        "vendorContact": "support@schoolsupplies.com"
+    },
+    {
+        "productDetailId": 114,
+        "productId": 14,
+        "currency": "INR",
+        "stock": 100,
+        "availability": "In Stock",
+        "additionalImages": [
+            "assets/images/product/item5.jpg"
+        ],
+        "video": "assets/videos/product/item14.mp4",
+        "specifications": {
+            "dimensions": "29.7x21 cm",
+            "weight": "0.5 kg",
+            "material": "Paper"
+        },
+        "features": [
+            "High-quality paper",
+            "Durable cover",
+            "Multiple sections"
+        ],
+        "color": ["White"],
+        "size": ["A4"],
+        "rating": 4.6,
+        "shippingCost": 30,
+        "deliveryTime": "3-5 business days",
+        "returnPolicy": "30-day return policy",
+        "vendorId": 501,
+        "vendorName": "Sunrise School Supplies Co.",
+        "vendorContact": "support@schoolsupplies.com"
+    }
+]

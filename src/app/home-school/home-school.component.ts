@@ -10,8 +10,8 @@ export class HomeSchoolComponent {
   skills: any = {
     title: "Discover our School",
     sub_title: "Igniting the spark of genius in every child.",
-    content: "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><ul class='list-check circle primary text-black'><li>You Will Never Thought That Knowing Education</li><li>Never Mess With Education And Here's The Reasons Why</li><li>This Is Why This Year Will Be The Year Of Education</li></ul>",
-    content_link: "about-1",
+    content: "<p>Welcome to Sunrise National Public School, where we nurture young minds from playgroup (PG) to 8th grade. Our school is equipped with state-of-the-art facilities, including a modern computer lab, a wide range of extracurricular activities, and reliable vehicle services. We are committed to providing a holistic educational experience that fosters academic excellence, creativity, and overall development in a safe and supportive environment. Join us to give your child the best start in their educational journey.</p><ul class='list-check circle primary text-black'><li>Holistic Development: Emphasis on academic excellence, creativity, and personal growth.</li><li>Parental Involvement: Regular updates and meetings to keep parents involved in their child's education.</li><li>Safety and Security: Robust measures to ensure the safety of all students.</li></ul>",
+    content_link: "/about-sunrise",
     exp_content: "<h2 class='no-title'>15+</h2><h4 class='title'>Years Experience Working</h4>",
     images_data: {
       "img1": "assets/images/about/about2/pic3.jpg",

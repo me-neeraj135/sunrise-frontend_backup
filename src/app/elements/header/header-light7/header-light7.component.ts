@@ -195,7 +195,7 @@ export class HeaderLight7Component {
       subMenu: [
         {
           title: 'Products',
-          route: '/shop-sidebar',
+          route: '/product',
         },
         {
           title: 'Product Details',

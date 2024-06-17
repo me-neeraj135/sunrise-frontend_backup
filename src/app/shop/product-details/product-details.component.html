@@ -136,37 +136,35 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-7 col-lg-7 col-sm-12">
-                        <form class="cart sticky-top" action="/shop-product-details">
+                    <div class="col-md-7 col-lg-7 col-sm-12" *ngIf="productData">
+                        <form class="cart sticky-top" action="/shop-cart">
                             <div class="dlab-post-title">
-                                <h4 class="post-title">Color Pencils</h4>
-                                <p class="m-b10">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-                                    1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                                    specimen book. It has survived not only five centuries, but also the leap into
-                                    electronic.</p>
+                                <h4 class="post-title">{{productData.title}}</h4>
+                                <p class="m-b10">{{productData.description}}</p>
                                 <div class="dlab-divider bg-gray tb15">
                                     <i class="icon-dot c-square"></i>
                                 </div>
                             </div>
                             <div class="relative">
-                                <h3 class="m-tb10">$2,140.00 </h3>
+                                <h3 class="m-tb10">₹{{productData.price}}</h3>
                                 <div class="shop-item-rating">
                                     <span class="rating-bx">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star"></i>
                                         <i class="fa fa-star-o"></i>
                                     </span>
-                                    <span>4.5 Rating</span>
+                                    <span>{{productData.rating}} Rating</span>
                                 </div>
                             </div>
                             <div class="shop-item-tage">
-                                <span>Tags :- </span>
-                                <a href="javascript:void(0);">Pencils,</a>
-                                <a href="javascript:void(0);">Pen</a>
-                                <a href="javascript:void(0);">Book</a>
+                                <span>Categoy :- </span>
+                                <a href="javascript:void(0);">{{productData.category}}</a>
+                            </div>
+                            <div class="shop-item-tage">
+                                <span>Available Stock :- </span>
+                                <a href="javascript:void(0);">{{productData.stock}}</a>
                             </div>
                             <div class="dlab-divider bg-gray tb15">
                                 <i class="icon-dot c-square"></i>
@@ -174,28 +172,16 @@
                             <div class="row">
                                 <div class="m-b30 col-md-7 col-sm-8">
                                     <h6>Product Size</h6>
-                                    <div class="btn-group product-item-size" data-toggle="buttons">
-                                        <label class="btn active">
-                                            <input type="radio" name="options" id="option1" checked>XS
-                                        </label>
+                                    <div class="btn-group product-item-size" data-toggle="buttons" *ngFor="let size of productData.size">
                                         <label class="btn">
-                                            <input type="radio" name="options" id="option2"> LG
-                                        </label>
-                                        <label class="btn">
-                                            <input type="radio" name="options" id="option3"> MD
-                                        </label>
-                                        <label class="btn">
-                                            <input type="radio" name="options" id="option4"> SM
-                                        </label>
-                                        <label class="btn">
-                                            <input type="radio" name="options" id="option5"> Xl
+                                            <input type="radio" name="options" id="option1" checked>{{size}}
                                         </label>
                                     </div>
                                 </div>
                                 <div class="m-b30 col-md-5 col-sm-4">
                                     <h6>Select quantity</h6>
                                     <div class="quantity btn-quantity style-1">
-                                        <input id="demo_vertical2" type="text" value="1" name="demo_vertical2" />
+                                        <input id="item_qty" type="text" value="1" name="item_qty" />
                                     </div>
                                 </div>
                             </div>
@@ -226,7 +212,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-12" *ngIf="productData">
                         <div class="dlab-tabs  product-description tabs-site-button">
                             <ul class="nav nav-tabs ">
                                 <li><a data-toggle="tab" href="#web-design-1" class="active"><i class="fa fa-globe"></i>
@@ -238,35 +224,40 @@
                             </ul>
                             <div class="tab-content">
                                 <div id="web-design-1" class="tab-pane active">
-                                    <p class="m-b10">Suspendisse et justo. Praesent mattis commyolk augue Aliquam ornare
-                                        hendrerit augue Cras tellus In pulvinar lectus a est Curabitur eget orci Cras
-                                        laoreet. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse
-                                        et justo. Praesent mattis commyolk augue aliquam ornare augue.</p>
-                                    <p>"But I must explain to you how all this mistaken idea of denouncing pleasure and
-                                        praising pain was born and I will give you a complete account of the system, and
-                                        expound the actual teachings of the great explorer of the truth, the
-                                        master-builder of human happiness. No one rejects, dislikes, or avoids pleasure
-                                        itself, because it is pleasure, but because those who do not know how to pursue
-                                        pleasure rationally encounter consequences</p>
-                                    <ul class="list-check primary">
-                                        <li>"But I must explain to you how all this mistaken idea of denouncing pleasure
-                                            and praising pain was born and I will give you a complete account of the
-                                            system, and </li>
-                                        <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                            Lorem Ipsum has been the industry's standard dummy text ever since the
-                                            1500s, when an unknown printer took a galley of type and scrambled it to
-                                            make a type specimen book. </li>
+                                    <p class="m-b10">{{productData.description}}</p>
+                                    <ul class="list-check primary" *ngFor="let feature of productData.features">
+                                        <li>{{feature}}</li>
                                     </ul>
                                 </div>
                                 <div id="graphic-design-1" class="tab-pane">
                                     <table class="table table-bordered">
                                         <tr>
                                             <td>Size</td>
-                                            <td>Small, Medium & Large</td>
+                                            <td>{{productData.size}}</td>
                                         </tr>
                                         <tr>
                                             <td>Color</td>
-                                            <td>Pink & White</td>
+                                            <td>{{productData.color}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dimensions</td>
+                                            <td>{{productData.specifications.dimensions}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Weight</td>
+                                            <td>{{productData.specifications.weight}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Material</td>
+                                            <td>{{productData.specifications.material}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Vendor Name</td>
+                                            <td>{{productData.vendorName}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Vendor Contact</td>
+                                            <td>{{productData.vendorContact}}</td>
                                         </tr>
                                         <tr>
                                             <td>Rating</td>
@@ -275,34 +266,10 @@
                                                     <i class="fa fa-star"></i>
                                                     <i class="fa fa-star"></i>
                                                     <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o"></i>
+                                                    <i class="fa fa-star"></i>
                                                     <i class="fa fa-star-o"></i>
                                                 </span>
                                             </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Waist</td>
-                                            <td>26 cm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Length</td>
-                                            <td>40 cm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Chest</td>
-                                            <td>33 inches</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Fabric</td>
-                                            <td>Cotton, Silk & Synthetic</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Warranty</td>
-                                            <td>3 Months</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Chest</td>
-                                            <td>33 inches</td>
                                         </tr>
                                     </table>
                                 </div>
@@ -315,29 +282,26 @@
                                                         src="assets/images/testimonials/pic1.jpg" alt="">
                                                     <div class="comment-text">
                                                         <div class="star-rating">
-                                                            <div data-rating="3">
+                                                            <div data-rating="5">
                                                                 <i class="fa fa-star text-yellow" data-alt="1"
                                                                     title="regular"></i>
                                                                 <i class="fa fa-star text-yellow" data-alt="2"
                                                                     title="regular"></i>
-                                                                <i class="fa fa-star-o text-yellow" data-alt="3"
+                                                                <i class="fa fa-star text-yellow" data-alt="3"
                                                                     title="regular"></i>
-                                                                <i class="fa fa-star-o text-yellow" data-alt="4"
+                                                                <i class="fa fa-star text-yellow" data-alt="4"
                                                                     title="regular"></i>
-                                                                <i class="fa fa-star-o text-yellow" data-alt="5"
+                                                                <i class="fa fa-star text-yellow" data-alt="5"
                                                                     title="regular"></i>
                                                             </div>
                                                         </div>
                                                         <p class="meta">
                                                             <strong class="author">Cobus Bester</strong>
-                                                            <span><i class="fa fa-clock-o"></i> March 7, 2013</span>
+                                                            <span><i class="fa fa-clock-o"></i> Apr 8, 2024</span>
                                                         </p>
                                                         <div class="description">
-                                                            <p>Lorem Ipsum is simply dummy text of the printing and
-                                                                typesetting industry. Lorem Ipsum has been the
-                                                                industry's standard dummy text ever since the 1500s,
-                                                                when an unknown printer took a galley of type and
-                                                                scrambled it to make a type specimen book.</p>
+                                                            <p>This product exceeded my expectations! The quality is top-notch and it works perfectly. 
+                                                                I highly recommend it to anyone looking for reliability and performance</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -348,29 +312,26 @@
                                                         src="assets/images/testimonials/pic2.jpg" alt="">
                                                     <div class="comment-text">
                                                         <div class="star-rating">
-                                                            <div data-rating="3">
+                                                            <div data-rating="5">
                                                                 <i class="fa fa-star text-yellow" data-alt="1"
                                                                     title="regular"></i>
                                                                 <i class="fa fa-star text-yellow" data-alt="2"
                                                                     title="regular"></i>
                                                                 <i class="fa fa-star text-yellow" data-alt="3"
                                                                     title="regular"></i>
-                                                                <i class="fa fa-star-o text-yellow" data-alt="4"
+                                                                <i class="fa fa-star text-yellow" data-alt="4"
                                                                     title="regular"></i>
-                                                                <i class="fa fa-star-o text-yellow" data-alt="5"
+                                                                <i class="fa fa-star text-yellow" data-alt="5"
                                                                     title="regular"></i>
                                                             </div>
                                                         </div>
                                                         <p class="meta">
                                                             <strong class="author">Cobus Bester</strong>
-                                                            <span><i class="fa fa-clock-o"></i> March 7, 2013</span>
+                                                            <span><i class="fa fa-clock-o"></i> March 7, 2024</span>
                                                         </p>
                                                         <div class="description">
-                                                            <p>Lorem Ipsum is simply dummy text of the printing and
-                                                                typesetting industry. Lorem Ipsum has been the
-                                                                industry's standard dummy text ever since the 1500s,
-                                                                when an unknown printer took a galley of type and
-                                                                scrambled it to make a type specimen book.</p>
+                                                            <p>I am extremely satisfied with my purchase. 
+                                                                The product is durable, well-made, and exactly as described. Great value for the price!</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -381,7 +342,7 @@
                                                         src="assets/images/testimonials/pic3.jpg" alt="">
                                                     <div class="comment-text">
                                                         <div class="star-rating">
-                                                            <div data-rating="3">
+                                                            <div data-rating="4">
                                                                 <i class="fa fa-star text-yellow" data-alt="1"
                                                                     title="regular"></i>
                                                                 <i class="fa fa-star text-yellow" data-alt="2"
@@ -396,14 +357,11 @@
                                                         </div>
                                                         <p class="meta">
                                                             <strong class="author">Cobus Bester</strong>
-                                                            <span><i class="fa fa-clock-o"></i> March 7, 2013</span>
+                                                            <span><i class="fa fa-clock-o"></i> March 7, 2024</span>
                                                         </p>
                                                         <div class="description">
-                                                            <p>Lorem Ipsum is simply dummy text of the printing and
-                                                                typesetting industry. Lorem Ipsum has been the
-                                                                industry's standard dummy text ever since the 1500s,
-                                                                when an unknown printer took a galley of type and
-                                                                scrambled it to make a type specimen book.</p>
+                                                            <p>Fantastic product! Easy to use and delivered excellent results. 
+                                                                The design is sleek and modern, and the functionality is superb. Highly recommended!</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -414,7 +372,7 @@
                                         <div id="review_form">
                                             <div id="respond" class="comment-respond">
                                                 <h3 class="comment-reply-title" id="reply-title">Add a review</h3>
-                                                <form class="comment-form" action="/shop-product-details">
+                                                <form class="comment-form" action="/product-details/1">
                                                     <div class="comment-form-author">
                                                         <label>Name <span class="required">*</span></label>
                                                         <input type="text" aria-required="true" size="30" value=""

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProductService } from 'src/app/services/product.service';
 interface type {
   img: string,
   title: string,
@@ -12,109 +14,37 @@ interface type {
   styleUrls: ['./shop-sidebar.component.css']
 })
 export class ShopSidebarComponent {
+  productData: any[] = [];
+  category: string | null = null;
+
   banner : any = {
 		pagetitle: "Shop Grid 3 Side Bar",
 		bg_image: "assets/images/banner/bnr5.jpg",
 		title: "Shop Grid 3 Side Bar",
 	}
-  shopData: type[] = [
-    {
-      img: 'assets/images/product/item1.jpg',
-      title: 'School Bag',
-      titleUrl: '/shop-product-details',
-      price: 192,
-      priceDic: 232
-    },
-    {
-      img: 'assets/images/product/item2.jpg',
-      title: 'Color Pencils',
-      titleUrl: '/shop-product-details',
-      price: 192,
-      priceDic: 232
-    },
-    {
-      img: 'assets/images/product/item3.jpg',
-      title: 'Pencils',
-      titleUrl: '/shop-product-details',
-      price: 192,
-      priceDic: 232
-    },
-    {
-      img: 'assets/images/product/item4.jpg',
-      title: 'Stapler',
-      titleUrl: '/shop-product-details',
-      price: 192,
-      priceDic: 232
-    },
-    {
-      img: 'assets/images/product/item5.jpg',
-      title: 'Project Book',
-      titleUrl: '/shop-product-details',
-      price: 192,
-      priceDic: 232
-    },
-    {
-      img: 'assets/images/product/item6.jpg',
-      title: 'Colorful Book',
-      titleUrl: '/shop-product-details',
-      price: 192,
-      priceDic: 232
-    },
-    {
-      img: 'assets/images/product/item7.jpg',
-      title: 'Notebook',
-      titleUrl: '/shop-product-details',
-      price: 192,
-      priceDic: 232
-    },
-    {
-      img: 'assets/images/product/item8.jpg',
-      title: 'Project file<',
-      titleUrl: '/shop-product-details',
-      price: 192,
-      priceDic: 232
-    },
-    {
-      img: 'assets/images/product/item9.jpg',
-      title: 'Calculator',
-      titleUrl: '/shop-product-details',
-      price: 192,
-      priceDic: 232
-    },
-    {
-      img: 'assets/images/product/item1.jpg',
-      title: 'School Bag',
-      titleUrl: '/shop-product-details',
-      price: 192,
-      priceDic: 232
-    },
-    {
-      img: 'assets/images/product/item2.jpg',
-      title: 'Color Pencils',
-      titleUrl: '/shop-product-details',
-      price: 192,
-      priceDic: 232
-    },
-    {
-      img: 'assets/images/product/item3.jpg',
-      title: 'Pencils',
-      titleUrl: '/shop-product-details',
-      price: 192,
-      priceDic: 232
-    },
-    {
-      img: 'assets/images/product/item4.jpg',
-      title: 'Stapler',
-      titleUrl: '/shop-product-details',
-      price: 192,
-      priceDic: 232
-    },
-    {
-      img: 'assets/images/product/item5.jpg',
-      title: 'Project Book',
-      titleUrl: '/shop-product-details',
-      price: 192,
-      priceDic: 232
+
+  constructor(private route: ActivatedRoute, private productService: ProductService){}
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      console.log('Query Params:', params);
+      this.category = params['category'] || null;
+      this.getProducts();
+    });
+    
+  }
+  getProducts(): void {
+    console.log('category', this.category);
+    if (this.category) {
+      this.productService.getProductsByCategory(this.category).subscribe(products => {
+        console.log('Filtered Products:', products);
+        this.productData = products;
+      });
+    }else {
+      this.productService.getProducts().subscribe(products => {
+        console.log('All Products:', products);
+        this.productData = products;
+      });
     }
-  ]
+  }
 }
