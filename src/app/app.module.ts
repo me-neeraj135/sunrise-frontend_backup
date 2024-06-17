@@ -99,8 +99,8 @@ import { QueryFormComponent } from './elements/forms/query-form/query-form.compo
 import { Accordian1Component } from './elements/accordians/accordian1/accordian1.component'
 import { TeachersComponent } from './academics/teachers-courses/teachers/teachers.component'
 import { TeachersProfileComponent } from './academics/teachers-courses/teachers-profile/teachers-profile.component'
-import { CourcesComponent } from './academics/teachers-courses/cources/cources.component'
-import { CourcesDetailsComponent } from './academics/teachers-courses/cources-details/cources-details.component'
+import { ClassesComponent } from './academics/teachers-courses/classes/classes.component'
+import { classesDetailsComponent } from './academics/teachers-courses/classes-details/classes-details.component'
 import { EventsComponent } from './academics/events-recognitions/events/events.component'
 import { EventsDetailsComponent } from './academics/events-recognitions/events-details/events-details.component'
 import { HelpDeskComponent } from './academics/school-services/help-desk/help-desk.component'
@@ -174,10 +174,10 @@ import { BlogStyleImageComponent } from './elements/blog/blog-style-image/blog-s
 import { Gallery5Component } from './elements/gallery/gallery5/gallery5.component'
 import { Gallery6Component } from './elements/gallery/gallery6/gallery6.component'
 import { Courses6Component } from './elements/courses/courses6/courses6.component'
-import { LightgalleryComponent } from './elements/widgets/lightgallery/lightgallery.component';
+import { LightgalleryComponent } from './elements/widgets/lightgallery/lightgallery.component'
 import { PrincipalMessageComponent } from './about-us/principal-message/principal-message.component'
-import { HttpClientModule } from '@angular/common/http';
-import { AboutSunriseComponent } from './about-us/about-sunrise/about-sunrise.component';
+import { HttpClientModule } from '@angular/common/http'
+import { AboutSunriseComponent } from './about-us/about-sunrise/about-sunrise.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -276,8 +276,8 @@ import { AboutSunriseComponent } from './about-us/about-sunrise/about-sunrise.co
     Accordian1Component,
     TeachersComponent,
     TeachersProfileComponent,
-    CourcesComponent,
-    CourcesDetailsComponent,
+    ClassesComponent,
+    classesDetailsComponent,
     EventsComponent,
     EventsDetailsComponent,
     HelpDeskComponent,
@@ -353,7 +353,12 @@ import { AboutSunriseComponent } from './about-us/about-sunrise/about-sunrise.co
     PrincipalMessageComponent,
     AboutSunriseComponent,
   ],
-  imports: [BrowserModule, LightgalleryModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    LightgalleryModule,
+    AppRoutingModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

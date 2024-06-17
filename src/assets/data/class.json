@@ -1,0 +1,65 @@
+[
+  {
+    "classId": 1,
+    "className": "KG",
+    "classUrl": "https://plus.unsplash.com/premium_photo-1663088989178-a570bdb3153c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+    "aboutClass": "Kindergarten or KG focuses on kids of 4 to 6 years or above. The second most class that introduces academics to the kids. ",
+    "students": "50"
+  },
+  {
+    "classId": 2,
+    "className": "PreP",
+    "classUrl": "https://media.istockphoto.com/id/480507030/photo/school-children-raising-their-hands-ready-to-answer-the-question.jpg?s=2048x2048&w=is&k=20&c=gQYFBKYzrOwnQ_60y8knp1u4fwRQUcN5x9E8xhu8yvw=",
+    "aboutClass": "Pre primary education in India is provided to children between 3–6 years by Kindergarten, Playway or Play Schools. These schools have varying terminology for different levels of classes, beginning from – Pre-Nursery, Nursery, KG, LKG (Lower Kindergarten) and UKG (Upper Kindergarten). Most of the pre-primary education in India is provided by private schools. ",
+    "students": "50"
+  },
+  {
+    "classId": 3,
+    "className": "Class - 1",
+    "classUrl": "https://media.istockphoto.com/id/1696715670/photo/happy-indian-school-girl-kid-playing-and-running-outside-the-primary-school-education-concept.jpg?s=2048x2048&w=is&k=20&c=x5egcGahGxLCz1cAitnY9YWG2gVnct-ou5jVJEoyk-0=",
+    "aboutClass": "Class 1 is the beginners’ stage of learning new things and developing new literacy skills of young learners. In 1st Standard, they take their very first step towards their elementary school education. In this article, we shall discuss in detail about what kids learn in their first year i.e. Class 1 of primary school. ",
+    "students": "50"
+  },
+  {
+    "classId": 4,
+    "className": "Class - 2",
+    "classUrl": "https://media.istockphoto.com/id/1248639579/photo/cute-little-girls-painting.jpg?s=2048x2048&w=is&k=20&c=lrvApC2M6iUnxizAk3F2jB_8dQTtqoOkYzICDh10Ys8=",
+    "aboutClass": "Class 2 is an important year in the life of every young learner who has just stepped into school. GK questions for Class 2 is an ideal way to create awareness in a child’s mind about the latest happening around him/her. At such a tender age, the child’s mind is vulnerable and more receptive to learning new things every day. Hence, having a basic general awareness about the surroundings helps a child to boost his or her confidence, along with enhancing his or her knowledge about current affairs and day-to-day events. ",
+    "students": "50"
+  },
+  {
+    "classId": 5,
+    "className": "Class - 3",
+    "classUrl": "https://media.istockphoto.com/id/1168266812/photo/little-girl-giving-a-presentation.jpg?s=2048x2048&w=is&k=20&c=R-6YNmntcR3kyd38d9L4yPgHcPfjhy7grK0hSQrb0fc=",
+    "aboutClass": "Class 3 is the most crucial class for kids. It is the middle phase of a kid’s primary class learning (between class 1-2 and class 4-5). Learning becomes even more extensive in this class. ",
+    "students": "50"
+  },
+  {
+    "classId": 6,
+    "className": "Class - 4",
+    "classUrl": "https://media.istockphoto.com/id/1521124181/photo/happy-little-indian-school-girl-standing-isolated-over-green-color-background-education.jpg?s=2048x2048&w=is&k=20&c=YAh-Gg7UOKaoOpSA8UKCDxZ3KHmgY77JTGkKLxR3VxQ=",
+    "aboutClass": "Class 4 is a crucial stage in a children’s academic journey, as it marks the transition from primary to upper primary education and lays the foundation for higher classes. CBSE Class 4 syllabus is designed to provide a holistic learning experience to the students.",
+    "students": "50"
+  },
+  {
+    "classId": 7,
+    "className": "Class - 5",
+    "classUrl": "https://media.istockphoto.com/id/1447832736/photo/smart-little-indian-schoolboy-having-an-idea-expression-with-wide-open-mouth-finally-found-a.jpg?s=2048x2048&w=is&k=20&c=mk64vXnpwx6GxMNh3-dtDlXOrfgTTmzS6elyTolbvUQ=",
+    "aboutClass": " Class 5 is an important stage in the academic journey of students, as it marks the beginning of the middle school phase. Students are introduced to more advanced concepts and subjects at this stage based on the conceptual foundation they built in earlier grades.",
+    "students": "50"
+  },
+  {
+    "classId": 6,
+    "className": "Class - 6",
+    "classUrl": "https://media.istockphoto.com/id/1151224020/photo/teacher-with-preschoolers-finger-painting-at-class.jpg?s=2048x2048&w=is&k=20&c=xG1Azj6nK1iKI-1o-mSl8_6QPH_-v6JdRMJc8toFDoI=",
+    "aboutClass": "The CBSE Class 6 syllabus comprises five core subjects, namely Mathematics, Science, Social Science, English, and Hindi. The syllabus is designed to promote the intellectual, social, and emotional development of students. The Mathematics syllabus includes topics like Knowing Our Numbers, Integers, Fractions, and Decimals, among others ",
+    "students": "50"
+  },
+  {
+    "classId": 7,
+    "className": "Class - 7",
+    "classUrl": "https://media.istockphoto.com/id/1696713405/photo/happy-indian-student-schoolboy-wearing-school-uniform-holding-victory-trophy-in-hand-outside.jpg?s=2048x2048&w=is&k=20&c=s6p8aZFd5Fxu730i0XilZ4XIf5rUSN1HEcNGE-dsb2o=",
+    "aboutClass": "If you're looking for a reliable and effective online learning platform to excel in CBSE Class 7, Vedantu is an excellent choice. With Vedantu, students can access quality education and expert guidance from the comfort of their homes. The platform offers a comprehensive curriculum for CBSE Class 7 that is designed to help students develop a strong understanding of the fundamental concepts in various subjects. Students can take advantage of the interactive live classes, where they can ask questions, get personalised feedback, and learn at their own pace. Vedantu also provides well-designed study materials, textbooks, and important questions, which can be accessed anytime, anywhere. With Vedantu's online learning platform, students can receive the best possible education, ensuring they are well-prepared for exams and achieve excellent results. ",
+    "students": "50"
+  }
+]

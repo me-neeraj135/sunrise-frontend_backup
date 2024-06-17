@@ -31,8 +31,8 @@ import { Services2Component } from './academics/school-services/services2/servic
 import { FaqsComponent } from './academics/school-services/faqs/faqs.component'
 import { TeachersComponent } from './academics/teachers-courses/teachers/teachers.component'
 import { TeachersProfileComponent } from './academics/teachers-courses/teachers-profile/teachers-profile.component'
-import { CourcesComponent } from './academics/teachers-courses/cources/cources.component'
-import { CourcesDetailsComponent } from './academics/teachers-courses/cources-details/cources-details.component'
+import { ClassesComponent } from './academics/teachers-courses/classes/classes.component'
+import { classesDetailsComponent } from './academics/teachers-courses/classes-details/classes-details.component'
 import { EventsComponent } from './academics/events-recognitions/events/events.component'
 import { EventsDetailsComponent } from './academics/events-recognitions/events-details/events-details.component'
 import { HelpDeskComponent } from './academics/school-services/help-desk/help-desk.component'
@@ -72,7 +72,6 @@ import { PrincipalMessageComponent } from './about-us/principal-message/principa
 import { AboutSunriseComponent } from './about-us/about-sunrise/about-sunrise.component'
 
 const routes: Routes = [
-  
   // Home --
   { path: '', redirectTo: '/home-school', pathMatch: 'full' },
   { path: 'home-school', component: HomeSchoolComponent },
@@ -82,29 +81,30 @@ const routes: Routes = [
 
   // { path: 'about-1', component: AboutUs1Component },
   { path: 'about-sunrise', component: AboutSunriseComponent },
-  { path: 'principal-message', component: PrincipalMessageComponent},
+  { path: 'principal-message', component: PrincipalMessageComponent },
 
   // Academics
-    // Events-Recognitions
-    { path: 'event', component: EventsComponent },
-    { path: 'event-details', component: EventsDetailsComponent },
-    // Gallary
-    { path: 'gallery-grid-2', component: GalleryGrid2Component },
-    { path: 'gallery-grid-3', component: GalleryGrid3Component },
-    { path: 'gallery-grid-4', component: GalleryGrid4Component },
-    // School-Services
-    { path: 'services-1', component: Services1Component },
-    { path: 'services-2', component: Services2Component },
-    { path: 'faq-1', component: FaqsComponent },
-    { path: 'help-desk', component: HelpDeskComponent },
-    { path: 'privacy-policy', component: PrivacyPolicyComponent },
-    // Teachers-Course
-    { path: 'teacher', component: TeachersComponent },
-    { path: 'teachers-profile/:id', component: TeachersProfileComponent },
-    { path: 'courses', component: CourcesComponent },
-    { path: 'courses-details', component: CourcesDetailsComponent },
+  // Events-Recognitions
+  { path: 'event', component: EventsComponent },
+  { path: 'event-details', component: EventsDetailsComponent },
+  // Gallary
+  { path: 'gallery-grid-2', component: GalleryGrid2Component },
+  { path: 'gallery-grid-3', component: GalleryGrid3Component },
+  { path: 'gallery-grid-4', component: GalleryGrid4Component },
+  // School-Services
+  { path: 'services-1', component: Services1Component },
+  { path: 'services-2', component: Services2Component },
+  { path: 'faq-1', component: FaqsComponent },
+  { path: 'help-desk', component: HelpDeskComponent },
+  { path: 'privacy-policy', component: PrivacyPolicyComponent },
 
-  // Features --  
+  // Teachers-Classes
+  { path: 'teacher', component: TeachersComponent },
+  { path: 'teachers-profile/:id', component: TeachersProfileComponent },
+  { path: 'classes', component: ClassesComponent },
+  { path: 'classes-details/:id', component: classesDetailsComponent },
+
+  // Features --
   { path: 'header-style-4', component: HeaderStyle4Component },
 
   { path: 'header-style-6', component: HeaderStyle6Component },
@@ -170,7 +170,6 @@ const routes: Routes = [
 
   // Error --
   { path: '**', component: Error404Component },
-
 ]
 
 @NgModule({
