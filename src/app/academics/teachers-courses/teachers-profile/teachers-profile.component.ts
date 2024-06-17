@@ -23,7 +23,7 @@ export class TeachersProfileComponent {
 
   ngOnInit(): void {
     this.teacherId = Number(this.route.snapshot.paramMap.get('id'));
-    this.teacherService.getTeacherById(this.teacherId).subscribe((data:any) => {
+    this.teacherService.getTeacherAndDetailsById(this.teacherId).subscribe((data:any) => {
       this.teacherData = data;
     });
   }

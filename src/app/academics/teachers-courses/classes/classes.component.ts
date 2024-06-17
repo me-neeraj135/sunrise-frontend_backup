@@ -26,7 +26,6 @@ export class ClassesComponent {
   ngOnInit(): void {
     this.classService.getClass().subscribe((data: any) => {
       this.classes = data
-      console.log('d', data)
     })
   }
 }

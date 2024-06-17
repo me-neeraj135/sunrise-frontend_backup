@@ -97,8 +97,7 @@ const routes: Routes = [
   { path: 'faq-1', component: FaqsComponent },
   { path: 'help-desk', component: HelpDeskComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
-
-  // Teachers-Classes
+  // Teachers-Course
   { path: 'teacher', component: TeachersComponent },
   { path: 'teachers-profile/:id', component: TeachersProfileComponent },
   { path: 'classes', component: ClassesComponent },
