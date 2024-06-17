@@ -36,9 +36,6 @@ export class TeacherService {
   }
 
   getTeacherById(id: number): Observable<any> {
-    this.teacher = this.http.get<any[]>(this.teachersUrl).pipe(
-      map(teachers => teachers.find(teacher => teacher.teacherId === id))
-    );
     return this.http.get<any[]>(this.teachersUrl).pipe(
       map(teachers => teachers.find(teacher => teacher.teacherId === id))
     );

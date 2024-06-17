@@ -130,8 +130,8 @@ const routes: Routes = [
 
   // Shop --
   { path: 'shop', component: ShopComponent },
-  { path: 'shop-sidebar', component: ShopSidebarComponent },
-  { path: 'shop-product-details', component: ProductDetailsComponent },
+  { path: 'product', component: ShopSidebarComponent },
+  { path: 'product-details/:id', component: ProductDetailsComponent },
   { path: 'shop-cart', component: CartComponent },
   { path: 'shop-wishlist', component: WishlistComponent },
   { path: 'shop-checkout', component: CheckoutComponent },

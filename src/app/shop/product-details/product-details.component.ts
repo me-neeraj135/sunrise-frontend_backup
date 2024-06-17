@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProductService } from 'src/app/services/product.service';
 declare var jQuery: any;
 declare var handleowlCarousel: any;
 declare var handleStarRating: any;
@@ -8,6 +10,8 @@ declare var handleStarRating: any;
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent {
+  productId: any;
+  productData: any;
 
   banner: any = {
 
@@ -16,13 +20,33 @@ export class ProductDetailsComponent {
     title: "Product Details",
   }
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private productService: ProductService
+  ) { }
 
   ngOnInit(): void {
+    this.getProductAndDetailsById();  
+  }
+
+  getProductAndDetailsById(): void {
+    this.productId = Number(this.route.snapshot.paramMap.get('id'));
+    this.productService.getProductAndDetailsById(this.productId).subscribe((data:any) => {
+      console.log('data', data);
+      this.productData = data;
+      this.initializeJQueryFunctions();
+    });
+  }
+
+  initializeJQueryFunctions(): void {
     (function ($) {
       handleowlCarousel();
       handleStarRating();
     })(jQuery);
+  }
+
+  getFormattedSizes(values: any): string {
+    return values.join(', ').replace(/, ([^,]*)$/, ' & $1');
   }
 
 }
