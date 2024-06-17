@@ -94,7 +94,7 @@ export class HeaderLight7Component {
   handleActiveMenu(val: any) {
     this.sidebarMenu.map((data: any, ind: any) => {
       data.subMenu?.map((item: any, ind: any) => {
-        console.log('data', item)
+        // console.log('data', item)
 
         if (item.route == val) {
           this.activeMenu = data.title
@@ -144,12 +144,12 @@ export class HeaderLight7Component {
               route: '/services-1',
             },
             {
-              title: 'Courses',
-              route: '/courses',
+              title: ' Classes',
+              route: '/classes',
             },
             {
-              title: 'Courses Details',
-              route: '/courses-details',
+              title: 'Class Details',
+              route: '/classes-details',
             },
           ],
         },
@@ -222,6 +222,6 @@ export class HeaderLight7Component {
           route: '/shop-register',
         },
       ],
-    }
+    },
   ]
 }

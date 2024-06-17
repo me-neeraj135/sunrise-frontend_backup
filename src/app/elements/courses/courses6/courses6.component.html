@@ -26,19 +26,22 @@
         </li>
     </ul>
     <div class="tab-content">
-        <div id="description" class="tab-pane active">
-            <h3 class="m-t0 m-b10">About This Course</h3>
-            <p>Suspendisse et justo. Praesent mattis commyolk augue Aliquam ornare hendrerit augue Cras tellus In pulvinar lectus a est Curabitur eget orci Cras laoreet. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et justo. Praesent mattis commyolk augue aliquam ornare augue.</p>
-            <h3 class="m-b10">Course’s Objectives</h3>	
-            <p>"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"</p>
+        <div id="description" class="tab-pane active" *ngIf="classDetails">
+            <h3 class="m-t0 m-b10">Class - {{classDetails.className}}</h3>
+
+            <h3 class="m-b10">Class’s Objectives</h3>
+            <p>{{classDetails.aboutClass}}</p>
             <h3 class="m-b10">Learning Outcomes</h3>
-            <ul class="list-checked primary">
-                <li>"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and </li>
-                <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </li>
-                <li>t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'</li>
-                <li>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
-                <li>Dorem ipsum dolor sit amet</li>
+
+            <ul class="list-checked primary" *ngFor="let subject of classDetails.subjects | keyvalue">
+                <li *ngFor="let topic of subject|keyvalue">
+                    {{ topic.value }}
+                </li>
+
+
+
             </ul>
+
             <div class="m-t10">
                 <h5>Share :</h5>
                 <ul class="dlab-social-icon">
@@ -52,13 +55,13 @@
         <div id="curriculum" class="tab-pane">
             <h3 class="m-t0 m-b15">Curriculum</h3>
             <h5 class="text-primary">Lesson 3</h5>
-            <table class="table" >
+            <table class="table">
                 <thead>
-                    <tr> 
-                        <th>Lecture</th> 
-                        <th>Unit</th> 
-                        <th class="text-right">Time</th> 
-                    </tr> 
+                    <tr>
+                        <th>Lecture</th>
+                        <th>Unit</th>
+                        <th class="text-right">Time</th>
+                    </tr>
                 </thead>
                 <tr>
                     <td>
@@ -89,13 +92,13 @@
                 </tr>
             </table>
             <h5 class="text-primary">Lesson 2</h5>
-            <table class="table" >
+            <table class="table">
                 <thead>
-                    <tr> 
-                        <th>Lecture</th> 
-                        <th>Unit</th> 
-                        <th class="text-right">Time</th> 
-                    </tr> 
+                    <tr>
+                        <th>Lecture</th>
+                        <th>Unit</th>
+                        <th class="text-right">Time</th>
+                    </tr>
                 </thead>
                 <tr>
                     <td>
@@ -153,13 +156,13 @@
                 </tr>
             </table>
             <h5 class="text-primary">Lesson 1</h5>
-            <table class="table" >
+            <table class="table">
                 <thead>
-                    <tr> 
-                        <th>Lecture</th> 
-                        <th>Unit</th> 
-                        <th class="text-right">Time</th> 
-                    </tr> 
+                    <tr>
+                        <th>Lecture</th>
+                        <th>Unit</th>
+                        <th class="text-right">Time</th>
+                    </tr>
                 </thead>
                 <tr>
                     <td>
@@ -195,52 +198,71 @@
             <div id="comments-1" class="dlab-instructor">
                 <ol class="commentlist">
                     <li class="comment">
-                        <div class="comment_container"> <img class="avatar avatar-60 photo" src="assets/images/testimonials/pic1.jpg" alt="">
+                        <div class="comment_container"> <img class="avatar avatar-60 photo"
+                                src="assets/images/testimonials/pic1.jpg" alt="">
                             <div class="comment-text">
-                                <h3 class="author m-t0">Cobus Bester</h3> 
+                                <h3 class="author m-t0">Cobus Bester</h3>
                                 <div class="w3-separator bg-primary"></div>
                                 <div class="description m-b15">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley..</p>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley..</p>
                                 </div>
                                 <ul class="dlab-social-icon">
-                                    <li><a href="javascript:void(0);" class="site-button circle fa fa-facebook facebook"></a></li>
-                                    <li><a href="javascript:void(0);" class="site-button circle fa fa-twitter twitter"></a></li>
-                                    <li><a href="javascript:void(0);" class="site-button circle fa fa-linkedin linkedin"></a></li>
-                                    <li><a href="javascript:void(0);" class="site-button circle fa fa-whatsapp whatsapp"></a></li>
+                                    <li><a href="javascript:void(0);"
+                                            class="site-button circle fa fa-facebook facebook"></a></li>
+                                    <li><a href="javascript:void(0);"
+                                            class="site-button circle fa fa-twitter twitter"></a></li>
+                                    <li><a href="javascript:void(0);"
+                                            class="site-button circle fa fa-linkedin linkedin"></a></li>
+                                    <li><a href="javascript:void(0);"
+                                            class="site-button circle fa fa-whatsapp whatsapp"></a></li>
                                 </ul>
                             </div>
                         </div>
                     </li>
                     <li class="comment">
-                        <div class="comment_container"> <img class="avatar avatar-60 photo" src="assets/images/testimonials/pic2.jpg" alt="">
+                        <div class="comment_container"> <img class="avatar avatar-60 photo"
+                                src="assets/images/testimonials/pic2.jpg" alt="">
                             <div class="comment-text">
-                                <h3 class="author m-t0">Cobus Bester</h3> 
+                                <h3 class="author m-t0">Cobus Bester</h3>
                                 <div class="w3-separator bg-primary"></div>
                                 <div class="description m-b15">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text..</p>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text..</p>
                                 </div>
                                 <ul class="dlab-social-icon">
-                                    <li><a href="javascript:void(0);" class="site-button circle fa fa-facebook facebook"></a></li>
-                                    <li><a href="javascript:void(0);" class="site-button circle fa fa-twitter twitter"></a></li>
-                                    <li><a href="javascript:void(0);" class="site-button circle fa fa-linkedin linkedin"></a></li>
-                                    <li><a href="javascript:void(0);" class="site-button circle fa fa-whatsapp whatsapp"></a></li>
+                                    <li><a href="javascript:void(0);"
+                                            class="site-button circle fa fa-facebook facebook"></a></li>
+                                    <li><a href="javascript:void(0);"
+                                            class="site-button circle fa fa-twitter twitter"></a></li>
+                                    <li><a href="javascript:void(0);"
+                                            class="site-button circle fa fa-linkedin linkedin"></a></li>
+                                    <li><a href="javascript:void(0);"
+                                            class="site-button circle fa fa-whatsapp whatsapp"></a></li>
                                 </ul>
                             </div>
                         </div>
                     </li>
                     <li class="comment">
-                        <div class="comment_container"> <img class="avatar avatar-60 photo" src="assets/images/testimonials/pic3.jpg" alt="">
+                        <div class="comment_container"> <img class="avatar avatar-60 photo"
+                                src="assets/images/testimonials/pic3.jpg" alt="">
                             <div class="comment-text">
-                                <h3 class="author m-t0">Cobus Bester</h3> 
+                                <h3 class="author m-t0">Cobus Bester</h3>
                                 <div class="w3-separator bg-primary"></div>
                                 <div class="description m-b15">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the..</p>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the..</p>
                                 </div>
                                 <ul class="dlab-social-icon">
-                                    <li><a href="javascript:void(0);" class="site-button circle fa fa-facebook facebook"></a></li>
-                                    <li><a href="javascript:void(0);" class="site-button circle fa fa-twitter twitter"></a></li>
-                                    <li><a href="javascript:void(0);" class="site-button circle fa fa-linkedin linkedin"></a></li>
-                                    <li><a href="javascript:void(0);" class="site-button circle fa fa-whatsapp whatsapp"></a></li>
+                                    <li><a href="javascript:void(0);"
+                                            class="site-button circle fa fa-facebook facebook"></a></li>
+                                    <li><a href="javascript:void(0);"
+                                            class="site-button circle fa fa-twitter twitter"></a></li>
+                                    <li><a href="javascript:void(0);"
+                                            class="site-button circle fa fa-linkedin linkedin"></a></li>
+                                    <li><a href="javascript:void(0);"
+                                            class="site-button circle fa fa-whatsapp whatsapp"></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -256,145 +278,158 @@
                         <h2 class="rating-title text-primary">4.5</h2>
                         <div class="icon-content">
                             <div class="star-rating">
-                                <div data-rating="3"> 
-                                    <i class="text-yellow fa fa-star" data-alt="1" title="regular"></i> 
-                                    <i class="text-yellow fa fa-star" data-alt="2" title="regular"></i> 
-                                    <i class="text-yellow fa fa-star-o" data-alt="3" title="regular"></i> 
-                                    <i class="text-yellow fa fa-star-o" data-alt="4" title="regular"></i> 
-                                    <i class="text-yellow fa fa-star-o" data-alt="5" title="regular"></i> 
+                                <div data-rating="3">
+                                    <i class="text-yellow fa fa-star" data-alt="1" title="regular"></i>
+                                    <i class="text-yellow fa fa-star" data-alt="2" title="regular"></i>
+                                    <i class="text-yellow fa fa-star-o" data-alt="3" title="regular"></i>
+                                    <i class="text-yellow fa fa-star-o" data-alt="4" title="regular"></i>
+                                    <i class="text-yellow fa fa-star-o" data-alt="5" title="regular"></i>
                                 </div>
                             </div>
                             <p>100,453 ratings</p>
                         </div>
                     </div>
-                </div>	
+                </div>
                 <div class="col-md-8 col-sm-7 m-b30">
                     <h5>Detailed Rating</h5>
                     <div class="bar-rating">
                         <ul class="bar-rating-chart icon-bx-wraper bx-style-1 p-a30">
-                            <li class="input-group"> 
+                            <li class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group">5 stars</span>
-                                </div> 
+                                </div>
                                 <div class="bar">
                                     <div class="bar-rat bg-primary" style="width:100%"></div>
                                 </div>
                                 <div class="input-group-prepend">
                                     <span class="input-group">5</span>
-                                </div> 
+                                </div>
                             </li>
-                            <li class="input-group"> 
+                            <li class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group">4 stars</span></div> 
+                                    <span class="input-group">4 stars</span>
+                                </div>
                                 <div class="bar">
                                     <div class="bar-rat bg-primary" style="width:80%"></div>
                                 </div>
                                 <div class="input-group-prepend">
-                                    <span class="input-group">4</span> 
-                                </div> 
+                                    <span class="input-group">4</span>
+                                </div>
                             </li>
-                            <li class="input-group"> 
+                            <li class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group">3 stars</span></div> 
+                                    <span class="input-group">3 stars</span>
+                                </div>
                                 <div class="bar">
                                     <div class="bar-rat bg-primary" style="width:60%"></div>
                                 </div>
                                 <div class="input-group-prepend">
-                                    <span class="input-group">3</span> 
-                                </div> 
+                                    <span class="input-group">3</span>
+                                </div>
                             </li>
-                            <li class="input-group"> 
+                            <li class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group">2 stars</span></div> 
+                                    <span class="input-group">2 stars</span>
+                                </div>
                                 <div class="bar">
                                     <div class="bar-rat bg-primary" style="width:40%"></div>
                                 </div>
                                 <div class="input-group-prepend">
-                                    <span class="input-group">2</span>	
-                                </div> 															
+                                    <span class="input-group">2</span>
+                                </div>
                             </li>
-                            <li class="input-group"> 
+                            <li class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group">1 stars</span></div> 
+                                    <span class="input-group">1 stars</span>
+                                </div>
                                 <div class="bar">
                                     <div class="bar-rat bg-primary" style="width:20%"></div>
                                 </div>
                                 <div class="input-group-prepend">
                                     <span class="input-group">1</span>
-                                </div> 
+                                </div>
                             </li>
                         </ul>
                     </div>
                 </div>
-            </div>	
-            
+            </div>
+
             <div id="comments">
                 <ol class="commentlist">
                     <li class="comment">
-                        <div class="comment_container"> 
+                        <div class="comment_container">
                             <img class="avatar avatar-60 photo" src="assets/images/testimonials/pic1.jpg" alt="">
                             <div class="comment-text">
                                 <div class="star-rating">
-                                    <div data-rating="3"> 
-                                        <i class="fa fa-star text-yellow" data-alt="1" title="regular"></i> 
-                                        <i class="fa fa-star text-yellow" data-alt="2" title="regular"></i> 
-                                        <i class="fa fa-star-o text-yellow" data-alt="3" title="regular"></i> 
-                                        <i class="fa fa-star-o text-yellow" data-alt="4" title="regular"></i> 
-                                        <i class="fa fa-star-o text-yellow" data-alt="5" title="regular"></i> 
+                                    <div data-rating="3">
+                                        <i class="fa fa-star text-yellow" data-alt="1" title="regular"></i>
+                                        <i class="fa fa-star text-yellow" data-alt="2" title="regular"></i>
+                                        <i class="fa fa-star-o text-yellow" data-alt="3" title="regular"></i>
+                                        <i class="fa fa-star-o text-yellow" data-alt="4" title="regular"></i>
+                                        <i class="fa fa-star-o text-yellow" data-alt="5" title="regular"></i>
                                     </div>
                                 </div>
-                                <p class="meta"> 
-                                    <strong class="author">Cobus Bester</strong> 
-                                    <span><i class="fa fa-clock-o"></i> March 7, 2013</span> 
+                                <p class="meta">
+                                    <strong class="author">Cobus Bester</strong>
+                                    <span><i class="fa fa-clock-o"></i> March 7, 2013</span>
                                 </p>
                                 <div class="description">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book.</p>
                                 </div>
                             </div>
                         </div>
                     </li>
                     <li class="comment">
-                        <div class="comment_container"> 
+                        <div class="comment_container">
                             <img class="avatar avatar-60 photo" src="assets/images/testimonials/pic2.jpg" alt="">
                             <div class="comment-text">
                                 <div class="star-rating">
-                                    <div data-rating="3"> 
-                                        <i class="fa fa-star text-yellow" data-alt="1" title="regular"></i> 
-                                        <i class="fa fa-star text-yellow" data-alt="2" title="regular"></i> 
-                                        <i class="fa fa-star text-yellow" data-alt="3" title="regular"></i> 
-                                        <i class="fa fa-star-o text-yellow" data-alt="4" title="regular"></i> 
-                                        <i class="fa fa-star-o text-yellow" data-alt="5" title="regular"></i> 
+                                    <div data-rating="3">
+                                        <i class="fa fa-star text-yellow" data-alt="1" title="regular"></i>
+                                        <i class="fa fa-star text-yellow" data-alt="2" title="regular"></i>
+                                        <i class="fa fa-star text-yellow" data-alt="3" title="regular"></i>
+                                        <i class="fa fa-star-o text-yellow" data-alt="4" title="regular"></i>
+                                        <i class="fa fa-star-o text-yellow" data-alt="5" title="regular"></i>
                                     </div>
                                 </div>
-                                <p class="meta"> 
-                                    <strong class="author">Cobus Bester</strong> 
-                                    <span><i class="fa fa-clock-o"></i> March 7, 2013</span> 
+                                <p class="meta">
+                                    <strong class="author">Cobus Bester</strong>
+                                    <span><i class="fa fa-clock-o"></i> March 7, 2013</span>
                                 </p>
                                 <div class="description">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book.</p>
                                 </div>
                             </div>
                         </div>
                     </li>
                     <li class="comment">
-                        <div class="comment_container"> 
+                        <div class="comment_container">
                             <img class="avatar avatar-60 photo" src="assets/images/testimonials/pic3.jpg" alt="">
                             <div class="comment-text">
                                 <div class="star-rating">
-                                    <div data-rating="3"> 
-                                        <i class="fa fa-star text-yellow" data-alt="1" title="regular"></i> 
-                                        <i class="fa fa-star text-yellow" data-alt="2" title="regular"></i> 
-                                        <i class="fa fa-star text-yellow" data-alt="3" title="regular"></i> 
-                                        <i class="fa fa-star text-yellow" data-alt="4" title="regular"></i> 
-                                        <i class="fa fa-star-o text-yellow" data-alt="5" title="regular"></i> 
+                                    <div data-rating="3">
+                                        <i class="fa fa-star text-yellow" data-alt="1" title="regular"></i>
+                                        <i class="fa fa-star text-yellow" data-alt="2" title="regular"></i>
+                                        <i class="fa fa-star text-yellow" data-alt="3" title="regular"></i>
+                                        <i class="fa fa-star text-yellow" data-alt="4" title="regular"></i>
+                                        <i class="fa fa-star-o text-yellow" data-alt="5" title="regular"></i>
                                     </div>
                                 </div>
-                                <p class="meta"> 
-                                    <strong class="author">Cobus Bester</strong> 
-                                    <span><i class="fa fa-clock-o"></i> March 7, 2013</span> 
+                                <p class="meta">
+                                    <strong class="author">Cobus Bester</strong>
+                                    <span><i class="fa fa-clock-o"></i> March 7, 2013</span>
                                 </p>
                                 <div class="description">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book.</p>
                                 </div>
                             </div>
                         </div>
@@ -406,7 +441,8 @@
                     <h5 class="widget-title style-1">LEAVE A REPLY</h5>
                 </div>
                 <h3 class="comment-reply-title" id="reply-title">
-                    <small> <a style="display:none;" href="javascript:void(0);" id="cancel-comment-reply-link" rel="nofollow">Cancel reply</a> </small>
+                    <small> <a style="display:none;" href="javascript:void(0);" id="cancel-comment-reply-link"
+                            rel="nofollow">Cancel reply</a> </small>
                 </h3>
                 <form class="comment-form" id="commentform" method="post">
                     <p class="comment-form-author">

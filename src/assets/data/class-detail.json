@@ -1,0 +1,122 @@
+[
+  {
+    "classDetailId": 1,
+    "classId": 1,
+    "className": "KG",
+    "aboutClass": "Kindergarten or KG focuses on kids of 4 to 6 years or above. The second most class that introduces academics to the kids. ",
+    "subjects": {
+      "English": [
+        "pre-writing strokes",
+        "Capital letter A-Z",
+        "Sentence Structure",
+        "Vocabulary"
+      ],
+      "Mathematics": [
+        " Pre-math concepts",
+        "Numbers (1-20)",
+        "Shapes",
+        "Colors"
+      ],
+      " General Awareness": [
+        " Myself",
+        "Seasons",
+        "Transport",
+        "Fruits",
+        "Animals",
+        "Vegetables"
+      ],
+      "Extracurricular Activities": [
+        "Picture reading",
+        "Rhymes",
+        "Celebrating fruit days",
+        "Planting and looking after seeds in the garden",
+        "Visit the garden",
+        "Displaying family pictures in the class",
+        "Welcome cards",
+        "Activities related to various festivals",
+        "Collage making",
+        "Health and hygiene week"
+      ]
+    }
+  },
+  {
+    "classDetailId": 2,
+    "classId": 2,
+    "className": "PreP",
+    "aboutClass": "Pre primary education in India is provided to children between 3–6 years by Kindergarten, Playway or Play Schools. These schools have varying terminology for different levels of classes, beginning from – Pre-Nursery, Nursery, KG, LKG (Lower Kindergarten) and UKG (Upper Kindergarten). Most of the pre-primary education in India is provided by private schools. ",
+    "subjects": {
+      "English": [
+        "pre-writing strokes",
+        "Capital letter A-Z",
+        "Sentence Structure",
+        "Vocabulary"
+      ],
+      "Mathematics": [
+        " Pre-math concepts",
+        "Numbers (1-20)",
+        "Shapes",
+        "Colors"
+      ],
+      " General Awareness": [
+        " Myself",
+        "Seasons",
+        "Transport",
+        "Fruits",
+        "Animals",
+        "Vegetables"
+      ],
+      "Extracurricular Activities": [
+        "Picture reading",
+        "Rhymes",
+        "Celebrating fruit days",
+        "Planting and looking after seeds in the garden",
+        "Visit the garden",
+        "Displaying family pictures in the class",
+        "Welcome cards",
+        "Activities related to various festivals",
+        "Collage making",
+        "Health and hygiene week"
+      ]
+    }
+  },
+  {
+    "classDetailId": 3,
+    "classId": 3,
+    "className": "1",
+    "aboutClass": "Class 1 is the beginners’ stage of learning new things and developing new literacy skills of young learners. In 1st Standard, they take their very first step towards their elementary school education. In this article, we shall discuss in detail about what kids learn in their first year i.e. Class 1 of primary school. ",
+    "subjects": {
+      "English": [
+        "pre-writing strokes",
+        "Capital letter A-Z",
+        "Sentence Structure",
+        "Vocabulary"
+      ],
+      "Mathematics": [
+        " Pre-math concepts",
+        "Numbers (1-20)",
+        "Shapes",
+        "Colors"
+      ],
+      " General Awareness": [
+        " Myself",
+        "Seasons",
+        "Transport",
+        "Fruits",
+        "Animals",
+        "Vegetables"
+      ],
+      "Extracurricular Activities": [
+        "Picture reading",
+        "Rhymes",
+        "Celebrating fruit days",
+        "Planting and looking after seeds in the garden",
+        "Visit the garden",
+        "Displaying family pictures in the class",
+        "Welcome cards",
+        "Activities related to various festivals",
+        "Collage making",
+        "Health and hygiene week"
+      ]
+    }
+  }
+]
