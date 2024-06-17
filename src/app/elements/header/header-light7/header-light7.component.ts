@@ -146,11 +146,7 @@ export class HeaderLight7Component {
             {
               title: ' Classes',
               route: '/classes',
-            },
-            {
-              title: 'Class Details',
-              route: '/classes-details',
-            },
+            }
           ],
         },
         {
@@ -196,10 +192,6 @@ export class HeaderLight7Component {
         {
           title: 'Products',
           route: '/product',
-        },
-        {
-          title: 'Product Details',
-          route: '/shop-product-details',
         },
         {
           title: 'Cart',
