@@ -86,7 +86,7 @@ const routes: Routes = [
   // Academics
   // Events-Recognitions
   { path: 'event', component: EventsComponent },
-  { path: 'event-details', component: EventsDetailsComponent },
+  { path: 'event-details/:id', component: EventsDetailsComponent },
   // Gallary
   { path: 'gallery-grid-2', component: GalleryGrid2Component },
   { path: 'gallery-grid-3', component: GalleryGrid3Component },

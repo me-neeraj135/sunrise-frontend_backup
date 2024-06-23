@@ -1,0 +1,269 @@
+[
+    {
+        "subMenuId": 1,
+        "menuId": 1,
+        "title": "About Sunrise",
+        "route": "/about-sunrise",
+        "subMenuClass": "sub-menu",
+        "isActive": true,
+        "userId": 1
+    },
+    {
+        "subMenuId": 2,
+        "menuId": 1,
+        "title": "Principal's Message",
+        "route": "/principal-message",
+        "subMenuClass": "sub-menu",
+        "isActive": true,
+        "userId": 1
+    },
+    {
+        "subMenuId": 3,
+        "menuId": 2,
+        "title": "Explore",
+        "route": "",
+        "subMenuClass": "mega-menu",
+        "isActive": true,
+        "userId": 1,
+        "subSubMenu": [
+            {
+                "subSubMenuId": 1,
+                "subMenuId": 3,
+                "title": "Teachers",
+                "route": "/teacher",
+                "subSubMenuClass": "sub-menu",
+                "isActive": true,
+                "userId": 1
+            },
+            {
+                "subSubMenuId": 2,
+                "subMenuId": 3,
+                "title": "Events",
+                "route": "/event",
+                "subSubMenuClass": "sub-menu",
+                "isActive": true,
+                "userId": 1
+            },
+            {
+                "subSubMenuId": 3,
+                "subMenuId": 3,
+                "title": "Services",
+                "route": "/services-1",
+                "subSubMenuClass": "sub-menu",
+                "isActive": true,
+                "userId": 1
+            },
+            {
+                "subSubMenuId": 4,
+                "subMenuId": 3,
+                "title": "Classes",
+                "route": "/classes",
+                "subSubMenuClass": "sub-menu",
+                "isActive": true,
+                "userId": 1
+            }
+        ]
+    },
+    {
+        "subMenuId": 4,
+        "menuId": 2,
+        "title": "Gallery",
+        "route": "",
+        "subMenuClass": "mega-menu",
+        "isActive": true,
+        "userId": 1,
+        "subSubMenu": [
+            {
+                "subSubMenuId": 5,
+                "subMenuId": 4,
+                "title": "Gallery Grid 2",
+                "route": "/gallery-grid-2",
+                "subSubMenuClass": "sub-menu",
+                "isActive": true,
+                "userId": 1
+            },
+            {
+                "subSubMenuId": 6,
+                "subMenuId": 4,
+                "title": "Gallery Grid 3",
+                "route": "/gallery-grid-3",
+                "subSubMenuClass": "sub-menu",
+                "isActive": true,
+                "userId": 1
+            },
+            {
+                "subSubMenuId": 7,
+                "subMenuId": 4,
+                "title": "Gallery Grid 4",
+                "route": "/gallery-grid-4",
+                "subSubMenuClass": "sub-menu",
+                "isActive": true,
+                "userId": 1
+            }
+        ]
+    },
+    {
+        "subMenuId": 5,
+        "menuId": 2,
+        "title": "Support",
+        "route": "",
+        "subMenuClass": "mega-menu",
+        "isActive": true,
+        "userId": 1,
+        "subSubMenu": [
+            {
+                "subSubMenuId": 8,
+                "subMenuId": 5,
+                "title": "FAQ",
+                "route": "/faq-1",
+                "subSubMenuClass": "sub-menu",
+                "isActive": true,
+                "userId": 1
+            },
+            {
+                "subSubMenuId": 9,
+                "subMenuId": 5,
+                "title": "Help Desk",
+                "route": "/help-desk",
+                "subSubMenuClass": "sub-menu",
+                "isActive": true,
+                "userId": 1
+            },
+            {
+                "subSubMenuId": 10,
+                "subMenuId": 5,
+                "title": "Privacy Policy",
+                "route": "/privacy-policy",
+                "subSubMenuClass": "sub-menu",
+                "isActive": true,
+                "userId": 1
+            }
+        ]
+    },
+    {
+        "subMenuId": 6,
+        "menuId": 3,
+        "title": "Products",
+        "route": "/product",
+        "subMenuClass": "sub-menu",
+        "isActive": true,
+        "userId": 1
+    },
+    {
+        "subMenuId": 7,
+        "menuId": 3,
+        "title": "Cart",
+        "route": "/shop-cart",
+        "subMenuClass": "sub-menu",
+        "isActive": true,
+        "userId": 1
+    },
+    {
+        "subMenuId": 8,
+        "menuId": 3,
+        "title": "Wishlist",
+        "route": "/shop-wishlist",
+        "subMenuClass": "sub-menu",
+        "isActive": true,
+        "userId": 1
+    },
+    {
+        "subMenuId": 9,
+        "menuId": 3,
+        "title": "Checkout",
+        "route": "/shop-checkout",
+        "subMenuClass": "sub-menu",
+        "isActive": true,
+        "userId": 1
+    },
+    {
+        "subMenuId": 10,
+        "menuId": 3,
+        "title": "Login",
+        "route": "/shop-login",
+        "subMenuClass": "sub-menu",
+        "isActive": true,
+        "userId": 1
+    },
+    {
+        "subMenuId": 11,
+        "menuId": 3,
+        "title": "Register",
+        "route": "/shop-register",
+        "subMenuClass": "sub-menu",
+        "isActive": true,
+        "userId": 1
+    },
+    {
+        "subMenuId": 12,
+        "menuId": 4,
+        "title": "Teacher",
+        "route": "/product",
+        "subMenuClass": "sub-menu",
+        "isActive": true,
+        "userId": 1
+    },
+    {
+        "subMenuId": 13,
+        "menuId": 4,
+        "title": "Event",
+        "route": "/shop-cart",
+        "subMenuClass": "sub-menu",
+        "isActive": true,
+        "userId": 1
+    },
+    {
+        "subMenuId": 14,
+        "menuId": 4,
+        "title": "Class",
+        "route": "/shop-wishlist",
+        "subMenuClass": "sub-menu",
+        "isActive": true,
+        "userId": 1
+    },
+    {
+        "subMenuId": 15,
+        "menuId": 4,
+        "title": "Product",
+        "route": "/shop-checkout",
+        "subMenuClass": "sub-menu",
+        "isActive": true,
+        "userId": 1
+    },
+    {
+        "subMenuId": 16,
+        "menuId": 5,
+        "title": "Teacher",
+        "route": "/shop-login",
+        "subMenuClass": "sub-menu",
+        "isActive": true,
+        "userId": 1
+    },
+    {
+        "subMenuId": 17,
+        "menuId": 5,
+        "title": "Event",
+        "route": "/shop-register",
+        "subMenuClass": "sub-menu",
+        "isActive": true,
+        "userId": 1
+    },
+    {
+        "subMenuId": 18,
+        "menuId": 5,
+        "title": "Class",
+        "route": "/shop-login",
+        "subMenuClass": "sub-menu",
+        "isActive": true,
+        "userId": 1
+    },
+    {
+        "subMenuId": 19,
+        "menuId": 5,
+        "title": "Product",
+        "route": "/shop-register",
+        "subMenuClass": "sub-menu",
+        "isActive": true,
+        "userId": 1
+    }
+]

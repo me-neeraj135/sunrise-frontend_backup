@@ -1,0 +1,42 @@
+[
+    {
+        "Id": 1,
+        "title": "About Us",
+        "menuClass": "main-menu",
+        "isActive": true,
+        "userId": 1,
+        "order": 1
+    },
+    {
+        "Id": 2,
+        "title": "Academics",
+        "menuClass": "has-mega-menu",
+        "isActive": true,
+        "userId": 1,
+        "order": 2
+    },
+    {
+        "Id": 3,
+        "title": "Inventory",
+        "menuClass": "main-menu",
+        "isActive": true,
+        "userId": 1,
+        "order": 3
+    },
+    {
+        "Id": 4,
+        "title": "Add",
+        "menuClass": "main-menu",
+        "isActive": true,
+        "userId": 2,
+        "order": 1
+    },
+    {
+        "Id": 5,
+        "title": "Delete",
+        "menuClass": "main-menu",
+        "isActive": true,
+        "userId": 2,
+        "order": 2
+    }
+]
