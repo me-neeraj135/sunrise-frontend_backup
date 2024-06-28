@@ -29,11 +29,12 @@
 											<div class="acod-content">
 												<div class="widget widget_services">
 													<ul>
-														<li><a [routerLink]="['/shop-cart']">School Bag</a></li>
-														<li><a [routerLink]="['/shop-cart']">Color Pencils</a></li>
-														<li><a [routerLink]="['/shop-cart']">Project Book</a></li>
-														<li><a [routerLink]="['/shop-cart']">Calculator</a></li>
-														<li><a [routerLink]="['/shop-cart']">Colorful Book</a></li>
+														<li><a [routerLink]="['/product']" [queryParams]="{ category: 'School Supplies' }">School Bag</a></li>
+														<li><a [routerLink]="['/product']" [queryParams]="{ category: 'Art Supplies' }">Color Pencils</a></li>
+														<li><a [routerLink]="['/product']" [queryParams]="{ category: 'School Supplies' }">Project Book</a></li>
+														<li><a [routerLink]="['/product']" [queryParams]="{ category: 'Electronics' }">Calculator</a></li>
+														<li><a [routerLink]="['/product']" [queryParams]="{ category: 'Books' }">Colorful Book</a></li>
+														<li><a [routerLink]="['/product']">All Products</a></li>
 													</ul>
 												</div>
 											</div>
@@ -211,7 +212,7 @@
 													</div>
 													<div class="item-widgets-body text-black">
 														<h6 class="item-title text-capitalize font-weight-500 m-t0">
-															<a [routerLink]="['/shop-product-details']">Color
+															<a [routerLink]="['/product-details', 1]">Color
 																Pencils</a>
 														</h6>
 														<ul class="item-review text-yellow-light">
@@ -233,7 +234,7 @@
 													</div>
 													<div class="item-widgets-body text-black">
 														<h6 class="item-title text-capitalize font-weight-500 m-t0">
-															<a [routerLink]="['/shop-product-details']">Color
+															<a [routerLink]="['/product-details', 2]">Color
 																Pencils</a>
 														</h6>
 														<ul class="item-review text-yellow-light">
@@ -255,7 +256,7 @@
 													</div>
 													<div class="item-widgets-body text-black">
 														<h6 class="item-title text-capitalize font-weight-500 m-t0">
-															<a [routerLink]="['/shop-product-details']">Color
+															<a [routerLink]="['/product-details', 3]">Color
 																Pencils</a>
 														</h6>
 														<ul class="item-review text-yellow-light">
@@ -280,7 +281,7 @@
 					</div>
 					<div class="col-lg-9 col-md-8 m-b30">
 						<div class="row">
-							<div *ngFor="let item of shopData" class="col-lg-4 col-md-6 col-sm-6">
+							<div *ngFor="let item of productData" class="col-lg-4 col-md-6 col-sm-6">
 								<div class="item-box m-b10">
 									<div class="item-img">
 										<img src="{{ item.img }}" alt="" />
@@ -296,7 +297,7 @@
 									</div>
 									<div class="item-info text-center text-black p-a10">
 										<h6 class="item-title font-weight-500"><a
-												[routerLink]="['{ item.titleUrl }']">{{ item.title }}</a></h6>
+												[routerLink]="['/product-details', item.productId]">{{ item.title }}</a></h6>
 										<ul class="item-review">
 											<li><i class="fa fa-star"></i></li>
 											<li><i class="fa fa-star"></i></li>
@@ -305,8 +306,8 @@
 											<li><i class="fa fa-star-o"></i></li>
 										</ul>
 										<h4 class="item-price">
-											<del>${{ item.priceDic }}</del>
-											<span class="text-primary">${{ item.price }}</span>
+											<del>₹{{ item.priceDisc }}</del>
+											<span class="text-primary">₹{{ item.price }}</span>
 										</h4>
 									</div>
 								</div>

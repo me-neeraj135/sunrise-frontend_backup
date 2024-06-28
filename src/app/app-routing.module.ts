@@ -86,7 +86,7 @@ const routes: Routes = [
   // Academics
   // Events-Recognitions
   { path: 'event', component: EventsComponent },
-  { path: 'event-details', component: EventsDetailsComponent },
+  { path: 'event-details/:id', component: EventsDetailsComponent },
   // Gallary
   { path: 'gallery-grid-2', component: GalleryGrid2Component },
   { path: 'gallery-grid-3', component: GalleryGrid3Component },
@@ -129,8 +129,8 @@ const routes: Routes = [
 
   // Shop --
   { path: 'shop', component: ShopComponent },
-  { path: 'shop-sidebar', component: ShopSidebarComponent },
-  { path: 'shop-product-details', component: ProductDetailsComponent },
+  { path: 'product', component: ShopSidebarComponent },
+  { path: 'product-details/:id', component: ProductDetailsComponent },
   { path: 'shop-cart', component: CartComponent },
   { path: 'shop-wishlist', component: WishlistComponent },
   { path: 'shop-checkout', component: CheckoutComponent },

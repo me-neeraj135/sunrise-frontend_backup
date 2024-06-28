@@ -1,0 +1,128 @@
+[
+    {
+      "productId": 1,
+      "img": "assets/images/product/item1.jpg",
+      "title": "School Bag",
+      "price": 890,
+      "priceDisc": 1110,
+      "category": "School Supplies",
+      "description": "A durable and spacious school bag perfect for students."
+    },
+    {
+      "productId": 2,
+      "img": "assets/images/product/item2.jpg",
+      "title": "Color Pencils",
+      "price": 55,
+      "priceDisc": 79,
+      "category": "Art Supplies",
+      "description": "A set of vibrant color pencils for creative artwork."
+    },
+    {
+      "productId": 3,
+      "img": "assets/images/product/item3.jpg",
+      "title": "Pencils",
+      "price": 35,
+      "priceDisc": 51,
+      "category": "School Supplies",
+      "description": "High-quality pencils for writing and drawing."
+    },
+    {
+      "productId": 4,
+      "img": "assets/images/product/item4.jpg",
+      "title": "Stapler",
+      "price": 90,
+      "priceDisc": 129,
+      "category": "Office Supplies",
+      "description": "A reliable stapler for everyday use."
+    },
+    {
+      "productId": 5,
+      "img": "assets/images/product/item5.jpg",
+      "title": "Project Book",
+      "price": 192,
+      "priceDisc": 232,
+      "category": "School Supplies",
+      "description": "A project book with high-quality paper for school projects."
+    },
+    {
+      "productId": 6,
+      "img": "assets/images/product/item6.jpg",
+      "title": "Colorful Book",
+      "price": 192,
+      "priceDisc": 232,
+      "category": "Books",
+      "description": "A colorful book to make learning fun."
+    },
+    {
+      "productId": 7,
+      "img": "assets/images/product/item7.jpg",
+      "title": "Notebook",
+      "price": 192,
+      "priceDisc": 232,
+      "category": "School Supplies",
+      "description": "A notebook with ruled pages for writing notes."
+    },
+    {
+      "productId": 8,
+      "img": "assets/images/product/item8.jpg",
+      "title": "Project File",
+      "price": 192,
+      "priceDisc": 232,
+      "category": "School Supplies",
+      "description": "A project file to organize your documents."
+    },
+    {
+      "productId": 9,
+      "img": "assets/images/product/item9.jpg",
+      "title": "Calculator",
+      "price": 192,
+      "priceDisc": 232,
+      "category": "Electronics",
+      "description": "A calculator for quick and accurate calculations."
+    },
+    {
+      "productId": 10,
+      "img": "assets/images/product/item1.jpg",
+      "title": "School Bag",
+      "price": 192,
+      "priceDisc": 232,
+      "category": "School Supplies",
+      "description": "A durable and spacious school bag perfect for students."
+    },
+    {
+      "productId": 11,
+      "img": "assets/images/product/item2.jpg",
+      "title": "Color Pencils",
+      "price": 192,
+      "priceDisc": 232,
+      "category": "Art Supplies",
+      "description": "A set of vibrant color pencils for creative artwork."
+    },
+    {
+      "productId": 12,
+      "img": "assets/images/product/item3.jpg",
+      "title": "Pencils",
+      "price": 192,
+      "priceDisc": 232,
+      "category": "School Supplies",
+      "description": "High-quality pencils for writing and drawing."
+    },
+    {
+      "productId": 13,
+      "img": "assets/images/product/item4.jpg",
+      "title": "Stapler",
+      "price": 192,
+      "priceDisc": 232,
+      "category": "Office Supplies",
+      "description": "A reliable stapler for everyday use."
+    },
+    {
+      "productId": 14,
+      "img": "assets/images/product/item5.jpg",
+      "title": "Project Book",
+      "price": 192,
+      "priceDisc": 232,
+      "category": "School Supplies",
+      "description": "A project book with high-quality paper for school projects."
+    }
+  ]

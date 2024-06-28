@@ -1,6 +1,7 @@
 import { Component } from '@angular/core'
 import { Router } from '@angular/router'
 import { Location, PlatformLocation } from '@angular/common'
+import { MenuService } from 'src/app/services/menu.service'
 
 interface MenuType {
   title: string
@@ -33,10 +34,12 @@ export class HeaderLight7Component {
   toggleSubMenu: string = ''
   currentHref: string = ''
   activeMenu: string = ''
+  menuData: Transformer[] = [];
+  sidebarMenu: any
 
   constructor(
     public router: Router,
-
+    private menuService: MenuService,
     private backLocation: PlatformLocation,
     private location: Location,
   ) {
@@ -57,7 +60,14 @@ export class HeaderLight7Component {
   }
 
   ngOnInit(): void {
-    this.handleActiveMenu(this.currentHref)
+    this.getMenuData();
+  }
+
+  getMenuData(){
+    this.menuService.getMenuData().subscribe((data) => {
+      this.sidebarMenu = data;
+    });
+    this.handleActiveMenu(this.currentHref);
   }
 
   themeColor(itme: any) {
@@ -75,9 +85,7 @@ export class HeaderLight7Component {
   opneMenu(item: any) {
     console.log('opn', item)
 
-    if (item === 3) {
-      this.router.navigate(['/blog-half-img'])
-    } else if (this.toggleMenu != item.toString()) {
+    if (this.toggleMenu != item.toString()) {
       this.toggleMenu = item.toString()
     } else {
       this.toggleMenu = ' '
@@ -92,7 +100,7 @@ export class HeaderLight7Component {
   }
 
   handleActiveMenu(val: any) {
-    this.sidebarMenu.map((data: any, ind: any) => {
+    this.sidebarMenu?.map((data: any, ind: any) => {
       data.subMenu?.map((item: any, ind: any) => {
         // console.log('data', item)
 
@@ -107,121 +115,4 @@ export class HeaderLight7Component {
       })
     })
   }
-
-  sidebarMenu: MenuType[] = [
-    {
-      title: 'About Us',
-      subMenuClass: 'sub-menu',
-      subMenu: [
-        {
-          title: 'About Sunrise',
-          route: '/about-sunrise',
-        },
-        {
-          title: "Principal's Message",
-          route: '/principal-message',
-        },
-      ],
-    },
-    {
-      title: 'Academics',
-      menuClass: 'has-mega-menu',
-      subMenuClass: 'mega-menu',
-      subMenu: [
-        {
-          title: 'Explore',
-          subSubMenu: [
-            {
-              title: 'Teachers',
-              route: '/teacher',
-            },
-            {
-              title: 'Events',
-              route: '/event',
-            },
-            {
-              title: 'Services',
-              route: '/services-1',
-            },
-            {
-              title: ' Classes',
-              route: '/classes',
-            },
-            {
-              title: 'Class Details',
-              route: '/classes-details',
-            },
-          ],
-        },
-        {
-          title: 'Gallery',
-          subSubMenu: [
-            {
-              title: 'Gallery Grid 2',
-              route: '/gallery-grid-2',
-            },
-            {
-              title: 'Gallery Grid 3',
-              route: '/gallery-grid-3',
-            },
-            {
-              title: 'Gallery Grid 4',
-              route: '/gallery-grid-4',
-            },
-          ],
-        },
-        {
-          title: 'Support',
-          subSubMenu: [
-            {
-              title: 'FAQ',
-              route: '/faq-1',
-            },
-            {
-              title: 'Help Desk',
-              route: '/help-desk',
-            },
-            {
-              title: 'Privacy Policy',
-              route: '/privacy-policy',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      title: 'Inventory',
-      subMenuClass: 'sub-menu',
-      subMenu: [
-        {
-          title: 'Products',
-          route: '/shop-sidebar',
-        },
-        {
-          title: 'Product Details',
-          route: '/shop-product-details',
-        },
-        {
-          title: 'Cart',
-          route: '/shop-cart',
-        },
-        {
-          title: 'Wishlist',
-          route: '/shop-wishlist',
-        },
-        {
-          title: 'Checkout',
-          route: '/shop-checkout',
-        },
-        {
-          title: 'Login',
-          route: '/shop-login',
-        },
-        {
-          title: 'Register',
-          route: '/shop-register',
-        },
-      ],
-    },
-  ]
 }
