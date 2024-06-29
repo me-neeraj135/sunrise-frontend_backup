@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "id": "9965",
+      "firstname": "Javed",
+      "lastname": "Ansari",
+      "email": "javed.ansari81@gmail.com",
+      "mobile": "7842350875",
+      "password": "12345",
+      "userType": "user"
+    },
+    {
+      "id": "f309",
+      "firstname": "Neeraj",
+      "lastname": "Kumar",
+      "email": "neeraj@gmail.com",
+      "mobile": "12345678",
+      "password": "123456",
+      "userType": "user"
+    },
+    {
+      "id": "70ff",
+      "firstname": "Amit",
+      "lastname": "Soni",
+      "email": "amit@gmail.com",
+      "mobile": "213232",
+      "password": "12345",
+      "userType": "user"
+    }
+  ]
+}
