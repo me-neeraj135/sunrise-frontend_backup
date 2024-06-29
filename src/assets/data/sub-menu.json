@@ -177,24 +177,6 @@
         "userId": 1
     },
     {
-        "subMenuId": 10,
-        "menuId": 3,
-        "title": "Login",
-        "route": "/shop-login",
-        "subMenuClass": "sub-menu",
-        "isActive": true,
-        "userId": 1
-    },
-    {
-        "subMenuId": 11,
-        "menuId": 3,
-        "title": "Register",
-        "route": "/shop-register",
-        "subMenuClass": "sub-menu",
-        "isActive": true,
-        "userId": 1
-    },
-    {
         "subMenuId": 12,
         "menuId": 4,
         "title": "Teacher",

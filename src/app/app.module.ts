@@ -178,6 +178,7 @@ import { LightgalleryComponent } from './elements/widgets/lightgallery/lightgall
 import { PrincipalMessageComponent } from './about-us/principal-message/principal-message.component'
 import { HttpClientModule } from '@angular/common/http'
 import { AboutSunriseComponent } from './about-us/about-sunrise/about-sunrise.component'
+import { ReactiveFormsModule } from '@angular/forms'
 @NgModule({
   declarations: [
     AppComponent,
@@ -357,6 +358,7 @@ import { AboutSunriseComponent } from './about-us/about-sunrise/about-sunrise.co
     BrowserModule,
     LightgalleryModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule,
   ],
   providers: [],
