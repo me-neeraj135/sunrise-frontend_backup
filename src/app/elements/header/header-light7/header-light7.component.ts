@@ -34,7 +34,7 @@ export class HeaderLight7Component {
   toggleSubMenu: string = ''
   currentHref: string = ''
   activeMenu: string = ''
-  menuData: Transformer[] = [];
+  menuData: Transformer[] = []
   sidebarMenu: any
 
   constructor(
@@ -44,6 +44,8 @@ export class HeaderLight7Component {
     private location: Location,
   ) {
     router.events.subscribe((val) => {
+      console.log('router.event-', val)
+
       if (location.path() != '') {
         this.currentHref = location.path()
       } else {
@@ -53,6 +55,8 @@ export class HeaderLight7Component {
 
     backLocation.onPopState(() => {
       // back click get url
+      console.log('window-location-path-', window.location.pathname)
+
       this.handleActiveMenu(window.location.pathname)
     })
 
@@ -60,14 +64,14 @@ export class HeaderLight7Component {
   }
 
   ngOnInit(): void {
-    this.getMenuData();
+    this.getMenuData()
   }
 
-  getMenuData(){
+  getMenuData() {
     this.menuService.getMenuData().subscribe((data) => {
-      this.sidebarMenu = data;
-    });
-    this.handleActiveMenu(this.currentHref);
+      this.sidebarMenu = data
+    })
+    this.handleActiveMenu(this.currentHref)
   }
 
   themeColor(itme: any) {
@@ -93,6 +97,8 @@ export class HeaderLight7Component {
   }
   opneSubMenu(item: any) {
     if (this.toggleSubMenu != item.toString()) {
+      console.log('opn submenu-', item)
+
       this.toggleSubMenu = item.toString()
     } else {
       this.toggleSubMenu = ' '

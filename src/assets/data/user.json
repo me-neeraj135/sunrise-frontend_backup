@@ -1,92 +1,92 @@
 [
-    {
-        "id": 1,
-        "firstName": "John",
-        "lastName": "Doe",
-        "mobile": "+1234567890",
-        "email": "john.doe@example.com",
-        "password": "password123",
-        "userType": "admin"
-    },
-    {
-        "id": 2,
-        "firstName": "Jane",
-        "lastName": "Smith",
-        "mobile": "+0987654321",
-        "email": "jane.smith@example.com",
-        "password": "securePass456",
-        "userType": "user"
-    },
-    {
-        "id": 3,
-        "firstName": "Alice",
-        "lastName": "Johnson",
-        "mobile": "+1122334455",
-        "email": "alice.johnson@example.com",
-        "password": "alicePass789",
-        "userType": "user"
-    },
-    {
-        "id": 4,
-        "firstName": "Bob",
-        "lastName": "Brown",
-        "mobile": "+6677889900",
-        "email": "bob.brown@example.com",
-        "password": "bobPass321",
-        "userType": "admin"
-    },
-    {
-        "id": 5,
-        "firstName": "Charlie",
-        "lastName": "Davis",
-        "mobile": "+5566778899",
-        "email": "charlie.davis@example.com",
-        "password": "charliePass654",
-        "userType": "user"
-    },
-    {
-        "id": 6,
-        "firstName": "David",
-        "lastName": "Martinez",
-        "mobile": "+4412345678",
-        "email": "david.martinez@example.com",
-        "password": "davidPass321",
-        "userType": "admin"
-    },
-    {
-        "id": 7,
-        "firstName": "Emily",
-        "lastName": "Clark",
-        "mobile": "+3311223344",
-        "email": "emily.clark@example.com",
-        "password": "emilyPass789",
-        "userType": "user"
-    },
-    {
-        "id": 8,
-        "firstName": "Frank",
-        "lastName": "Wright",
-        "mobile": "+4455667788",
-        "email": "frank.wright@example.com",
-        "password": "frankPass456",
-        "userType": "user"
-    },
-    {
-        "id": 9,
-        "firstName": "Grace",
-        "lastName": "Lee",
-        "mobile": "+5566778899",
-        "email": "grace.lee@example.com",
-        "password": "gracePass123",
-        "userType": "admin"
-    },
-    {
-        "id": 10,
-        "firstName": "Henry",
-        "lastName": "Taylor",
-        "mobile": "+6677889900",
-        "email": "henry.taylor@example.com",
-        "password": "henryPass456",
-        "userType": "user"
-    }
+  {
+    "id": 1,
+    "firstName": "John",
+    "lastName": "Doe",
+    "mobile": "+1234567890",
+    "email": "john.doe@example.com",
+    "password": "password123",
+    "userType": "admin"
+  },
+  {
+    "id": 2,
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "mobile": "+0987654321",
+    "email": "jane.smith@example.com",
+    "password": "securePass456",
+    "userType": "user"
+  },
+  {
+    "id": 3,
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "mobile": "+1122334455",
+    "email": "alice.johnson@example.com",
+    "password": "alicePass789",
+    "userType": "user"
+  },
+  {
+    "id": 4,
+    "firstName": "Bob",
+    "lastName": "Brown",
+    "mobile": "+6677889900",
+    "email": "bob.brown@example.com",
+    "password": "bobPass321",
+    "userType": "admin"
+  },
+  {
+    "id": 5,
+    "firstName": "Charlie",
+    "lastName": "Davis",
+    "mobile": "+5566778899",
+    "email": "charlie.davis@example.com",
+    "password": "charliePass654",
+    "userType": "user"
+  },
+  {
+    "id": 6,
+    "firstName": "David",
+    "lastName": "Martinez",
+    "mobile": "+4412345678",
+    "email": "david.martinez@example.com",
+    "password": "davidPass321",
+    "userType": "admin"
+  },
+  {
+    "id": 7,
+    "firstName": "Emily",
+    "lastName": "Clark",
+    "mobile": "+3311223344",
+    "email": "emily.clark@example.com",
+    "password": "emilyPass789",
+    "userType": "user"
+  },
+  {
+    "id": 8,
+    "firstName": "Frank",
+    "lastName": "Wright",
+    "mobile": "+4455667788",
+    "email": "frank.wright@example.com",
+    "password": "frankPass456",
+    "userType": "user"
+  },
+  {
+    "id": 9,
+    "firstName": "Grace",
+    "lastName": "Lee",
+    "mobile": "+5566778899",
+    "email": "grace.lee@example.com",
+    "password": "gracePass123",
+    "userType": "admin"
+  },
+  {
+    "id": 10,
+    "firstName": "Henry",
+    "lastName": "Taylor",
+    "mobile": "+6677889900",
+    "email": "henry.taylor@example.com",
+    "password": "henryPass456",
+    "userType": "user"
+  }
 ]
