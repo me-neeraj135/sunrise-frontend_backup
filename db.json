@@ -26,6 +26,69 @@
       "mobile": "213232",
       "password": "12345",
       "userType": "user"
+    },
+    {
+      "id": "baec",
+      "firstname": "Shubham",
+      "lastname": "Gupta",
+      "email": "shubham@gmail.com",
+      "mobile": "1234567890",
+      "password": "123456",
+      "userType": "user"
+    },
+    {
+      "id": "7514",
+      "firstname": "user1",
+      "lastname": "user1l",
+      "email": "user1@gmail.com",
+      "mobile": "1234567890",
+      "password": "1234567",
+      "userType": "user"
+    },
+    {
+      "id": "1d28",
+      "firstname": "user2",
+      "lastname": "user2l",
+      "email": "user2@gmail.com",
+      "mobile": "1234567890",
+      "password": "1234567",
+      "userType": "user"
+    },
+    {
+      "id": "eb8b",
+      "firstname": "user3",
+      "lastname": "user3l",
+      "email": "user3@gmail.com",
+      "mobile": "12345",
+      "password": "1234567",
+      "userType": "user"
+    },
+    {
+      "id": "b3e8",
+      "firstName": "user4f",
+      "lastName": "user4l",
+      "email": "user4@gmail.com",
+      "mobile": "1234567890",
+      "password": "12345",
+      "userType": "user"
+    },
+    {
+      "id": "043d",
+      "firstName": "user4f",
+      "lastName": "user4l",
+      "email": "user4@gmail.com",
+      "mobile": "1234567890",
+      "password": "12345",
+      "userType": "user"
+    },
+    {
+      "id": "7582",
+      "firstName": "admin1",
+      "lastName": "ad1L",
+      "email": "admin@gmail.com",
+      "mobile": "1234567890",
+      "password": "12345",
+      "userType": "admin"
     }
   ]
 }

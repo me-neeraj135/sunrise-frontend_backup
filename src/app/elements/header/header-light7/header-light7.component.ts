@@ -2,7 +2,7 @@ import { Component } from '@angular/core'
 import { Router } from '@angular/router'
 import { Location, PlatformLocation } from '@angular/common'
 import { MenuService } from 'src/app/services/menu.service'
-
+import { AuthService } from 'src/app/services/auth.service'
 interface MenuType {
   title: string
   route?: string
@@ -36,15 +36,17 @@ export class HeaderLight7Component {
   activeMenu: string = ''
   menuData: Transformer[] = []
   sidebarMenu: any
+  user: any
 
   constructor(
     public router: Router,
     private menuService: MenuService,
     private backLocation: PlatformLocation,
     private location: Location,
+    private authService: AuthService,
   ) {
     router.events.subscribe((val) => {
-      console.log('router.event-', val)
+      // console.log('router.event-', val)
 
       if (location.path() != '') {
         this.currentHref = location.path()
@@ -55,7 +57,7 @@ export class HeaderLight7Component {
 
     backLocation.onPopState(() => {
       // back click get url
-      console.log('window-location-path-', window.location.pathname)
+      // console.log('window-location-path-', window.location.pathname)
 
       this.handleActiveMenu(window.location.pathname)
     })
@@ -65,6 +67,11 @@ export class HeaderLight7Component {
 
   ngOnInit(): void {
     this.getMenuData()
+    const userData = localStorage.getItem('currentUser')
+    console.log('uddd', userData)
+    if (userData) {
+      this.user = JSON.parse(userData)
+    }
   }
 
   getMenuData() {
@@ -120,5 +127,12 @@ export class HeaderLight7Component {
         })
       })
     })
+  }
+  handleLogout() {
+    console.log('logout handle')
+    this.authService.logout()
+    setTimeout(() => {
+      this.router.navigate(['/login'])
+    }, 2000)
   }
 }

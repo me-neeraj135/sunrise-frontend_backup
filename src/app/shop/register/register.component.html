@@ -23,26 +23,97 @@
 							<div class="tab-content">
 								<form [formGroup]="registrationForm" (ngSubmit)="submitForm()" class="tab-pane active">
 									<h4 class="font-weight-700">PERSONAL INFORMATION</h4>
-									<p class="font-weight-600">Please fill in the following details to create an account.</p>
+									<p class="font-weight-600">Please fill in the following details to create an
+										account.</p>
 									<div class="form-group">
-										<label class="font-weight-700">First Name *</label>
-										<input id="firstname" formControlName="firstname" class="form-control" placeholder="First Name" type="text">
+										<label for="firstName" class="font-weight-700">First Name *</label>
+										<input id="firstName" formControlName="firstName" class="form-control"
+											placeholder="First Name" type="text"
+											[ngClass]="{ error:getControl('firstName')?.errors && getControl('firstName')?.touched}">
+
+										<div *ngIf="getControl('email')?.errors &&getControl('email')?.touched">
+											<small class="text-danger"
+												*ngIf="getControl('firstName')?.errors?.['required']">First Name is
+												required
+											</small>
+										</div>
+
 									</div>
 									<div class="form-group">
-										<label class="font-weight-700">Last Name *</label>
-										<input id="lastname" formControlName="lastname" class="form-control" placeholder="Last Name" type="text">
+										<label for="lastName" class="font-weight-700">Last Name *</label>
+										<input id="lastName" formControlName="lastName" class="form-control"
+											placeholder="Last Name" type="text"
+											[ngClass]="{ error:getControl('lastName')?.errors && getControl('lastName')?.touched}">
+
+										<div *ngIf="getControl('lastName')?.errors &&getControl('lastName')?.touched">
+											<small class="text-danger"
+												*ngIf="getControl('lastName')?.errors?.['required']">Last Name is
+												required
+											</small>
+										</div>
 									</div>
 									<div class="form-group">
-										<label class="font-weight-700">Mobile Number *</label>
-										<input id="mobile" formControlName="mobile" class="form-control" placeholder="Mobile Number" type="tel">
+										<label for="mobile" class="font-weight-700">Mobile Number *</label>
+										<input id="mobile" formControlName="mobile" class="form-control"
+											placeholder="Mobile Number" type="tel" required
+											[ngClass]="{ error:getControl('mobile')?.errors && getControl('mobile')?.touched}">
+
+										<div *ngIf="getControl('mobile')?.errors &&getControl('mobile')?.touched">
+											<small class="text-danger"
+												*ngIf="getControl('mobile')?.errors?.['required']">Mobile Number is
+												required.</small>
+											<small class="text-danger"
+												*ngIf="getControl('mobile')?.errors?.['pattern']">Please enter a valid
+												10-digit
+												mobile number.</small>
+										</div>
 									</div>
 									<div class="form-group">
-										<label class="font-weight-700">E-MAIL *</label>
-										<input id="email" formControlName="email" class="form-control" placeholder="Your Email Id" type="email">
+										<label for="email" class="font-weight-700">E-MAIL *</label>
+										<input id="email" formControlName="email" class="form-control"
+											placeholder="Your Email Id" type="email"
+											[ngClass]="{ error:getControl('email')?.errors && getControl('email')?.touched}"
+											required>
+
+
+										<div *ngIf="getControl('email')?.errors &&getControl('email')?.touched">
+											<small class="text-danger"
+												*ngIf="getControl('email')?.errors?.['required']">Email is required
+											</small>
+											<small class="text-danger"
+												*ngIf="getControl('email')?.errors?.['minlength']">Min length is
+												required
+											</small>
+											<small class="text-danger"
+												*ngIf="getControl('email')?.errors?.['pattern']">Please enter valid
+												email
+											</small>
+										</div>
 									</div>
 									<div class="form-group">
-										<label class="font-weight-700">PASSWORD *</label>
-										<input id="password" type="password" formControlName="password" class="form-control" placeholder="Type Password" type="password">
+										<label for="password" class="font-weight-700">PASSWORD *</label>
+										<input id="password" type="password" formControlName="password"
+											class="form-control" placeholder="Type Password" type="password"
+											[ngClass]="{ error:getControl('password')?.errors && getControl('password')?.touched}"
+											required>
+
+
+
+										<div *ngIf="getControl('password')?.errors &&getControl('password')?.touched">
+											<small class="text-danger"
+												*ngIf="getControl('password')?.errors?.['required']">Password is
+												required
+											</small>
+											<small class="text-danger"
+												*ngIf="getControl('password')?.errors?.['minlength']">Minimum password
+												length is 5
+											</small>
+
+											<small class="text-danger"
+												*ngIf="getControl('password')?.errors?.['maxlength']">Max password
+												length is 15
+											</small>
+										</div>
 									</div>
 
 									<!-- Success message -->
@@ -56,7 +127,8 @@
 									</div>
 
 									<div class="text-left m-t15">
-										<button type="submit" class="site-button button-lg radius-no outline outline-2">CREATE</button>
+										<button type="submit"
+											class="site-button button-lg radius-no outline outline-2">CREATE</button>
 									</div>
 								</form>
 							</div>

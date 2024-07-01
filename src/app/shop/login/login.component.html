@@ -34,23 +34,51 @@
             </div>
           </div>
           <div class="col-lg-6 col-md-6 m-b30">
-            <div class="p-a30 border-1 seth">
+            <div class="p-a30 border-1 seth ">
               <div class="tab-content nav">
-                <form id="login" class="tab-pane active col-12 p-a0">
+                <form [formGroup]="loginForm" (ngSubmit)=onLogin() id="login" class="tab-pane active col-12 p-a0">
                   <h4 class="font-weight-700">LOGIN</h4>
                   <p class="font-weight-600">
                     If you have an account with us, please log in.
                   </p>
                   <div class="form-group">
-                    <label class="font-weight-700">E-MAIL *</label>
-                    <input name="dzName" required="" class="form-control" placeholder="Your Email Id" type="email" />
+                    <label for="email" class="font-weight-700">E-MAIL *</label>
+                    <input formControlName="email" class="form-control" placeholder="Your Email Id" type="email"
+                      [ngClass]="{ error:getControl('email')?.errors && getControl('email')?.touched}" required />
+
+                    <div *ngIf="getControl('email')?.errors &&getControl('email')?.touched">
+                      <small class="text-danger" *ngIf="getControl('email')?.errors?.['required']">Email is required
+                      </small>
+                      <small class="text-danger" *ngIf="getControl('email')?.errors?.['minlength']">Min length is
+                        required
+                      </small>
+                      <small class="text-danger" *ngIf="getControl('email')?.errors?.['pattern']">Please enter valid
+                        email
+                      </small>
+                    </div>
                   </div>
                   <div class="form-group">
-                    <label class="font-weight-700">PASSWORD *</label>
-                    <input name="dzName" required="" class="form-control" placeholder="Type Password" type="password" />
+                    <label for="password" class="font-weight-700">PASSWORD *</label>
+
+                    <input class="form-control" placeholder="Type Password" type="password" formControlName="password"
+                      [ngClass]="{error:getControl('password')?.errors &&getControl('password')?.touched}" required />
+
+
+                    <div *ngIf="getControl('password')?.errors &&getControl('password')?.touched">
+                      <small class="text-danger" *ngIf="getControl('password')?.errors?.['required']">Password is
+                        required
+                      </small>
+                      <small class="text-danger" *ngIf="getControl('password')?.errors?.['minlength']">Minimum password
+                        length is 5
+                      </small>
+
+                      <small class="text-danger" *ngIf="getControl('password')?.errors?.['maxlength']">Max password
+                        length is 15
+                      </small>
+                    </div>
                   </div>
                   <div class="text-left">
-                    <button class="site-button m-r5 button-lg radius-no">
+                    <button class="site-button m-r5 button-lg radius-no " [disabled]="!loginForm.valid">
                       login
                     </button>
                     <a data-toggle="tab" href="#forgot-password" class="m-l5">

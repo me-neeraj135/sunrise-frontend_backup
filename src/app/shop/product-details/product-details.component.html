@@ -172,7 +172,8 @@
                             <div class="row">
                                 <div class="m-b30 col-md-7 col-sm-8">
                                     <h6>Product Size</h6>
-                                    <div class="btn-group product-item-size" data-toggle="buttons" *ngFor="let size of productData.size">
+                                    <div class="btn-group product-item-size" data-toggle="buttons"
+                                        *ngFor="let size of productData.size">
                                         <label class="btn">
                                             <input type="radio" name="options" id="option1" checked>{{size}}
                                         </label>
@@ -208,6 +209,15 @@
                             <button type="submit" class="site-button radius-no">
                                 <i class="ti-shopping-cart"></i> Add To Cart
                             </button>
+                            <div class="d-flex justify-content-start " *ngIf="user.userType==='admin'">
+                                <button type="submit" class="site-button radius-no">
+                                    <i class="fa-solid fa-pen"></i> Update Product
+                                </button>
+
+                                <button type="submit" class="site-button radius-no">
+                                    <i class="fa-solid fa-trash"></i> Delete Product
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -300,8 +310,10 @@
                                                             <span><i class="fa fa-clock-o"></i> Apr 8, 2024</span>
                                                         </p>
                                                         <div class="description">
-                                                            <p>This product exceeded my expectations! The quality is top-notch and it works perfectly. 
-                                                                I highly recommend it to anyone looking for reliability and performance</p>
+                                                            <p>This product exceeded my expectations! The quality is
+                                                                top-notch and it works perfectly.
+                                                                I highly recommend it to anyone looking for reliability
+                                                                and performance</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -330,8 +342,9 @@
                                                             <span><i class="fa fa-clock-o"></i> March 7, 2024</span>
                                                         </p>
                                                         <div class="description">
-                                                            <p>I am extremely satisfied with my purchase. 
-                                                                The product is durable, well-made, and exactly as described. Great value for the price!</p>
+                                                            <p>I am extremely satisfied with my purchase.
+                                                                The product is durable, well-made, and exactly as
+                                                                described. Great value for the price!</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -360,8 +373,10 @@
                                                             <span><i class="fa fa-clock-o"></i> March 7, 2024</span>
                                                         </p>
                                                         <div class="description">
-                                                            <p>Fantastic product! Easy to use and delivered excellent results. 
-                                                                The design is sleek and modern, and the functionality is superb. Highly recommended!</p>
+                                                            <p>Fantastic product! Easy to use and delivered excellent
+                                                                results.
+                                                                The design is sleek and modern, and the functionality is
+                                                                superb. Highly recommended!</p>
                                                         </div>
                                                     </div>
                                                 </div>
