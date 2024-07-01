@@ -13,6 +13,7 @@ declare var handleStarRating: any
 export class ProductDetailsComponent {
   productId: any
   productData: any
+  user: any
 
   banner: any = {
     pagetitle: 'Product Details',
@@ -28,6 +29,11 @@ export class ProductDetailsComponent {
 
   ngOnInit(): void {
     this.getProductAndDetailsById()
+    const userData = localStorage.getItem('currentUser')
+    console.log('uddd', userData)
+    if (userData) {
+      this.user = JSON.parse(userData)
+    }
   }
 
   getProductAndDetailsById(): void {
