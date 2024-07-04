@@ -12,8 +12,13 @@
 		<div class="section-full content-inner">
 			<!-- Product -->
 			<div class="container">
-				<div class="row">
-					<div class="col-lg-3 col-md-4 m-b30">
+				<button *ngIf="user&&user.userType==='admin'" class="addProductBtn" (click)="addNewProduct($event)">
+					Add Product
+
+				</button>
+				<div [ngClass]="showProductForm ? 'nw' : 'row'">
+					<div class="col-lg-3 col-md-4 m-b30 ">
+
 						<aside class="side-bar shop-categories sticky-top">
 							<div class="widget recent-posts-entry">
 								<div class="dlab-accordion advanced-search toggle" id="accordion1">
@@ -29,11 +34,21 @@
 											<div class="acod-content">
 												<div class="widget widget_services">
 													<ul>
-														<li><a [routerLink]="['/product']" [queryParams]="{ category: 'School Supplies' }">School Bag</a></li>
-														<li><a [routerLink]="['/product']" [queryParams]="{ category: 'Art Supplies' }">Color Pencils</a></li>
-														<li><a [routerLink]="['/product']" [queryParams]="{ category: 'School Supplies' }">Project Book</a></li>
-														<li><a [routerLink]="['/product']" [queryParams]="{ category: 'Electronics' }">Calculator</a></li>
-														<li><a [routerLink]="['/product']" [queryParams]="{ category: 'Books' }">Colorful Book</a></li>
+														<li><a [routerLink]="['/product']"
+																[queryParams]="{ category: 'School Supplies' }">School
+																Bag</a></li>
+														<li><a [routerLink]="['/product']"
+																[queryParams]="{ category: 'Art Supplies' }">Color
+																Pencils</a></li>
+														<li><a [routerLink]="['/product']"
+																[queryParams]="{ category: 'School Supplies' }">Project
+																Book</a></li>
+														<li><a [routerLink]="['/product']"
+																[queryParams]="{ category: 'Electronics' }">Calculator</a>
+														</li>
+														<li><a [routerLink]="['/product']"
+																[queryParams]="{ category: 'Books' }">Colorful Book</a>
+														</li>
 														<li><a [routerLink]="['/product']">All Products</a></li>
 													</ul>
 												</div>
@@ -279,7 +294,16 @@
 							</div>
 						</aside>
 					</div>
-					<div class="col-lg-9 col-md-8 m-b30">
+
+
+
+					<!-- form -->
+					<div *ngIf="showProductForm===true" class="fm">
+						<app-add-product *ngIf="user&&user.userType==='admin'"></app-add-product>
+					</div>
+
+					<!-- products -->
+					<div *ngIf="!showProductForm" class="col-lg-9 col-md-8 m-b30">
 						<div class="row">
 							<div *ngFor="let item of productData" class="col-lg-4 col-md-6 col-sm-6">
 								<div class="item-box m-b10">
@@ -297,7 +321,9 @@
 									</div>
 									<div class="item-info text-center text-black p-a10">
 										<h6 class="item-title font-weight-500"><a
-												[routerLink]="['/product-details', item.productId]">{{ item.title }}</a></h6>
+												[routerLink]="['/product-details', item.productId]">{{ item.title
+												}}</a>
+										</h6>
 										<ul class="item-review">
 											<li><i class="fa fa-star"></i></li>
 											<li><i class="fa fa-star"></i></li>
@@ -314,7 +340,10 @@
 							</div>
 						</div>
 					</div>
+
 				</div>
+
+
 			</div>
 			<!-- Product END -->
 		</div>

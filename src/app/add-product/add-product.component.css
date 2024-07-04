@@ -1,0 +1,50 @@
+.pdFormHeader {
+  font-size: 25px;
+  text-align: center;
+  text-transform: capitalize;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.432);
+  margin: 0;
+}
+.pdFormWrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+.pdFormWrapper > form {
+  width: 100%;
+
+  padding: 2rem;
+  border-radius: 3px;
+  background-color: gainsboro;
+}
+.pdFormWrapper > form > div {
+  margin-bottom: 1rem;
+}
+.pdFormWrapper > form > div > label {
+  font-weight: 300;
+  margin-bottom: 0;
+  color: rgb(64, 63, 63);
+}
+.pdFormWrapper > form > div > input,
+textarea {
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  padding: 0.5rem;
+  background-color: white;
+  outline: none;
+}
+
+.subBtn {
+  border-radius: 3px;
+  border: 1px solid black;
+  border-color: white;
+  padding: 0.3rem 1rem;
+}
+
+/* images */
+.imgsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}

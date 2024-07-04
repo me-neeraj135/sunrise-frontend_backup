@@ -179,6 +179,8 @@ import { PrincipalMessageComponent } from './about-us/principal-message/principa
 import { HttpClientModule } from '@angular/common/http'
 import { AboutSunriseComponent } from './about-us/about-sunrise/about-sunrise.component'
 import { ReactiveFormsModule } from '@angular/forms'
+import { AddProductComponent } from './add-product/add-product.component'
+import { UpdateProductComponent } from './update-product/update-product.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -353,6 +355,8 @@ import { ReactiveFormsModule } from '@angular/forms'
     LightgalleryComponent,
     PrincipalMessageComponent,
     AboutSunriseComponent,
+    AddProductComponent,
+    UpdateProductComponent,
   ],
   imports: [
     BrowserModule,

@@ -68,7 +68,7 @@ export class HeaderLight7Component {
   ngOnInit(): void {
     this.getMenuData()
     const userData = localStorage.getItem('currentUser')
-    console.log('uddd', userData)
+
     if (userData) {
       this.user = JSON.parse(userData)
     }
