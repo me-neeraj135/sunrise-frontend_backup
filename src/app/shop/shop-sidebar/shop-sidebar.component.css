@@ -1,0 +1,26 @@
+.addProductBtn {
+  border-radius: 3px;
+  background-color: white;
+  border: 1px solid gray;
+}
+.addProductBtn:hover > a {
+  background-color: black;
+  color: white;
+}
+.nw {
+  display: flex;
+  justify-content: space-between;
+}
+.fm {
+  width: 70%;
+}
+@media (max-width: 980px) {
+  .nw {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .fm {
+    width: 100%;
+  }
+}

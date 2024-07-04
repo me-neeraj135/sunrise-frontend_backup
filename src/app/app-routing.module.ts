@@ -70,6 +70,8 @@ import { CommonModule } from '@angular/common'
 import { HomeSchoolComponent } from './home-school/home-school.component'
 import { PrincipalMessageComponent } from './about-us/principal-message/principal-message.component'
 import { AboutSunriseComponent } from './about-us/about-sunrise/about-sunrise.component'
+import { AddProductComponent } from './add-product/add-product.component'
+import { UpdateProductComponent } from './update-product/update-product.component'
 
 const routes: Routes = [
   // Home --
@@ -127,9 +129,12 @@ const routes: Routes = [
   { path: 'error-404', component: Error404Component },
   { path: 'error-405', component: Error405Component },
 
-  // Shop --
+  // Shop --or product
   { path: 'shop', component: ShopComponent },
   { path: 'product', component: ShopSidebarComponent },
+  { path: 'addProduct', component: AddProductComponent },
+  { path: 'updateProduct', component: UpdateProductComponent },
+
   { path: 'product-details/:id', component: ProductDetailsComponent },
   { path: 'shop-cart', component: CartComponent },
   { path: 'shop-wishlist', component: WishlistComponent },

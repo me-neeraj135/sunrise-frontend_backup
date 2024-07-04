@@ -80,6 +80,24 @@
       "mobile": "1234567890",
       "password": "12345",
       "userType": "user"
+    },
+    {
+      "id": "25c2",
+      "firstName": "user6f",
+      "lastName": "usr6l",
+      "email": "user6@gmail.com",
+      "mobile": "1234567890",
+      "password": "12345",
+      "userType": "user"
+    },
+    {
+      "id": "aca2",
+      "firstName": "admin1",
+      "lastName": "ad1L",
+      "email": "admin@gmail.com",
+      "mobile": "1234567890",
+      "password": "12345",
+      "userType": "admin"
     }
   ]
 }

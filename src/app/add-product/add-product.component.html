@@ -1,0 +1,52 @@
+<!-- src/app/product-form/product-form.component.html -->
+
+<div class="pdFormWrapper">
+    <h1 class="pdFormHeader">add-new -product !</h1>
+
+    <form [formGroup]="addProductForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="name">Product ID</label>
+            <input id="name" formControlName="name" />
+        </div>
+
+        <div>
+            <label for="name">Product Name</label>
+            <input id="name" formControlName="name" />
+        </div>
+
+        <div>
+            <label for="name">Product Category</label>
+            <input id="name" formControlName="name" />
+        </div>
+
+        <div>
+            <label for="price">Price</label>
+            <input id="price" type="number" formControlName="price" />
+        </div>
+        <div>
+            <label for="price">
+                Discount Price
+            </label>
+            <input id="price" type="number" formControlName="price" />
+        </div>
+
+        <div>
+            <label for="description">Description</label>
+
+            <textarea formControlName="description" id=""></textarea>
+        </div>
+        <div>
+            <label for="images">Image</label>
+            <input id="images" class="imgInputWrapper" type="file" (change)="onFileChange($event)" multiple />
+        </div>
+        <div class="imgsWrapper">
+            <div *ngFor="let img of images">
+                <img [src]="img" alt="Product Image" style="width: 100px; height: 100px;" />
+
+
+            </div>
+        </div>
+        <button class="subBtn" type="submit" [disabled]="!addProductForm.valid">Add Product </button>
+    </form>
+
+</div>

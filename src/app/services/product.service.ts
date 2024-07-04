@@ -50,4 +50,16 @@ export class ProductService {
       }),
     )
   }
+
+  // add product
+
+  addProduct(product: any): Observable<any> {
+    return this.http.post<any>(this.productUrl, product)
+  }
+
+  // update product
+
+  updateProduct(product: any): Observable<any> {
+    return this.http.put<any>(`${this.productUrl}/${product.id}`, product)
+  }
 }
