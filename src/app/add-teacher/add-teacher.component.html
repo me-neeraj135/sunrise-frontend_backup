@@ -1,0 +1,90 @@
+<!-- <div class="page-wraper">
+    <app-header-light7></app-header-light7>
+</div> -->
+<div class="teacherFormWrapper">
+
+    <h1> Add New Teacher</h1>
+
+    <form [formGroup]="teacherForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="name">Name:</label>
+            <input id="name" type="text" formControlName="name" required>
+            <!-- <div
+            *ngIf="teacherForm.getControl('name').invalid && (teacherForm.getControl('name').dirty || teacherForm.getControl('name').touched)">
+            <div *ngIf="teacherForm.getControl('name').errors.required">
+                Name is required.
+            </div>
+        </div> -->
+        </div>
+
+
+        <div>
+            <label for="age">Age:</label>
+            <input id="age" type="number" formControlName="age" required>
+            <!-- <div
+                    *ngIf="teacherForm.getControl('name').invalid && (teacherForm.getControl('name').dirty || teacherForm.getControl('name').touched)">
+                    <div *ngIf="teacherForm.getControl('name').errors.required">
+                        Name is required.
+                    </div>
+                </div> -->
+        </div>
+        <div>
+            <label for="gender">Gender:</label>
+            <input id="gender" type="text" formControlName="gender" required>
+            <!-- <div
+                            *ngIf="teacherForm.getControl('name').invalid && (teacherForm.getControl('name').dirty || teacherForm.getControl('name').touched)">
+                            <div *ngIf="teacherForm.getControl('name').errors.required">
+                                Name is required.
+                            </div>
+                        </div> -->
+        </div>
+
+        <div>
+            <label for="position">Position:</label>
+            <input id="position" type="text" formControlName="position" required>
+            <!-- <div
+                            *ngIf="teacherForm.getControl('name').invalid && (teacherForm.getControl('name').dirty || teacherForm.getControl('name').touched)">
+                            <div *ngIf="teacherForm.getControl('name').errors.required">
+                                Name is required.
+                            </div>
+                        </div> -->
+        </div>
+        <div>
+            <label for="subject">Subject:</label>
+            <input id="subject" type="text" formControlName="subject">
+            <!-- <div
+            *ngIf="teacherForm.getControl('subject').invalid && (teacherForm.getControl('subject').dirty || teacherForm.getControl('subject').touched)">
+            <div *ngIf="teacherForm.getControl('subject').errors.required">
+                Subject is required.
+            </div>
+        </div> -->
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input id="email" type="email" formControlName="email">
+            <!-- <div
+            *ngIf="teacherForm.getControl('email').invalid && (teacherForm.getControl('email').dirty || teacherForm.getControl('email').touched)">
+            <div *ngIf="teacherForm.getControl('email').errors.required">
+                Email is required.
+            </div>
+            <div>
+                Email is invalid.
+            </div>
+        </div> -->
+        </div>
+
+        <div>
+            <label for="image">Image</label>
+            <input id="image" class="imgInputWrapper" type="file" (change)="onFileChange($event)" multiple />
+        </div>
+        <div class="imgsWrapper">
+            <div *ngFor="let img of images">
+                <img [src]="img" alt="Teacher Image" style="width: 100px; height: 100px;" />
+
+
+            </div>
+        </div>
+        <button type="submit" [disabled]="teacherForm.invalid">Add Teacher</button>
+    </form>
+</div>

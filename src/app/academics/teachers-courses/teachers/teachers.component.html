@@ -12,7 +12,10 @@
       <!-- Our Team -->
       <div class="section-full content-inner">
         <div class="container">
+          <button *ngIf="user&&user.userType==='admin'" class="addTeacherBtn" (click)="addNewTeacher($event)">add new
+            Teacher</button>
           <div class="row">
+
             <div *ngFor="let data of teachersData" class="col-lg-3 col-md-6 col-sm-6">
               <div class="dlab-box m-b30 dlab-team1">
                 <div class="dlab-media">
