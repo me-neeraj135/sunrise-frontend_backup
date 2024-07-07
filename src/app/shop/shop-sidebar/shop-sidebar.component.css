@@ -3,10 +3,7 @@
   background-color: white;
   border: 1px solid gray;
 }
-.addProductBtn:hover > a {
-  background-color: black;
-  color: white;
-}
+
 .nw {
   display: flex;
   justify-content: space-between;

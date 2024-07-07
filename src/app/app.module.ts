@@ -180,7 +180,9 @@ import { HttpClientModule } from '@angular/common/http'
 import { AboutSunriseComponent } from './about-us/about-sunrise/about-sunrise.component'
 import { ReactiveFormsModule } from '@angular/forms'
 import { AddProductComponent } from './add-product/add-product.component'
-import { UpdateProductComponent } from './update-product/update-product.component'
+import { UpdateProductComponent } from './update-product/update-product.component';
+import { AddTeacherComponent } from './add-teacher/add-teacher.component';
+import { AddEventComponent } from './add-event/add-event.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -357,6 +359,8 @@ import { UpdateProductComponent } from './update-product/update-product.componen
     AboutSunriseComponent,
     AddProductComponent,
     UpdateProductComponent,
+    AddTeacherComponent,
+    AddEventComponent,
   ],
   imports: [
     BrowserModule,

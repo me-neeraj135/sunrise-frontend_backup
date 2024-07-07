@@ -1,0 +1,81 @@
+<div class="eventFormWrapper">
+    <h1>
+        Add new Event
+    </h1>
+    <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="name">Organizer Name:</label>
+            <input id="name" type="text" formControlName="name">
+            <!-- <div
+                *ngIf="eventForm.get('name').invalid && (eventForm.get('name').dirty || eventForm.get('name').touched)">
+                <div *ngIf="eventForm.get('name').errors.required">Name is required.</div>
+            </div> -->
+        </div>
+
+        <div>
+            <label for="date">Event Date:</label>
+            <input id="date" type="date" formControlName="date">
+            <!-- <div
+                *ngIf="eventForm.get('date').invalid && (eventForm.get('date').dirty || eventForm.get('date').touched)">
+                <div *ngIf="eventForm.get('date').errors.required">Date is required.</div>
+            </div> -->
+        </div>
+
+        <div>
+            <label for="time">Time:</label>
+            <input id="time" type="time" formControlName="time">
+            <!-- <div
+                *ngIf="eventForm.get('location').invalid && (eventForm.get('location').dirty || eventForm.get('location').touched)">
+                <div *ngIf="eventForm.get('location').errors.required">Location is required.</div>
+            </div> -->
+        </div>
+        <div>
+            <label for="email">email:</label>
+            <input id="email" type="email" formControlName="email">
+            <!-- <div
+                        *ngIf="eventForm.get('location').invalid && (eventForm.get('location').dirty || eventForm.get('location').touched)">
+                        <div *ngIf="eventForm.get('location').errors.required">Location is required.</div>
+                    </div> -->
+        </div>
+        <div>
+            <label for="phone">Phone:</label>
+            <input id="phone" type="tel" formControlName="phone">
+            <!-- <div
+                        *ngIf="eventForm.get('location').invalid && (eventForm.get('location').dirty || eventForm.get('location').touched)">
+                        <div *ngIf="eventForm.get('location').errors.required">Location is required.</div>
+                    </div> -->
+        </div>
+        <div>
+            <label for="address">Address:</label>
+            <input id="address" type="text" formControlName="address">
+            <!-- <div
+                        *ngIf="eventForm.get('location').invalid && (eventForm.get('location').dirty || eventForm.get('location').touched)">
+                        <div *ngIf="eventForm.get('location').errors.required">Location is required.</div>
+                    </div> -->
+        </div>
+        <div>
+            <label for="about">About-Event:</label>
+            <textarea name="about" id="about" formControlName="about"></textarea>
+            <!-- <div
+                        *ngIf="eventForm.get('location').invalid && (eventForm.get('location').dirty || eventForm.get('location').touched)">
+                        <div *ngIf="eventForm.get('location').errors.required">Location is required.</div>
+                    </div> -->
+        </div>
+
+        <div>
+            <label for="image">Image</label>
+            <input id="image" class="imgInputWrapper" type="file" (change)="onFileChange($event)" multiple />
+        </div>
+        <div class="imgsWrapper">
+            <div *ngFor="let img of images">
+                <img [src]="img" alt="Event Image" style="width: 100px; height: 100px;" />
+
+
+            </div>
+        </div>
+
+
+        <button type="submit" [disabled]="eventForm.invalid">Add Event</button>
+    </form>
+
+</div>

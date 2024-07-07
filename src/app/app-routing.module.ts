@@ -72,7 +72,8 @@ import { PrincipalMessageComponent } from './about-us/principal-message/principa
 import { AboutSunriseComponent } from './about-us/about-sunrise/about-sunrise.component'
 import { AddProductComponent } from './add-product/add-product.component'
 import { UpdateProductComponent } from './update-product/update-product.component'
-
+import { AddTeacherComponent } from './add-teacher/add-teacher.component'
+import { AddEventComponent } from './add-event/add-event.component'
 const routes: Routes = [
   // Home --
   { path: '', redirectTo: '/home-school', pathMatch: 'full' },
@@ -88,7 +89,9 @@ const routes: Routes = [
   // Academics
   // Events-Recognitions
   { path: 'event', component: EventsComponent },
+  { path: 'addEvent', component: AddEventComponent },
   { path: 'event-details/:id', component: EventsDetailsComponent },
+
   // Gallary
   { path: 'gallery-grid-2', component: GalleryGrid2Component },
   { path: 'gallery-grid-3', component: GalleryGrid3Component },
@@ -102,6 +105,7 @@ const routes: Routes = [
   // Teachers-Course
   { path: 'teacher', component: TeachersComponent },
   { path: 'teachers-profile/:id', component: TeachersProfileComponent },
+  { path: 'addTeacher', component: AddTeacherComponent },
   { path: 'classes', component: ClassesComponent },
   { path: 'classes-details/:id', component: classesDetailsComponent },
 

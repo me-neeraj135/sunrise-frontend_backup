@@ -41,7 +41,10 @@ textarea {
   border-color: white;
   padding: 0.3rem 1rem;
 }
-
+button[disabled] {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
 /* images */
 .imgsWrapper {
   display: flex;
