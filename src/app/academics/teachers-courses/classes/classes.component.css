@@ -1,0 +1,9 @@
+.addClassBtn {
+  font-size: 10px;
+
+  border: 1px solid gray;
+  border-radius: 3px;
+
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+}

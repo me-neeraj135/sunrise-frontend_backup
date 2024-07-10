@@ -182,7 +182,10 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { AddProductComponent } from './add-product/add-product.component'
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { AddTeacherComponent } from './add-teacher/add-teacher.component';
-import { AddEventComponent } from './add-event/add-event.component'
+import { AddEventComponent } from './add-event/add-event.component';
+import { AddClassComponent } from './add-class/add-class.component';
+import { AddServiceComponent } from './add-service/add-service.component';
+import { AddTestimonialsComponent } from './add-testimonials/add-testimonials.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -361,6 +364,9 @@ import { AddEventComponent } from './add-event/add-event.component'
     UpdateProductComponent,
     AddTeacherComponent,
     AddEventComponent,
+    AddClassComponent,
+    AddServiceComponent,
+    AddTestimonialsComponent,
   ],
   imports: [
     BrowserModule,

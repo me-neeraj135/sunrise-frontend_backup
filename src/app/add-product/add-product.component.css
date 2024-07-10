@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .pdFormHeader {
   font-size: 25px;
   text-align: center;
@@ -14,7 +17,9 @@
   width: 100%;
 
   padding: 2rem;
-  border-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+
   background-color: gainsboro;
 }
 .pdFormWrapper > form > div {
@@ -24,15 +29,6 @@
   font-weight: 300;
   margin-bottom: 0;
   color: rgb(64, 63, 63);
-}
-.pdFormWrapper > form > div > input,
-textarea {
-  width: 100%;
-  border: none;
-  border-radius: 3px;
-  padding: 0.5rem;
-  background-color: white;
-  outline: none;
 }
 
 .subBtn {
@@ -50,4 +46,12 @@ button[disabled] {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+}
+
+.error {
+  border: 1px solid red;
+}
+.text-danger {
+  font-size: 10px;
+  color: red;
 }
