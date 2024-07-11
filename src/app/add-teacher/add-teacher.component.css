@@ -1,13 +1,12 @@
 .teacherFormWrapper {
   width: 100%;
   height: 100vh;
-  border-radius: 5px;
-  padding: 1rem;
+
   /* background-image: url('https://plus.unsplash.com/premium_vector-1713965460267-a52b5e3af86f?q=80&w=3300&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: cover; */
-  /* background-color: rgba(112, 128, 144, 0.699); */
+  /* background-color: rgba(72, 72, 72, 0.901); */
 }
 h1 {
   text-align: center;
@@ -33,7 +32,8 @@ label {
   margin-bottom: 5px;
 }
 
-input {
+input,
+select {
   width: 100%;
   padding: 8px;
   box-sizing: border-box;

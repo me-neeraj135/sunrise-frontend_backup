@@ -3,41 +3,81 @@
 <div class="pdFormWrapper">
     <h1 class="pdFormHeader">add-new -product !</h1>
 
-    <form [formGroup]="addProductForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="addProductForm" (ngSubmit)="onProductAdd()">
+
+
         <div>
-            <label for="name">Product ID</label>
-            <input id="name" formControlName="name" />
+            <label for="title">Product Name</label>
+            <input id="title" formControlName="title" class="form-control"
+                [ngClass]="{ error:getControl('title')?.errors && getControl('title')?.touched}" required />
+
+            <div *ngIf="getControl('title')?.errors && getControl('title')?.touched">
+                <small class="text-danger" *ngIf="getControl('title')?.errors?.['required']">Name is required
+                </small>
+            </div>
         </div>
 
         <div>
-            <label for="name">Product Name</label>
-            <input id="name" formControlName="name" />
-        </div>
+            <label for="category">Product Category</label>
+            <input id="category" class="form-control" formControlName="category"
+                [ngClass]="{ error:getControl('category')?.errors && getControl('category')?.touched}" required />
 
-        <div>
-            <label for="name">Product Category</label>
-            <input id="name" formControlName="name" />
+            <div *ngIf="getControl('category')?.errors && getControl('category')?.touched">
+                <small class="text-danger" *ngIf="getControl('category')?.errors?.['required']">Category is required
+                </small>
+            </div>
         </div>
 
         <div>
             <label for="price">Price</label>
-            <input id="price" type="number" formControlName="price" />
+            <input id="price" class="form-control" type="number" formControlName="price" required
+                [ngClass]="{ error:getControl('price')?.errors && getControl('price')?.touched}" />
+            <div *ngIf="getControl('price')?.errors && getControl('price')?.touched">
+                <small *ngIf="getControl('price')?.errors?.['required']" class="text-danger">Price is required.</small>
+                <small *ngIf="getControl('price')?.errors?.['pattern']" class="text-danger">Invalid price format. Should
+                    be a number with up
+                    to 2
+                    decimal places.
+
+                </small>
+            </div>
         </div>
         <div>
-            <label for="price">
+            <label for="priceDis">
                 Discount Price
             </label>
-            <input id="price" type="number" formControlName="price" />
+            <input id="priceDis" class="form-control" type="number" formControlName="priceDis"
+                [ngClass]="{ error:getControl('priceDis')?.errors && getControl('priceDis')?.touched}" />
+
+            <div *ngIf="getControl('priceDis')?.errors && getControl('priceDis')?.touched">
+                <small *ngIf="getControl('priceDis')?.errors?.['required']" class="text-danger">priceDis is
+                    required.</small>
+                <small *ngIf="getControl('priceDis')?.errors?.['pattern']" class="text-danger">Invalid priceDis format.
+                    Should
+                    be a number with up
+                    to 2
+                    decimal places.
+
+                </small>
+            </div>
         </div>
 
         <div>
             <label for="description">Description</label>
 
-            <textarea formControlName="description" id=""></textarea>
+            <textarea id="description" class="form-control" formControlName="description"
+                [ngClass]="{ error:getControl('description')?.errors && getControl('description')?.touched}"></textarea>
+
+            <div *ngIf="getControl('description')?.errors && getControl('description')?.touched">
+                <small class="text-danger" *ngIf="getControl('description')?.errors?.['required']">description is
+                    required
+                </small>
+            </div>
         </div>
         <div>
             <label for="images">Image</label>
-            <input id="images" class="imgInputWrapper" type="file" (change)="onFileChange($event)" multiple />
+            <input id="images" class="form-control" type="file" (change)="onFileChange($event)" multiple />
+
         </div>
         <div class="imgsWrapper">
             <div *ngFor="let img of images">

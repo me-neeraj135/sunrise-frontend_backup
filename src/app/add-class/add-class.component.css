@@ -1,0 +1,54 @@
+.classFormWrapper {
+  width: 100%;
+}
+.formBox {
+  width: 50%;
+  margin: 2rem auto;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+  background-color: gainsboro;
+}
+h1 {
+  font-size: 17px;
+  text-align: center;
+  background-color: black;
+  color: ghostwhite;
+}
+form {
+  width: 100%;
+  padding: 1rem;
+}
+form > div {
+  width: 100%;
+  margin-bottom: 15px;
+}
+label {
+  margin-bottom: 2px;
+}
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+}
+.imgsWrapper {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+button {
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  margin: 0.5rem 0;
+  border: none;
+  padding: 1rem;
+  border-radius: 3px;
+}
+button[disabled] {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}

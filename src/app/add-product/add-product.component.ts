@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import { ProductService } from '../services/product.service'
 // import Products from '../../assets/data/product.json'
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router'
 @Component({
   selector: 'app-add-product',
@@ -19,13 +19,18 @@ export class AddProductComponent {
     private router: Router,
   ) {
     this.addProductForm = this.fb.group({
-      productId: ['', Validators.required],
-      title: ['', Validators.required],
-      img: [null, Validators.required],
-      price: [0, [Validators.required, Validators.min(0)]],
-      priceDisc: ['', Validators.required],
-      category: ['', Validators.required],
-      description: ['', Validators.required],
+      title: new FormControl('', [Validators.required]),
+      img: new FormControl(null, [Validators.required]),
+      price: new FormControl('', [
+        Validators.required,
+        Validators.pattern(/^\d+(\.\d{1,2})?$/),
+      ]),
+      priceDis: new FormControl('', [
+        Validators.required,
+        Validators.pattern(/^\d+(\.\d{1,2})?$/),
+      ]),
+      category: new FormControl('', [Validators.required]),
+      description: new FormControl('', [Validators.required]),
     })
   }
   ngOnInit(): void {
@@ -34,6 +39,9 @@ export class AddProductComponent {
     if (userData) {
       this.user = JSON.parse(userData)
     }
+  }
+  getControl(value: any) {
+    return this.addProductForm.get(value)
   }
   onFileChange(event: any) {
     if (event.target.files && event.target.files.length) {
@@ -48,22 +56,29 @@ export class AddProductComponent {
     }
   }
 
-  onSubmit() {
-    const product: any = {
-      ...this.addProductForm.value,
-      images: this.images,
-    }
+  onProductAdd() {
+    console.log('addProduct-submit', this.addProductForm.valid)
 
-    this.productService.addProduct(product).subscribe(
-      (response) => {
-        console.log('Product added successfully!', response)
-        setTimeout(() => {
-          this.router.navigate(['/addProduct'])
-        }, 2000)
-      },
-      (error) => {
-        console.error('Error adding product', error)
-      },
-    )
+    if (this.addProductForm.valid) {
+      const product: any = {
+        ...this.addProductForm.value,
+        images: this.images,
+      }
+      console.log('addProduct-valid', product)
+
+      this.productService.addProduct(product).subscribe(
+        (response) => {
+          console.log('Product added successfully!', response)
+          setTimeout(() => {
+            this.router.navigate(['/addProduct'])
+          }, 2000)
+        },
+        (error) => {
+          console.error('Error adding product', error)
+        },
+      )
+    } else {
+      console.log('product form invalid')
+    }
   }
 }

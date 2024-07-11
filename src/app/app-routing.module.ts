@@ -74,6 +74,7 @@ import { AddProductComponent } from './add-product/add-product.component'
 import { UpdateProductComponent } from './update-product/update-product.component'
 import { AddTeacherComponent } from './add-teacher/add-teacher.component'
 import { AddEventComponent } from './add-event/add-event.component'
+import { AddClassComponent } from './add-class/add-class.component'
 const routes: Routes = [
   // Home --
   { path: '', redirectTo: '/home-school', pathMatch: 'full' },
@@ -108,8 +109,8 @@ const routes: Routes = [
   { path: 'addTeacher', component: AddTeacherComponent },
   { path: 'classes', component: ClassesComponent },
   { path: 'classes-details/:id', component: classesDetailsComponent },
-
-  // Features --
+  { path: 'addClass', component: AddClassComponent },
+  // Features --,
   { path: 'header-style-4', component: HeaderStyle4Component },
 
   { path: 'header-style-6', component: HeaderStyle6Component },
