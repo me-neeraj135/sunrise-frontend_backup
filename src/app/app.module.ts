@@ -179,13 +179,15 @@ import { PrincipalMessageComponent } from './about-us/principal-message/principa
 import { HttpClientModule } from '@angular/common/http'
 import { AboutSunriseComponent } from './about-us/about-sunrise/about-sunrise.component'
 import { ReactiveFormsModule } from '@angular/forms'
-import { AddProductComponent } from './add-product/add-product.component'
+import { AddProductComponent } from './admin-add-group/add-product/add-product.component'
 import { UpdateProductComponent } from './update-product/update-product.component';
-import { AddTeacherComponent } from './add-teacher/add-teacher.component';
-import { AddEventComponent } from './add-event/add-event.component';
-import { AddClassComponent } from './add-class/add-class.component';
-import { AddServiceComponent } from './add-service/add-service.component';
-import { AddTestimonialsComponent } from './add-testimonials/add-testimonials.component'
+import { AddTeacherComponent } from './admin-add-group/add-teacher/add-teacher.component';
+import { AddEventComponent } from './admin-add-group/add-event/add-event.component';
+import { AddClassComponent } from './admin-add-group/add-class/add-class.component';
+import { AddServiceComponent } from './admin-add-group/add-service/add-service.component';
+import { AddTestimonialsComponent } from './admin-add-group/add-testimonials/add-testimonials.component';
+import { SuccessDialogComponent } from './util/success-dialog/success-dialog.component'
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -367,6 +369,7 @@ import { AddTestimonialsComponent } from './add-testimonials/add-testimonials.co
     AddClassComponent,
     AddServiceComponent,
     AddTestimonialsComponent,
+    SuccessDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -374,8 +377,9 @@ import { AddTestimonialsComponent } from './add-testimonials/add-testimonials.co
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatDialogModule,
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

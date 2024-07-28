@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
-import { ClassServiceService } from 'src/app/class-service/class-service.service'
+import { ClassServiceService } from 'src/app/services/class-service.service'
 
 @Component({
   selector: 'app-classes-details',

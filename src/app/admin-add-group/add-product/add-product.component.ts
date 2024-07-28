@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { ProductService } from '../services/product.service'
+import { ProductService } from '../../services/product.service'
 // import Products from '../../assets/data/product.json'
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router'

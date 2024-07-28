@@ -9,6 +9,8 @@ import { map } from 'rxjs/operators';
 export class TeacherService {
   private teachersUrl = 'assets/data/teacher.json'
   private teacherDetailsUrl = 'assets/data/teacher-detail.json';
+  private backendUrl = 'http://localhost:5000/api';
+  private apiUrl = 'http://localhost:5000/api/teachers';
   teacher: any;
 
   constructor(private http: HttpClient) { }
@@ -29,6 +31,22 @@ export class TeacherService {
 
   getTeachers(): Observable<any> {
     return this.http.get<any>(this.teachersUrl);
+  }
+
+  addTeacher(teacher: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, teacher);
+  }
+
+  getBackendTeachers(): Observable<any> {
+    return this.http.get<any>(`${this.backendUrl}/teachers`);
+  }
+
+  getBackendTeacherById(id: string): Observable<any> {
+    return this.http.get<any>(`${this.backendUrl}/teachers`).pipe(
+      map(teachers => teachers.find((teacher: {
+        _id: string; teacherId: any; 
+            }) => teacher._id === id))
+        );
   }
 
   getTeacherDetails(): Observable<any[]> {

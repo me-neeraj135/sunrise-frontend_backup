@@ -22,8 +22,8 @@ export class TeachersProfileComponent {
     private teacherService: TeacherService){}
 
   ngOnInit(): void {
-    this.teacherId = Number(this.route.snapshot.paramMap.get('id'));
-    this.teacherService.getTeacherAndDetailsById(this.teacherId).subscribe((data:any) => {
+    this.teacherId = this.route.snapshot.paramMap.get('id');
+    this.teacherService.getBackendTeacherById(this.teacherId).subscribe((data:any) => {
       this.teacherData = data;
     });
   }

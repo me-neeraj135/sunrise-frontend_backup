@@ -3,16 +3,16 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, forkJoin, map } from 'rxjs';
 
 interface Menu {
-  Id: number;
+  _id: number;
   title: string;
   menuClass: string;
   isActive: boolean;
-  userId: number;
-  order: number;
+  userId: string;
+  orderBy: number;
 }
 
 interface SubMenu {
-  subMenuId: number;
+  _id: number;
   menuId: number;
   title: string;
   route: string;
@@ -49,6 +49,8 @@ interface TransformedSubMenu {
   providedIn: 'root',
 })
 export class MenuService {
+  private apiUrl = 'http://localhost:5000/api/menus';
+
   constructor(private http: HttpClient) {}
 
   private getLoggedInUserId(): number {
@@ -56,18 +58,58 @@ export class MenuService {
     return 1;
   }
 
+  getMenuData3(): Observable<TransformedMenu> {
+    return this.http.get<any>(this.apiUrl);
+  }
+
   getMenuData(): Observable<TransformedMenu[]> {
-    const menuUrl = 'assets/data/menu.json';
-    const subMenuUrl = 'assets/data/sub-menu.json';
-    const loggedInUserId = this.getLoggedInUserId();
+    const menuUrl = 'http://localhost:5000/api/menus';
+    const subMenuUrl = 'http://localhost:5000/api/submenus';
+    const loggedInUserId = '6693c7b58b3d3bde81ec497a';
+    
 
     return forkJoin([this.http.get<Menu[]>(menuUrl), this.http.get<SubMenu[]>(subMenuUrl)]).pipe(
       map(([menus, subMenus]) => {
         // Filter menus by logged-in user ID and sort by 'order'
-        const filteredMenus = menus.filter(menu => menu.userId === loggedInUserId).sort((a, b) => a.order - b.order);
+        const filteredMenus = menus.filter(menu => menu.userId === loggedInUserId).sort((a, b) => a.orderBy - b.orderBy);
 
         const transformedMenus: TransformedMenu[] = filteredMenus.map((menu) => {
-          const relevantSubMenus = subMenus.filter((subMenu) => subMenu.menuId === menu.Id);
+          const relevantSubMenus = subMenus.filter((subMenu) => subMenu.menuId === menu._id);
+          const transformedSubMenus: TransformedSubMenu[] = relevantSubMenus.map((subMenu) => ({
+            title: subMenu.title,
+            route: subMenu.route,
+            subSubMenu: subMenu.subSubMenu?.map((subSub) => ({
+              title: subSub.title,
+              route: subSub.route,
+            })),
+          }));
+
+          return {
+            title: menu.title,
+            menuClass: menu.menuClass,
+            subMenuClass: relevantSubMenus.length ? relevantSubMenus[0].subMenuClass : undefined,
+            subMenu: transformedSubMenus,
+          };
+        });
+
+        return transformedMenus;
+      })
+    );
+  }
+
+  getMenuData2(): Observable<TransformedMenu[]> {
+    const menuUrl = 'assets/data/menu.json';
+    const subMenuUrl = 'assets/data/sub-menu.json';
+    const loggedInUserId = '6693c7b58b3d3bde81ec497a';
+    
+
+    return forkJoin([this.http.get<Menu[]>(menuUrl), this.http.get<SubMenu[]>(subMenuUrl)]).pipe(
+      map(([menus, subMenus]) => {
+        // Filter menus by logged-in user ID and sort by 'order'
+        const filteredMenus = menus.filter(menu => menu.userId === loggedInUserId).sort((a, b) => a.orderBy - b.orderBy);
+
+        const transformedMenus: TransformedMenu[] = filteredMenus.map((menu) => {
+          const relevantSubMenus = subMenus.filter((subMenu) => subMenu.menuId === menu._id);
           const transformedSubMenus: TransformedSubMenu[] = relevantSubMenus.map((subMenu) => ({
             title: subMenu.title,
             route: subMenu.route,

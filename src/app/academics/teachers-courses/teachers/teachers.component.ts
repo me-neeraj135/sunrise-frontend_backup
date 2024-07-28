@@ -19,7 +19,7 @@ export class TeachersComponent {
   constructor(private teacherService: TeacherService, private router: Router) {}
 
   ngOnInit(): void {
-    this.teacherService.getTeachers().subscribe((data: any) => {
+    this.teacherService.getBackendTeachers().subscribe((data: any) => {
       this.teachersData = data
     })
     const userData = localStorage.getItem('currentUser')
