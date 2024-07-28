@@ -70,11 +70,11 @@ import { CommonModule } from '@angular/common'
 import { HomeSchoolComponent } from './home-school/home-school.component'
 import { PrincipalMessageComponent } from './about-us/principal-message/principal-message.component'
 import { AboutSunriseComponent } from './about-us/about-sunrise/about-sunrise.component'
-import { AddProductComponent } from './add-product/add-product.component'
+import { AddProductComponent } from './admin-add-group/add-product/add-product.component'
 import { UpdateProductComponent } from './update-product/update-product.component'
-import { AddTeacherComponent } from './add-teacher/add-teacher.component'
-import { AddEventComponent } from './add-event/add-event.component'
-import { AddClassComponent } from './add-class/add-class.component'
+import { AddTeacherComponent } from './admin-add-group/add-teacher/add-teacher.component'
+import { AddEventComponent } from './admin-add-group/add-event/add-event.component'
+import { AddClassComponent } from './admin-add-group/add-class/add-class.component'
 const routes: Routes = [
   // Home --
   { path: '', redirectTo: '/home-school', pathMatch: 'full' },

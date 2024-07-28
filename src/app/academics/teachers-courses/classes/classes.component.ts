@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
-import { ClassServiceService } from 'src/app/class-service/class-service.service'
-import { AddClassComponent } from 'src/app/add-class/add-class.component'
+import { ClassServiceService } from 'src/app/services/class-service.service'
+import { AddClassComponent } from 'src/app/admin-add-group/add-class/add-class.component'
 import {
   FormBuilder,
   FormGroup,
