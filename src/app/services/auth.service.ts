@@ -10,32 +10,12 @@ import { Router } from '@angular/router'
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000/users' // Replace with your backend API URL
+  private apiUrl = 'http://localhost:5000/api'
 
   constructor(private http: HttpClient, private router: Router) {}
 
   login(email: string, password: string): Observable<any> {
-    return this.http
-      .get<any[]>(`${this.apiUrl}?email=${email}&password=${password}`)
-      .pipe(
-        map((users) => {
-          console.log('usr', users)
-          if (users.length) {
-            const user = users[0]
-            if (user.email === email && user.password === password) {
-              localStorage.setItem('currentUser', JSON.stringify(user))
-              return user
-            } else {
-              return throwError(() => new Error(`User not register`))
-            }
-          }
-          return null
-        }),
-        catchError((error) => {
-          console.error('Error fetching users', error)
-          return of(null)
-        }),
-      )
+    return this.http.post<any>(`${this.apiUrl}/login`, { email, password });
   }
 
   getUser() {

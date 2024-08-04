@@ -22,17 +22,5 @@ export class TeachersComponent {
     this.teacherService.getBackendTeachers().subscribe((data: any) => {
       this.teachersData = data
     })
-    const userData = localStorage.getItem('currentUser')
-
-    if (userData) {
-      this.user = JSON.parse(userData)
-    }
-  }
-
-  addNewTeacher(event: Event): void {
-    console.log('Button was clicked!', event)
-    this.showTeacherForm = true
-    this.router.navigate(['/addTeacher'])
-    console.log('form', this.showTeacherForm)
   }
 }

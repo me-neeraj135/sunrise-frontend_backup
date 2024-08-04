@@ -62,58 +62,11 @@ export class MenuService {
     return this.http.get<any>(this.apiUrl)
   }
 
-  getMenuData(): Observable<TransformedMenu[]> {
-    const menuUrl = 'http://localhost:5000/api/menus'
-    const subMenuUrl = 'http://localhost:5000/api/submenus'
-    const loggedInUserId = '6693c7b58b3d3bde81ec497a'
-    // const loggedInUserId = '66a5d530e5d656345c0862be'
-
-    return forkJoin([
-      this.http.get<Menu[]>(menuUrl),
-      this.http.get<SubMenu[]>(subMenuUrl),
-    ]).pipe(
-      map(([menus, subMenus]) => {
-        // Filter menus by logged-in user ID and sort by 'order'
-        const filteredMenus = menus
-          .filter((menu) => menu.userId === loggedInUserId)
-          .sort((a, b) => a.orderBy - b.orderBy)
-
-        const transformedMenus: TransformedMenu[] = filteredMenus.map(
-          (menu) => {
-            const relevantSubMenus = subMenus.filter(
-              (subMenu) => subMenu.menuId === menu._id,
-            )
-            const transformedSubMenus: TransformedSubMenu[] = relevantSubMenus.map(
-              (subMenu) => ({
-                title: subMenu.title,
-                route: subMenu.route,
-                subSubMenu: subMenu.subSubMenu?.map((subSub) => ({
-                  title: subSub.title,
-                  route: subSub.route,
-                })),
-              }),
-            )
-
-            return {
-              title: menu.title,
-              menuClass: menu.menuClass,
-              subMenuClass: relevantSubMenus.length
-                ? relevantSubMenus[0].subMenuClass
-                : undefined,
-              subMenu: transformedSubMenus,
-            }
-          },
-        )
-
-        return transformedMenus
-      }),
-    )
-  }
-
-  getMenuData2(): Observable<TransformedMenu[]> {
-    const menuUrl = 'assets/data/menu.json'
-    const subMenuUrl = 'assets/data/sub-menu.json'
-    const loggedInUserId = '6693c7b58b3d3bde81ec497a'
+  getMenuData(userType : any): Observable<TransformedMenu[]> {
+    const menuUrl = 'http://localhost:5000/api/menus';
+    const subMenuUrl = 'http://localhost:5000/api/submenus';
+    const loggedInUserId = (userType == 'admin') ? '66a5d530e5d656345c0862be' : '6693c7b58b3d3bde81ec497a';
+    
 
     return forkJoin([
       this.http.get<Menu[]>(menuUrl),
