@@ -62,10 +62,10 @@ export class MenuService {
     return this.http.get<any>(this.apiUrl);
   }
 
-  getMenuData(): Observable<TransformedMenu[]> {
+  getMenuData(userType : any): Observable<TransformedMenu[]> {
     const menuUrl = 'http://localhost:5000/api/menus';
     const subMenuUrl = 'http://localhost:5000/api/submenus';
-    const loggedInUserId = '6693c7b58b3d3bde81ec497a';
+    const loggedInUserId = (userType == 'admin') ? '66a5d530e5d656345c0862be' : '6693c7b58b3d3bde81ec497a';
     
 
     return forkJoin([this.http.get<Menu[]>(menuUrl), this.http.get<SubMenu[]>(subMenuUrl)]).pipe(
