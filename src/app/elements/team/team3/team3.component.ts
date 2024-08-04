@@ -12,7 +12,7 @@ export class Team3Component {
   constructor(private teacherService: TeacherService){}
 
   ngOnInit(): void {
-    this.teacherService.getTeachers().subscribe((data:any) => {
+    this.teacherService.getBackendTeachers().subscribe((data:any) => {
       this.teachersData = data;
     });
   }
