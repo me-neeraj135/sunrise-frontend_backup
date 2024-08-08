@@ -1,25 +1,4 @@
-.classFormWrapper {
-  width: 100%;
-}
-.formBox {
-  width: 50%;
-  margin: 2rem auto;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
-    rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
-  background-color: gainsboro;
-}
-h1 {
-  font-size: 17px;
-  text-align: center;
-  background-color: black;
-  color: ghostwhite;
-}
-form {
-  width: 100%;
-  padding: 1rem;
-}
 form > div {
-  width: 100%;
   margin-bottom: 15px;
 }
 label {

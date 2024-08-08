@@ -25,7 +25,7 @@
 
                                     <div class="form-group">
                                         <label for="name" class="font-weight-700">Name *</label>
-                                        <input id="name" formControlName="name" class="form-control" placeholder="Name" type="text" required
+                                        <input id="name" formControlName="name" placeholder="Name" type="text" required
                                             [ngClass]="{ error: getControl('name')?.errors && getControl('name')?.touched }">
                                         <div *ngIf="getControl('name')?.errors && getControl('name')?.touched">
                                             <small class="text-danger" *ngIf="getControl('name')?.errors?.['required']">
@@ -36,7 +36,7 @@
 
                                     <div class="form-group">
                                         <label for="age" class="font-weight-700">Age *</label>
-                                        <input id="age" formControlName="age" class="form-control" placeholder="Age" type="number" required
+                                        <input id="age" formControlName="age" placeholder="Age" type="number" required
                                             [ngClass]="{ error: getControl('age')?.errors && getControl('age')?.touched }">
                                         <div *ngIf="getControl('age')?.errors && getControl('age')?.touched">
                                             <small class="text-danger" *ngIf="getControl('age')?.errors?.['required']">
@@ -50,13 +50,15 @@
 
                                     <div class="form-group">
                                         <label for="gender" class="font-weight-700">Gender *</label>
-                                        <select id="gender" formControlName="gender" class="form-control"
+                                        <select id="gender" formControlName="gender"
                                             [ngClass]="{ error: getControl('gender')?.errors && getControl('gender')?.touched }">
                                             <option value="" disabled>Select Gender</option>
-                                            <option *ngFor="let gender of genderOptions" [value]="gender">{{ gender }}</option>
+                                            <option *ngFor="let gender of genderOptions" [value]="gender">{{ gender }}
+                                            </option>
                                         </select>
                                         <div *ngIf="getControl('gender')?.errors && getControl('gender')?.touched">
-                                            <small class="text-danger" *ngIf="getControl('gender')?.errors?.['required']">
+                                            <small class="text-danger"
+                                                *ngIf="getControl('gender')?.errors?.['required']">
                                                 Gender is required.
                                             </small>
                                         </div>
@@ -64,10 +66,12 @@
 
                                     <div class="form-group">
                                         <label for="position" class="font-weight-700">Position *</label>
-                                        <input id="position" formControlName="position" class="form-control" placeholder="Position" type="text" required
+                                        <input id="position" formControlName="position" placeholder="Position"
+                                            type="text" required
                                             [ngClass]="{ error: getControl('position')?.errors && getControl('position')?.touched }">
                                         <div *ngIf="getControl('position')?.errors && getControl('position')?.touched">
-                                            <small class="text-danger" *ngIf="getControl('position')?.errors?.['required']">
+                                            <small class="text-danger"
+                                                *ngIf="getControl('position')?.errors?.['required']">
                                                 Position is required.
                                             </small>
                                         </div>
@@ -75,10 +79,12 @@
 
                                     <div class="form-group">
                                         <label for="subject" class="font-weight-700">Subject *</label>
-                                        <input id="subject" formControlName="subject" class="form-control" placeholder="Subject" type="text" required
+                                        <input id="subject" formControlName="subject" placeholder="Subject" type="text"
+                                            required
                                             [ngClass]="{ error: getControl('subject')?.errors && getControl('subject')?.touched }">
                                         <div *ngIf="getControl('subject')?.errors && getControl('subject')?.touched">
-                                            <small class="text-danger" *ngIf="getControl('subject')?.errors?.['required']">
+                                            <small class="text-danger"
+                                                *ngIf="getControl('subject')?.errors?.['required']">
                                                 Subject is required.
                                             </small>
                                         </div>
@@ -86,10 +92,12 @@
 
                                     <div class="form-group">
                                         <label for="email" class="font-weight-700">Email *</label>
-                                        <input id="email" formControlName="email" class="form-control" placeholder="Email" type="email" required
+                                        <input id="email" formControlName="email" placeholder="Email" type="email"
+                                            required
                                             [ngClass]="{ error: getControl('email')?.errors && getControl('email')?.touched }">
                                         <div *ngIf="getControl('email')?.errors && getControl('email')?.touched">
-                                            <small class="text-danger" *ngIf="getControl('email')?.errors?.['required']">
+                                            <small class="text-danger"
+                                                *ngIf="getControl('email')?.errors?.['required']">
                                                 Email is required.
                                             </small>
                                             <small class="text-danger" *ngIf="getControl('email')?.errors?.['email']">
@@ -100,27 +108,42 @@
 
                                     <div class="form-group">
                                         <label for="about" class="font-weight-700">About</label>
-                                        <textarea id="about" formControlName="about" class="form-control" placeholder="About"></textarea>
+                                        <textarea id="about" formControlName="about" placeholder="About"></textarea>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="duty" class="font-weight-700">Duty</label>
-                                        <textarea id="duty" formControlName="duty" class="form-control" placeholder="Duty"></textarea>
+                                        <textarea id="duty" formControlName="duty" placeholder="Duty"></textarea>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="experience" class="font-weight-700">Experience</label>
-                                        <input id="experience" formControlName="experience" class="form-control" placeholder="Experience" type="text">
+                                        <input id="experience" formControlName="experience" placeholder="Experience"
+                                            type="text">
+                                    </div>
+                                    <div>
+                                        <label for="teacherImage">Teacher Image</label>
+                                        <input type="file" (change)="onFileChange($event)" multiple />
+                                        <div *ngIf="getControl('teacherImage')?.errors?.['required']">
+                                            <small class=" error">Image is required.</small>
+                                        </div>
+                                        <div *ngIf="getControl('teacherImage')?.errors?.['invalidFileType']">
+                                            <small class="error">Invalid file type. Only JPEG, PNG, and GIF are
+                                                allowed.</small>
+                                        </div>
+
+                                    </div>
+                                    <div class="imgsWrapper">
+
+
+                                        <h3>Image Preview:</h3>
+                                        <div *ngFor="let image of images">
+                                            <img [src]="image" alt="Image Preview"
+                                                style="max-width: 100px; max-height: 100px;" />
+                                        </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="image" class="font-weight-700">Image</label>
-                                        <input id="image" class="form-control" type="file" (change)="onFileChange($event)" />
-                                    </div>
-
-                                    <div class="text-left m-t15">
-                                        <button type="submit" class="site-button button-lg radius-no outline outline-2">ADD TEACHER</button>
-                                    </div>
+                                    <button type="submit" [disabled]="teacherForm.invalid">Add TEACHER</button>
                                 </form>
                             </div>
                         </div>
