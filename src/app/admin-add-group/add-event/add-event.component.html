@@ -1,81 +1,196 @@
-<div class="eventFormWrapper">
-    <h1>
-        Add new Event
-    </h1>
-    <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
-        <div>
-            <label for="name">Organizer Name:</label>
-            <input id="name" type="text" formControlName="name">
-            <!-- <div
-                *ngIf="eventForm.get('name').invalid && (eventForm.get('name').dirty || eventForm.get('name').touched)">
-                <div *ngIf="eventForm.get('name').errors.required">Name is required.</div>
-            </div> -->
-        </div>
+<div class="page-wraper">
+    <app-header-light7></app-header-light7>
 
-        <div>
-            <label for="date">Event Date:</label>
-            <input id="date" type="date" formControlName="date">
-            <!-- <div
-                *ngIf="eventForm.get('date').invalid && (eventForm.get('date').dirty || eventForm.get('date').touched)">
-                <div *ngIf="eventForm.get('date').errors.required">Date is required.</div>
-            </div> -->
-        </div>
+    <div class="page-content bg-white">
+        <!-- inner page banner -->
+        <app-banner1 [data]="banner"></app-banner1>
+        <!-- inner page banner END -->
 
-        <div>
-            <label for="time">Time:</label>
-            <input id="time" type="time" formControlName="time">
-            <!-- <div
-                *ngIf="eventForm.get('location').invalid && (eventForm.get('location').dirty || eventForm.get('location').touched)">
-                <div *ngIf="eventForm.get('location').errors.required">Location is required.</div>
-            </div> -->
-        </div>
-        <div>
-            <label for="email">email:</label>
-            <input id="email" type="email" formControlName="email">
-            <!-- <div
-                        *ngIf="eventForm.get('location').invalid && (eventForm.get('location').dirty || eventForm.get('location').touched)">
-                        <div *ngIf="eventForm.get('location').errors.required">Location is required.</div>
-                    </div> -->
-        </div>
-        <div>
-            <label for="phone">Phone:</label>
-            <input id="phone" type="tel" formControlName="phone">
-            <!-- <div
-                        *ngIf="eventForm.get('location').invalid && (eventForm.get('location').dirty || eventForm.get('location').touched)">
-                        <div *ngIf="eventForm.get('location').errors.required">Location is required.</div>
-                    </div> -->
-        </div>
-        <div>
-            <label for="address">Address:</label>
-            <input id="address" type="text" formControlName="address">
-            <!-- <div
-                        *ngIf="eventForm.get('location').invalid && (eventForm.get('location').dirty || eventForm.get('location').touched)">
-                        <div *ngIf="eventForm.get('location').errors.required">Location is required.</div>
-                    </div> -->
-        </div>
-        <div>
-            <label for="about">About-Event:</label>
-            <textarea name="about" id="about" formControlName="about"></textarea>
-            <!-- <div
-                        *ngIf="eventForm.get('location').invalid && (eventForm.get('location').dirty || eventForm.get('location').touched)">
-                        <div *ngIf="eventForm.get('location').errors.required">Location is required.</div>
-                    </div> -->
-        </div>
+        <div class="section-full content-inner shop-account">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="font-weight-700 m-t0 m-b40">ADD NEW EVENT</h2>
+                    </div>
+                </div>
 
-        <div>
-            <label for="image">Image</label>
-            <input id="image" class="imgInputWrapper" type="file" (change)="onFileChange($event)" multiple />
-        </div>
-        <div class="imgsWrapper">
-            <div *ngFor="let img of images">
-                <img [src]="img" alt="Event Image" style="width: 100px; height: 100px;" />
+                <div class="row">
+                    <div class="col-lg-12 m-b30">
+                        <div class="p-a30 border-1 max-w750 m-auto">
+                            <div class="tab-content">
+                                <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+                                    <div>
+                                        <label for="organizerName">Organizer Name:</label>
+                                        <input id="organizerName" type="text" formControlName="organizerName">
+                                        <div
+                                            *ngIf="eventForm.get('organizerName')?.errors?.['required'] && (eventForm.get('organizerName')?.dirty || eventForm.get('organizerName')?.touched)">
+                                            <small class="error"> organizer Name is required.</small>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label for="eventHighLight">Event Highlight:</label>
+                                        <input id="eventHighLight" type="text" formControlName="eventHighLight">
+                                        <div
+                                            *ngIf="eventForm.get('eventHighLight')?.errors?.['required'] && (eventForm.get('eventHighLight')?.dirty || eventForm.get('eventHighLight')?.touched)">
+                                            <small class="error"> Highlight is required.</small>
+                                        </div>
+                                    </div>
 
 
+                                    <div>
+                                        <label for="eventTitle">Event Title:</label>
+                                        <input id="eventTitle" type="text" formControlName="eventTitle">
+                                        <div
+                                            *ngIf="eventForm.get('eventTitle')?.errors?.['required'] && (eventForm.get('eventTitle')?.dirty || eventForm.get('eventTitle')?.touched)">
+                                            <small class="error"> Event Title is required.</small>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label for="startDate">Event Start Date:</label>
+                                        <input id="startDate" type="date" formControlName="startDate">
+                                        <div
+                                            *ngIf="eventForm.get('startDate')?.errors?.['required'] && (eventForm.get('startDate')?.dirty || eventForm.get('startDate')?.touched)">
+                                            <small class="error">startDate is required.</small>
+                                        </div>
+                                    </div>
+
+
+                                    <div>
+                                        <label for="endDate">Event End Date:</label>
+                                        <input id="endDate" type="date" formControlName="endDate">
+                                        <div
+                                            *ngIf="eventForm.get('endDate')?.errors?.['required'] && (eventForm.get('endDate')?.dirty || eventForm.get('endDate')?.touched)">
+                                            <small class="error">End Date is required.</small>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label for="startTime">Start Time:</label>
+                                        <input id="startTime" type="time" formControlName="startTime">
+                                        <div
+                                            *ngIf="eventForm.get('startTime')?.errors?.['required'] && (eventForm.get('startTime')?.dirty || eventForm.get('startTime')?.touched)">
+                                            <small class="error"> Start Time is required.</small>
+                                        </div>
+                                    </div>
+
+
+                                    <div>
+                                        <label for="endTime">End Time:</label>
+                                        <input id="endTime" type="time" formControlName="endTime">
+                                        <div
+                                            *ngIf="eventForm.get('endTime')?.errors?.['required'] && (eventForm.get('endTime')?.dirty || eventForm.get('endTime')?.touched)">
+                                            <small class="error"> End Time is required.</small>
+                                        </div>
+                                    </div>
+
+
+                                    <div>
+                                        <label for="email">Email:</label>
+                                        <input id="email" type="email" formControlName="email">
+                                        <div
+                                            *ngIf="eventForm.get('email')?.errors?.['required'] && (eventForm.get('email')?.dirty || eventForm.get('email')?.touched)">
+                                            <small class="error">Email is required.</small>
+                                        </div>
+                                        <div
+                                            *ngIf="eventForm.get('email')?.errors?.['email'] && (eventForm.get('email')?.dirty || eventForm.get('email')?.touched)">
+                                            <small class="error">Invalid email format.</small>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label for="phone">Phone:</label>
+                                        <input id="phone" type="tel" formControlName="phone">
+                                        <div
+                                            *ngIf="eventForm.get('phone')?.errors?.['required'] && (eventForm.get('phone')?.dirty || eventForm.get('phone')?.touched)">
+                                            <small class="error">Phone is required.</small>
+                                        </div>
+                                        <div
+                                            *ngIf="eventForm.get('phone')?.errors?.['pattern'] && (eventForm.get('phone')?.dirty || eventForm.get('phone')?.touched)">
+                                            <small class="error">Invalid phone number. Must be 10 digits.</small>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label for="eventAddress">Event Address:</label>
+                                        <input id="eventAddress" type="text" formControlName="eventAddress">
+                                        <div
+                                            *ngIf="eventForm.get('eventAddress')?.errors?.['required'] && (eventForm.get('eventAddress')?.dirty || eventForm.get('eventAddress')?.touched)">
+                                            <small class="error">Event Address is required.</small>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label for="aboutEvent">About Event:</label>
+                                        <textarea id="aboutEvent" formControlName="aboutEvent"></textarea>
+                                        <div
+                                            *ngIf="eventForm.get('aboutEvent')?.errors?.['required'] && (eventForm.get('aboutEvent')?.dirty || eventForm.get('aboutEvent')?.touched)">
+                                            <small class="error">About event is required.</small>
+                                        </div>
+                                    </div>
+
+
+                                    <div>
+                                        <label for="eventLabel"> Event Label:</label>
+                                        <textarea id="eventLabel" formControlName="eventLabel"></textarea>
+                                        <div
+                                            *ngIf="eventForm.get('eventLabel')?.errors?.['required'] && (eventForm.get('eventLabel')?.dirty || eventForm.get('eventLabel')?.touched)">
+                                            <small class="error"> Event label is required.</small>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="eventYear">Event Year:</label>
+                                        <input id="eventYear" type="number" formControlName="eventYear" min="1900"
+                                            [max]="currentYear">
+                                        <div
+                                            *ngIf="eventForm.get('eventYear')?.errors?.['required'] && (eventForm.get('eventYear')?.dirty || eventForm.get('eventYear')?.touched)">
+                                            <small class="error"> Event Year is required.</small>
+                                        </div>
+
+                                        <div
+                                            *ngIf="getControl('eventYear')?.errors?.['invalidYear'] && (getControl('eventYear')?.dirty || getControl('eventYear')?.touched)">
+                                            <small class="error">Invalid eventYear. Must be between 1900 and
+                                                {{currentYear}}.</small>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label for="eventImage">Event Image</label>
+                                        <input type="file" (change)="onFileChange($event)" multiple />
+                                        <div *ngIf="getControl('eventImage')?.errors?.['required']">
+                                            <small class="">Image is required.</small>
+                                        </div>
+                                        <div *ngIf="getControl('eventImage')?.errors?.['invalidFileType']">
+                                            <small class="error">Invalid file type. Only JPEG, PNG, and GIF are allowed.
+                                            </small>
+                                        </div>
+
+                                    </div>
+                                    <div class="imgsWrapper">
+
+
+                                        <h3>Image Preview:</h3>
+                                        <div *ngFor="let image of images">
+                                            <img [src]="image" alt="Image Preview"
+                                                style="max-width: 100px; max-height: 100px;" />
+                                        </div>
+
+                                    </div>
+                                    <button type="submit" [disabled]="eventForm.invalid">Add Event</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
 
-
-        <button type="submit" [disabled]="eventForm.invalid">Add Event</button>
-    </form>
-
+    <app-newsletter2></app-newsletter2>
+    <!-- Footer -->
+    <app-footer13></app-footer13>
+    <!-- Footer END-->
+    <!-- scroltop -->
+    <app-scroltop></app-scroltop>
 </div>

@@ -1,13 +1,18 @@
 import { Component } from '@angular/core'
+import { ClassServiceService } from 'src/app/services/class-service.service'
 import {
   FormBuilder,
   FormGroup,
   NgForm,
   Validators,
   FormControl,
+  AbstractControl,
+  ValidationErrors,
 } from '@angular/forms'
 import { Router } from '@angular/router'
 import { throwError } from 'rxjs'
+import { MatDialog } from '@angular/material/dialog'
+import { SuccessDialogComponent } from 'src/app/util/success-dialog/success-dialog.component'
 @Component({
   selector: 'app-add-class',
   templateUrl: './add-class.component.html',
@@ -18,37 +23,114 @@ export class AddClassComponent {
   user: any
   images: string[] = []
 
-  constructor(private fb: FormBuilder) {
-    this.classForm = this.fb.group({
-      className: new FormControl('', [Validators.required]),
+  banner: any = {
+    pagetitle: 'Add New Class',
+    bg_image: 'assets/images/banner/bnr5.jpg',
+    title: 'Add New Class',
+  }
 
-      classStudent: new FormControl('', [Validators.required]),
-      aboutClass: new FormControl('', [Validators.required]),
-      classSubject: new FormControl('', [Validators.required]),
-      classImage: new FormControl('', [Validators.required]),
+  // Custom file validator to check for file presence and types
+  fileValidator(control: AbstractControl): ValidationErrors | null {
+    const files = control.value
+    console.log('files-v-', files)
+    if (!files || files.length === 0) {
+      return { required: true } // Required error
+    }
+
+    const validExtensions = ['image/jpeg', 'image/png', 'image/gif'] // Allowed file types
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i]
+      if (!validExtensions.includes(file.type)) {
+        return { invalidFileType: true } // Invalid file type error
+      }
+    }
+
+    return null // No errors
+  }
+  constructor(
+    private fb: FormBuilder,
+    private class_Service: ClassServiceService,
+    private dialog: MatDialog,
+  ) {
+    this.classForm = this.fb.group({
+      className: ['', Validators.required],
+      classStudent: ['', Validators.required],
+      classSubject: ['', Validators.required],
+      aboutClass: ['', Validators.required],
+      classImage: [null, this.fileValidator],
+      isActive: [1],
     })
   }
 
   getControl(value: any) {
     return this.classForm.get(value)
   }
+
   onFileChange(event: any) {
-    if (event.target.files && event.target.files.length) {
-      const files = event.target.files
-      this.classForm.value.img = files
-      for (let i = 0; i < files.length; i++) {
+    const files = event.target.files
+    this.images = [] // Reset images array
+
+    if (files && files.length) {
+      // Set the form control value to the selected files
+      console.log('files-onchange-', files)
+
+      this.classForm.patchValue({
+        // classImage: files,
+        classImage: {
+          name: files[0]['name'],
+          size: files[0]['size'],
+          type: files[0]['type'],
+        },
+      })
+
+      for (let file of files) {
         const reader = new FileReader()
         reader.onload = (e: any) => {
-          this.images.push(e.target.result)
+          this.images.push(e.target.result) // Preview image
         }
-        reader.readAsDataURL(files[i])
+        reader.readAsDataURL(file)
       }
+    } else {
+      this.classForm.patchValue({ classImage: null }) // Clear the form control if no files
     }
   }
 
-  addClass() {
-    console.log('tform', this.classForm.value, this.classForm)
+  onSubmit() {
     if (this.classForm.valid) {
+      console.log('Form Submit-value!', this.classForm.value)
+
+      this.class_Service.addClass(this.classForm.value).subscribe(
+        (response) => {
+          console.log('class added successfully!', response)
+          this.openSuccessDialog('class is saved successfully!')
+        },
+        (error) => {
+          console.error('Error adding class:', error)
+          this.openSuccessDialog('Failed to save class. Please try again.')
+        },
+      )
+    } else {
+      console.log('Form is invalid')
     }
+  }
+
+  openSuccessDialog(message: string): void {
+    this.dialog.open(SuccessDialogComponent, {
+      data: {
+        message,
+        callback: () => this.clearForm(), // Pass the callback to clear the form
+      },
+    })
+  }
+
+  clearForm(): void {
+    this.classForm.reset({
+      className: '',
+      classStudent: '',
+      classSubject: '',
+      aboutClass: '',
+      classImage: null,
+      isActive: 1,
+    })
   }
 }

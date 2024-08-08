@@ -1,57 +1,38 @@
-* {
+form > div {
+  margin-bottom: 15px;
+}
+label {
+  margin-bottom: 2px;
+}
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
   box-sizing: border-box;
-}
-.pdFormHeader {
-  font-size: 25px;
-  text-align: center;
-  text-transform: capitalize;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.432);
-  margin: 0;
-}
-.pdFormWrapper {
-  width: 100%;
-  margin: 0 auto;
-}
-.pdFormWrapper > form {
-  width: 100%;
-
-  padding: 2rem;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-
-  background-color: gainsboro;
-}
-.pdFormWrapper > form > div {
-  margin-bottom: 1rem;
-}
-.pdFormWrapper > form > div > label {
-  font-weight: 300;
-  margin-bottom: 0;
-  color: rgb(64, 63, 63);
-}
-
-.subBtn {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border: none;
   border-radius: 3px;
-  border: 1px solid black;
-  border-color: white;
-  padding: 0.3rem 1rem;
+  outline: none;
+}
+.imgsWrapper {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  border: 1px solid gainsboro;
+}
+button {
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  margin: 0.5rem 0;
+  border: none;
+  padding: 1rem;
+  border-radius: 3px;
 }
 button[disabled] {
   background-color: #cccccc;
   cursor: not-allowed;
 }
-/* images */
-.imgsWrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
 
 .error {
-  border: 1px solid red;
-}
-.text-danger {
-  font-size: 10px;
   color: red;
 }
