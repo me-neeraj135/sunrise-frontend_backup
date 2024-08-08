@@ -10,6 +10,10 @@ export class ClassServiceService {
   private classUrl = 'assets/data/class.json'
   private classDetailsUrl = 'assets/data/class-detail.json'
 
+  private backendUrl = 'http://localhost:5000/api'
+  private apiUrl = 'http://localhost:5000/api/classes'
+  class_data: any
+
   constructor(private http: HttpClient) {}
 
   getClass(): Observable<any> {
@@ -52,5 +56,9 @@ export class ClassServiceService {
       .pipe(
         map((details) => details.find((detail) => detail.classDetailId === id)),
       )
+  }
+
+  addClass(class_data: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, class_data)
   }
 }

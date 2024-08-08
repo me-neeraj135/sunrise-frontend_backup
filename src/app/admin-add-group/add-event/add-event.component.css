@@ -1,40 +1,9 @@
-/* * {
-  box-sizing: border-box;
-} */
-.eventFormWrapper {
-  width: 100%;
-  min-height: 100vh;
-  background-image: url('https://images.pexels.com/photos/6863190/pexels-photo-6863190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 2rem 0;
-}
-h1 {
-  font-size: 22px;
-  font-weight: 700;
-
-  text-transform: capitalize;
-  text-align: center;
-  color: #c5d6e0;
-}
-form {
-  width: 50%;
-  margin: 0 auto;
-  background-color: #c5d6e0;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
-    rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
-  padding: 2rem;
-  border-radius: 5px;
-}
-
-div {
+form > div {
   margin-bottom: 15px;
 }
-
 label {
-  margin-bottom: 5px;
+  margin-bottom: 2px;
 }
-
 input,
 textarea {
   width: 100%;
@@ -47,20 +16,21 @@ textarea {
 }
 .imgsWrapper {
   display: flex;
+  gap: 0.5rem;
   flex-wrap: wrap;
-  gap: 5px;
 }
-
 button {
   width: 100%;
-  padding: 10px;
-  background-color: #3b7056;
-  color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  margin: 0.5rem 0;
   border: none;
-  cursor: pointer;
+  padding: 1rem;
+  border-radius: 3px;
 }
-
 button[disabled] {
   background-color: #cccccc;
   cursor: not-allowed;
+}
+.error {
+  color: red;
 }

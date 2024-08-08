@@ -8,6 +8,8 @@ import { Observable, catchError, forkJoin, map, of } from 'rxjs'
 export class ProductService {
   private productUrl = 'assets/data/product.json'
   private productDetailUrl = 'assets/data/product-detail.json'
+  private backendUrl = 'http://localhost:5000/api'
+  private apiUrl = 'http://localhost:5000/api/products'
 
   constructor(private http: HttpClient) {}
 
@@ -54,7 +56,7 @@ export class ProductService {
   // add product
 
   addProduct(product: any): Observable<any> {
-    return this.http.post<any>(this.productUrl, product)
+    return this.http.post<any>(this.apiUrl, product)
   }
 
   // update product

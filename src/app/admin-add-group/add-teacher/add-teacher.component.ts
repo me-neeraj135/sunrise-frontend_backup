@@ -1,31 +1,61 @@
-import { Component, OnInit } from '@angular/core';
-import { TeacherService } from 'src/app/services/teacher.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
-import { SuccessDialogComponent } from 'src/app/util/success-dialog/success-dialog.component';
+import { Component, OnInit } from '@angular/core'
+import { TeacherService } from 'src/app/services/teacher.service'
+import {
+  FormBuilder,
+  FormGroup,
+  NgForm,
+  Validators,
+  FormControl,
+  AbstractControl,
+  ValidationErrors,
+} from '@angular/forms'
+import { MatDialog } from '@angular/material/dialog'
+import { SuccessDialogComponent } from 'src/app/util/success-dialog/success-dialog.component'
 
 @Component({
   selector: 'app-add-teacher',
   templateUrl: './add-teacher.component.html',
-  styleUrls: ['./add-teacher.component.css']
+  styleUrls: ['./add-teacher.component.css'],
 })
 export class AddTeacherComponent implements OnInit {
-  teacherForm: FormGroup;
-  user: any;
-  images: string[] = [];
-  emailRegex = `^(?=.{1,256})(?=.{1,64}@.{1,255}$)[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$`;
-  genderOptions = ['Male', 'Female'];
+  teacherForm: FormGroup
+  user: any
+  images: string[] = []
+  emailRegex = `^(?=.{1,256})(?=.{1,64}@.{1,255}$)[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$`
+  genderOptions = ['Male', 'Female']
 
   banner: any = {
     pagetitle: 'Add New Teacher',
     bg_image: 'assets/images/banner/bnr5.jpg',
     title: 'Add New Teacher',
-  };
+  }
+  // Custom file validator to check for file presence and types
+  fileValidator(control: AbstractControl): ValidationErrors | null {
+    const files = control.value
 
+    if (!files || files.length === 0) {
+      return { required: true } // Required error
+    }
+
+    const validExtensions = [
+      'image/jpeg',
+      'image/jpg',
+      'image/png',
+      'image/gif',
+    ] // Allowed file types
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i]
+      if (!validExtensions.includes(file.type)) {
+        return { invalidFileType: true } // Invalid file type error
+      }
+    }
+
+    return null // No errors
+  }
   constructor(
     private fb: FormBuilder,
     private teacherService: TeacherService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
   ) {
     this.teacherForm = this.fb.group({
       name: ['', Validators.required],
@@ -37,53 +67,70 @@ export class AddTeacherComponent implements OnInit {
       about: [''],
       duty: [''],
       experience: [''],
-      img: ['assets/images/our-team/pic1.jpg'], // Placeholder for image
-      isActive: [1]
-    });
+      teacherImage: [null, this.fileValidator], // Placeholder for image
+      isActive: [1],
+    })
   }
 
   ngOnInit(): void {}
 
   getControl(controlName: string) {
-    return this.teacherForm.get(controlName);
+    return this.teacherForm.get(controlName)
   }
 
   onFileChange(event: any) {
-    if (event.target.files.length > 0) {
-      const file = event.target.files[0];
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => {
-        this.teacherForm.patchValue({
-          img: reader.result
-        });
-      };
+    const files = event.target.files
+
+    this.images = [] // Reset images array
+
+    if (files && files.length) {
+      // Set the form control value to the selected files
+
+      this.teacherForm.patchValue({
+        teacherImage: {
+          name: files[0]['name'],
+          size: files[0]['size'],
+          type: files[0]['type'],
+        },
+      })
+
+      for (let file of files) {
+        const reader = new FileReader()
+        reader.onload = (e: any) => {
+          this.images.push(e.target.result) // Preview image
+        }
+        reader.readAsDataURL(file)
+      }
+    } else {
+      this.teacherForm.patchValue({ teacherImage: null }) // Clear the form control if no files
     }
   }
 
   addTeacher() {
     if (this.teacherForm.valid) {
+      // console.log('tchvalue--', this.teacherForm.value)
+
       this.teacherService.addTeacher(this.teacherForm.value).subscribe(
-        response => {
-          console.log('Teacher added successfully!', response);
-          this.openSuccessDialog('Teacher is saved successfully!');
+        (response) => {
+          console.log('Teacher added successfully!', response)
+          this.openSuccessDialog('Teacher is saved successfully!')
         },
-        error => {
-          console.error('Error adding teacher:', error);
-          this.openSuccessDialog('Failed to save teacher. Please try again.');
-        }
-      );
+        (error) => {
+          console.error('Error adding teacher:', error)
+          this.openSuccessDialog('Failed to save teacher. Please try again.')
+        },
+      )
     } else {
-      this.teacherForm.markAllAsTouched(); // Mark all fields as touched to show validation messages
+      this.teacherForm.markAllAsTouched() // Mark all fields as touched to show validation messages
     }
   }
   openSuccessDialog(message: string): void {
     this.dialog.open(SuccessDialogComponent, {
       data: {
         message,
-        callback: () => this.clearForm() // Pass the callback to clear the form
-      }
-    });
+        callback: () => this.clearForm(), // Pass the callback to clear the form
+      },
+    })
   }
 
   clearForm(): void {
@@ -97,8 +144,8 @@ export class AddTeacherComponent implements OnInit {
       about: '',
       duty: '',
       experience: '',
-      img: 'assets/images/our-team/pic1.jpg', // Reset to placeholder
-      isActive: 1
-    });
+      teacherImage: null, // Reset to placeholder
+      isActive: 1,
+    })
   }
 }

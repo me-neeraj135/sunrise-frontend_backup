@@ -1,53 +1,66 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable, catchError, forkJoin, map, throwError } from 'rxjs';
-import { TeacherService } from './teacher.service';
+import { HttpClient } from '@angular/common/http'
+import { Injectable } from '@angular/core'
+import { Observable, catchError, forkJoin, map, throwError } from 'rxjs'
+import { TeacherService } from './teacher.service'
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EventService {
-  private eventUrl = 'assets/data/event.json';
-  private eventDetailUrl = "assets/data/event-detail.json";
-  private eventContentUrl = "assets/data/event-content.json";
+  private eventUrl = 'assets/data/event.json'
+  private eventDetailUrl = 'assets/data/event-detail.json'
+  private eventContentUrl = 'assets/data/event-content.json'
+  private backendUrl = 'http://localhost:5000/api'
+  private apiUrl = 'http://localhost:5000/api/events'
 
-  constructor(private http: HttpClient, private teacherService: TeacherService) { }
-  
+  constructor(
+    private http: HttpClient,
+    private teacherService: TeacherService,
+  ) {}
+
+  addEvent(event: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, event)
+  }
+
   getEvents(): Observable<any> {
-    return this.http.get<any>(this.eventUrl);
+    return this.http.get<any>(this.eventUrl)
   }
 
   getEventDetails(): Observable<any[]> {
-    return this.http.get<any[]>(this.eventDetailUrl);
+    return this.http.get<any[]>(this.eventDetailUrl)
   }
 
   getEventContents(): Observable<any[]> {
-    return this.http.get<any[]>(this.eventContentUrl);
+    return this.http.get<any[]>(this.eventContentUrl)
   }
 
   getEventById(eventId: number): Observable<any> {
     return forkJoin([
       this.getEvents(),
       this.getEventDetails(),
-      this.getEventContents()
+      this.getEventContents(),
     ]).pipe(
-      catchError(error => throwError('Failed to fetch event data')),
+      catchError((error) => throwError('Failed to fetch event data')),
       map(([events, eventDetails, eventContents]) => {
-        const event = events.find((e: {eventId:number}) => e.eventId === eventId);
-        const eventDetail = eventDetails.find(ed => ed.eventId === eventId);
-        const eventContentsFiltered = eventContents.filter(ec => ec.eventId === eventId);
+        const event = events.find(
+          (e: { eventId: number }) => e.eventId === eventId,
+        )
+        const eventDetail = eventDetails.find((ed) => ed.eventId === eventId)
+        const eventContentsFiltered = eventContents.filter(
+          (ec) => ec.eventId === eventId,
+        )
 
         if (event && eventDetail && eventContentsFiltered.length > 0) {
           return {
             ...event,
             about: eventDetail.about,
             highlight: eventDetail.highlight,
-            contents: eventContentsFiltered.map((ec: any) => ec.label)
-          };
+            contents: eventContentsFiltered.map((ec: any) => ec.label),
+          }
         } else {
-          throw new Error('Event data not found');
+          throw new Error('Event data not found')
         }
-      })
-    );
+      }),
+    )
   }
 }
