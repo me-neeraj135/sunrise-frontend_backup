@@ -188,6 +188,11 @@ import { AddServiceComponent } from './admin-add-group/add-service/add-service.c
 import { AddTestimonialsComponent } from './admin-add-group/add-testimonials/add-testimonials.component';
 import { SuccessDialogComponent } from './util/success-dialog/success-dialog.component'
 import { MatDialogModule } from '@angular/material/dialog';
+import { UpdateTeacherComponent } from './admin-update-group/update-teacher/update-teacher.component';
+import { UpdateEventComponent } from './admin-update-group/update-event/update-event.component';
+import { UpdateClassComponent } from './admin-update-group/update-class/update-class.component';
+import { UpdateTestimonialsComponent } from './admin-update-group/update-testimonials/update-testimonials.component';
+import { UpdateServiceComponent } from './admin-update-group/update-service/update-service.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -370,6 +375,11 @@ import { MatDialogModule } from '@angular/material/dialog';
     AddServiceComponent,
     AddTestimonialsComponent,
     SuccessDialogComponent,
+    UpdateTeacherComponent,
+    UpdateEventComponent,
+    UpdateClassComponent,
+    UpdateTestimonialsComponent,
+    UpdateServiceComponent,
   ],
   imports: [
     BrowserModule,
