@@ -67,7 +67,7 @@ export class AddTeacherComponent implements OnInit {
       about: [''],
       duty: [''],
       experience: [''],
-      teacherImage: [null, this.fileValidator], // Placeholder for image
+      teacherImage: [null], // Placeholder for image
       isActive: [1],
     })
   }
@@ -79,29 +79,18 @@ export class AddTeacherComponent implements OnInit {
   }
 
   onFileChange(event: any) {
-    const files = event.target.files
-
     this.images = [] // Reset images array
-
-    if (files && files.length) {
-      // Set the form control value to the selected files
-
-      this.teacherForm.patchValue({
-        teacherImage: {
-          name: files[0]['name'],
-          size: files[0]['size'],
-          type: files[0]['type'],
-        },
-      })
-
-      for (let file of files) {
-        const reader = new FileReader()
-        reader.onload = (e: any) => {
-          this.images.push(e.target.result) // Preview image
-        }
-        reader.readAsDataURL(file)
-      }
-    } else {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = (e : any) => {
+        this.images.push(e.target.result) // Preview image
+        this.teacherForm.patchValue({
+          teacherImage: reader.result
+        });
+      };
+    }else {
       this.teacherForm.patchValue({ teacherImage: null }) // Clear the form control if no files
     }
   }

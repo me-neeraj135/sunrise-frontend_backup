@@ -123,7 +123,7 @@
                                     </div>
                                     <div>
                                         <label for="teacherImage">Teacher Image</label>
-                                        <input type="file" (change)="onFileChange($event)" multiple />
+                                        <input type="file" (change)="onFileChange($event)" />
                                         <div *ngIf="getControl('teacherImage')?.errors?.['required']">
                                             <small class=" error">Image is required.</small>
                                         </div>
