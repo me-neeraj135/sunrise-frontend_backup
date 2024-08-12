@@ -71,10 +71,15 @@ import { HomeSchoolComponent } from './home-school/home-school.component'
 import { PrincipalMessageComponent } from './about-us/principal-message/principal-message.component'
 import { AboutSunriseComponent } from './about-us/about-sunrise/about-sunrise.component'
 import { AddProductComponent } from './admin-add-group/add-product/add-product.component'
-import { UpdateProductComponent } from './update-product/update-product.component'
 import { AddTeacherComponent } from './admin-add-group/add-teacher/add-teacher.component'
 import { AddEventComponent } from './admin-add-group/add-event/add-event.component'
 import { AddClassComponent } from './admin-add-group/add-class/add-class.component'
+import { UpdateTeacherComponent } from './admin-update-group/update-teacher/update-teacher.component'
+import { UpdateEventComponent } from './admin-update-group/update-event/update-event.component'
+import { UpdateClassComponent } from './admin-update-group/update-class/update-class.component'
+import { UpdateProductComponent } from './admin-update-group/update-product/update-product.component'
+import { UpdateTestimonialsComponent } from './admin-update-group/update-testimonials/update-testimonials.component'
+import { UpdateServiceComponent } from './admin-update-group/update-service/update-service.component'
 const routes: Routes = [
   // Home --
   { path: '', redirectTo: '/home-school', pathMatch: 'full' },
@@ -91,6 +96,7 @@ const routes: Routes = [
   // Events-Recognitions
   { path: 'event', component: EventsComponent },
   { path: 'addEvent', component: AddEventComponent },
+  { path: 'updateEvent', component: UpdateEventComponent },
   { path: 'event-details/:id', component: EventsDetailsComponent },
 
   // Gallary
@@ -100,6 +106,7 @@ const routes: Routes = [
   // School-Services
   { path: 'services-1', component: Services1Component },
   { path: 'services-2', component: Services2Component },
+  { path: 'UpdateService', component: UpdateServiceComponent},
   { path: 'faq-1', component: FaqsComponent },
   { path: 'help-desk', component: HelpDeskComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
@@ -107,9 +114,12 @@ const routes: Routes = [
   { path: 'teacher', component: TeachersComponent },
   { path: 'teachers-profile/:id', component: TeachersProfileComponent },
   { path: 'addTeacher', component: AddTeacherComponent },
+  { path: 'updateTeacher', component: UpdateTeacherComponent },
+  // Class 
   { path: 'classes', component: ClassesComponent },
   { path: 'classes-details/:id', component: classesDetailsComponent },
   { path: 'addClass', component: AddClassComponent },
+  { path: 'updateClass', component: UpdateClassComponent },
   // Features --,
   { path: 'header-style-4', component: HeaderStyle4Component },
 
@@ -150,16 +160,10 @@ const routes: Routes = [
   // Blog --
   { path: 'blog-half-img', component: HalfImageComponent },
   { path: 'blog-half-img-sidebar', component: HalfImageSidebarComponent },
-  {
-    path: 'blog-half-img-left-sidebar',
-    component: HalfImageSidebarLeftComponent,
-  },
+  { path: 'blog-half-img-left-sidebar', component: HalfImageSidebarLeftComponent},
   { path: 'blog-large-img', component: LargeImageComponent },
   { path: 'blog-large-img-sidebar', component: LargeImageSidebarComponent },
-  {
-    path: 'blog-large-img-left-sidebar',
-    component: LargeImageSidebarLeftComponent,
-  },
+  { path: 'blog-large-img-left-sidebar', component: LargeImageSidebarLeftComponent},
   { path: 'blog-grid-2', component: Grid2Component },
   { path: 'blog-grid-2-sidebar', component: Grid2SidebarComponent },
   { path: 'blog-grid-2-sidebar-left', component: Grid2SidebarLeftComponent },
@@ -170,6 +174,7 @@ const routes: Routes = [
   { path: 'blog-single', component: SingleComponent },
   { path: 'blog-single-sidebar', component: SingleSidebarComponent },
   { path: 'blog-single-left-sidebar', component: SingleSidebarLeftComponent },
+  { path: 'updateBlog', component: UpdateTestimonialsComponent},
 
   // Contact --
   { path: 'contact-1', component: ContactUs1Component },
