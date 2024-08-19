@@ -78,7 +78,7 @@ export class AddEventComponent {
       eventAddress: ['', Validators.required],
       eventTitle: ['', Validators.required],
       eventLabel: ['', Validators.required],
-      eventImage: [null, this.fileValidator],
+      eventImage: [null],
       eventYear: ['', [Validators.required, this.yearValidator]],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
@@ -97,28 +97,17 @@ export class AddEventComponent {
   }
 
   onFileChange(event: any) {
-    const files = event.target.files
     this.images = [] // Reset images array
 
-    if (files && files.length) {
-      // Set the form control value to the selected files
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0]
+      const reader = new FileReader()
+      reader.readAsDataURL(file)
 
-      this.eventForm.patchValue({
-        // eventImage:files
-        eventImage: {
-          name: files[0]['name'],
-          size: files[0]['size'],
-          type: files[0]['type'],
-        },
-      })
       console.log('evt-valid--', this.eventForm)
-
-      for (let file of files) {
-        const reader = new FileReader()
-        reader.onload = (e: any) => {
-          this.images.push(e.target.result) // Preview image
-        }
-        reader.readAsDataURL(file)
+      reader.onload = (e: any) => {
+        this.images.push(e.target.result) // Preview image
+        this.eventForm.patchValue({ eventImage: reader.result }) // Clear the form control if no files
       }
     } else {
       this.eventForm.patchValue({ eventImage: null }) // Clear the form control if no files
