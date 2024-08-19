@@ -39,7 +39,7 @@ export class AddProductComponent implements OnInit {
   ) {
     this.productForm = this.fb.group({
       title: ['', Validators.required],
-      additionalImages: this.fb.array([]),
+      additionalImages: this.fb.array([null]),
       availability: ['', Validators.required],
       category: ['', Validators.required],
       color: ['', Validators.required],
@@ -47,7 +47,7 @@ export class AddProductComponent implements OnInit {
       deliveryTime: ['', Validators.required],
       description: ['', Validators.required],
       features: this.fb.array([]),
-      img: ['', [Validators.required, this.fileValidator]],
+      img: [null],
 
       price: ['', [Validators.required, this.priceValidator]],
       priceDiscount: ['', this.priceValidator],
@@ -64,7 +64,7 @@ export class AddProductComponent implements OnInit {
       vendorContact: ['', [Validators.required, Validators.email]],
       vendorId: ['', Validators.required],
       vendorName: ['', Validators.required],
-      video: ['', this.videoValidator],
+      video: [null],
       isActive: 1,
     })
   }
@@ -83,20 +83,37 @@ export class AddProductComponent implements OnInit {
 
   // Handle additional image file changes
   onAdditionalImagesChange(event: any) {
-    const files = event.target.files
     // this.additionalImagesPreview = [] // Reset additional images preview
-    console.log('adImage-change--', files)
 
-    if (files && files.length) {
+    if (event.target.files.length > 0) {
       // this.additionalImages.clear() // Clear form array
-      for (let file of files) {
-        const reader = new FileReader()
-        reader.onload = (e: any) => {
-          this.additionalImagesPreview.push(e.target.result) // Preview additional image
-        }
-        reader.readAsDataURL(file)
-        this.additionalImages.push(this.fb.control(file)) // Add file to form array
+
+      const file = event.target.files[0]
+      console.log('adImage-change--', file)
+      const reader = new FileReader()
+      reader.readAsDataURL(file)
+
+      reader.onload = (e: any) => {
+        this.additionalImagesPreview.push(e.target.result) // Preview additional image
+        this.productForm.patchValue({
+          additionalImages: reader.result,
+        })
+        // this.additionalImages.push(this.fb.control(reader.result)) // Add file to form array
       }
+      // for (let file of files) {
+      //   const reader = new FileReader()
+      //   reader.readAsDataURL(file)
+
+      //   // this.additionalImages.push(this.fb.control(reader.result)) // Add file to form array
+      //   reader.onload = (e: any) => {
+      //     console.log('forfile--', file, 'result--', reader.result)
+      //     this.additionalImagesPreview.push(e.target.result) // Preview additional image
+      //     this.additionalImages.push(this.fb.control(reader.result)) // Add file to form array
+      //   }
+      //   reader.readAsDataURL(file)
+      // }
+    } else {
+      this.productForm.patchValue({ addAdditionalImages: null }) // Clear the form control if no files
     }
   }
 
@@ -104,14 +121,14 @@ export class AddProductComponent implements OnInit {
   onFileChange(event: any) {
     const file = event.target.files[0]
     console.log('main image-change--', file)
-
     if (file) {
       const reader = new FileReader()
-      reader.onload = (e: any) => {
-        this.images = [e.target.result] // Preview main Product image
-        this.productForm.patchValue({ img: file }) // Set image file to form
-      }
       reader.readAsDataURL(file)
+      reader.onload = (e: any) => {
+        // this.images = [e.target.result] // Preview main Product image
+        this.images.push(e.target.result)
+        this.productForm.patchValue({ img: reader.result }) // Set image file to form
+      }
     } else {
       this.images = []
       this.productForm.patchValue({ img: null })
@@ -124,13 +141,13 @@ export class AddProductComponent implements OnInit {
     const file = event.target.files[0]
     if (file) {
       const reader = new FileReader()
+      reader.readAsDataURL(file)
       reader.onload = (e: any) => {
         this.videoPreview = e.target.result // Set video preview
+        this.productForm.patchValue({ video: reader.result })
       }
-      reader.readAsDataURL(file)
 
       // Update form control value and clear error
-      this.productForm.patchValue({ video: file })
       this.videoError = null
     } else {
       this.videoPreview = null
@@ -190,7 +207,7 @@ export class AddProductComponent implements OnInit {
 
       const product: any = {
         ...this.productForm.value,
-        images: this.images,
+        img: this.images,
         additionalImages: this.additionalImages.value,
         video: this.productForm.value.video,
       }
@@ -199,11 +216,11 @@ export class AddProductComponent implements OnInit {
       this.productService.addProduct(product).subscribe(
         (response) => {
           console.log('Product added successfully!', response)
-          this.openSuccessDialog('class is saved successfully!')
+          this.openSuccessDialog('Product is saved successfully!')
         },
         (error) => {
           console.error('Error adding product', error)
-          this.openSuccessDialog('Failed to save class. Please try again.')
+          this.openSuccessDialog('Failed to save product. Please try again.')
         },
       )
     } else {

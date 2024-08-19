@@ -57,7 +57,7 @@ export class AddClassComponent {
       classStudent: ['', Validators.required],
       classSubject: ['', Validators.required],
       aboutClass: ['', Validators.required],
-      classImage: [null, this.fileValidator],
+      classImage: [null],
       isActive: [1],
     })
   }
@@ -67,28 +67,17 @@ export class AddClassComponent {
   }
 
   onFileChange(event: any) {
-    const files = event.target.files
-    this.images = [] // Reset images array
+    // Reset images array
 
-    if (files && files.length) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0]
       // Set the form control value to the selected files
-      console.log('files-onchange-', files)
+      const reader = new FileReader()
+      reader.readAsDataURL(file)
 
-      this.classForm.patchValue({
-        // classImage: files,
-        classImage: {
-          name: files[0]['name'],
-          size: files[0]['size'],
-          type: files[0]['type'],
-        },
-      })
-
-      for (let file of files) {
-        const reader = new FileReader()
-        reader.onload = (e: any) => {
-          this.images.push(e.target.result) // Preview image
-        }
-        reader.readAsDataURL(file)
+      reader.onload = (e: any) => {
+        this.images.push(e.target.result) // Preview image
+        this.classForm.patchValue({ classImage: reader.result })
       }
     } else {
       this.classForm.patchValue({ classImage: null }) // Clear the form control if no files

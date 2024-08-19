@@ -29,29 +29,7 @@ export class AddTeacherComponent implements OnInit {
     bg_image: 'assets/images/banner/bnr5.jpg',
     title: 'Add New Teacher',
   }
-  // Custom file validator to check for file presence and types
-  fileValidator(control: AbstractControl): ValidationErrors | null {
-    const files = control.value
 
-    if (!files || files.length === 0) {
-      return { required: true } // Required error
-    }
-
-    const validExtensions = [
-      'image/jpeg',
-      'image/jpg',
-      'image/png',
-      'image/gif',
-    ] // Allowed file types
-    for (let i = 0; i < files.length; i++) {
-      const file = files[i]
-      if (!validExtensions.includes(file.type)) {
-        return { invalidFileType: true } // Invalid file type error
-      }
-    }
-
-    return null // No errors
-  }
   constructor(
     private fb: FormBuilder,
     private teacherService: TeacherService,
@@ -81,16 +59,16 @@ export class AddTeacherComponent implements OnInit {
   onFileChange(event: any) {
     this.images = [] // Reset images array
     if (event.target.files.length > 0) {
-      const file = event.target.files[0];
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = (e : any) => {
+      const file = event.target.files[0]
+      const reader = new FileReader()
+      reader.readAsDataURL(file)
+      reader.onload = (e: any) => {
         this.images.push(e.target.result) // Preview image
         this.teacherForm.patchValue({
-          teacherImage: reader.result
-        });
-      };
-    }else {
+          teacherImage: reader.result,
+        })
+      }
+    } else {
       this.teacherForm.patchValue({ teacherImage: null }) // Clear the form control if no files
     }
   }
@@ -136,5 +114,29 @@ export class AddTeacherComponent implements OnInit {
       teacherImage: null, // Reset to placeholder
       isActive: 1,
     })
+  }
+
+  // Custom file validator to check for file presence and types
+  fileValidator(control: AbstractControl): ValidationErrors | null {
+    const files = control.value
+
+    if (!files || files.length === 0) {
+      return { required: true } // Required error
+    }
+
+    const validExtensions = [
+      'image/jpeg',
+      'image/jpg',
+      'image/png',
+      'image/gif',
+    ] // Allowed file types
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i]
+      if (!validExtensions.includes(file.type)) {
+        return { invalidFileType: true } // Invalid file type error
+      }
+    }
+
+    return null // No errors
   }
 }
